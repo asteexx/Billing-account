@@ -1,0 +1,99 @@
+<ng4-loading-spinner> </ng4-loading-spinner>
+<div class="container mt-lg-5">
+  <div class="row">
+
+    <div class="col">
+
+      <h4>Billing accounts component:</h4>
+
+      <table class="table">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Address</th>
+          <th scope="col">Username</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Delete Action</th>
+          <th scope="col">Edit Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let billingAccount of billingAccounts">
+          <td scope="row">{{billingAccount.id}}</td>
+          <td>{{billingAccount.address}}</td>
+          <td>{{billingAccount.username}}</td>
+          <td>{{billingAccount.email}}</td>
+          <td><button type="button" class="btn btn-danger" (click)="_deleteBillingAccount(billingAccount.id)">Delete</button></td>
+          <td><button type="button" class="btn btn-secondary" (click)="_openModal(template, billingAccount)">Edit</button></td>
+        </tr>
+
+        </tbody>
+      </table>
+
+      <div>
+        <p>Billing Accounts count: {{billingAccounts ? billingAccounts.length : 0}}</p>
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn btn-dark" (click)="_updateBillingAccounts()">Update</button>
+
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+              (click)="_openModal(template)">
+        Create new billing account
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Modal -->
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{editMode ? "Edit": "Create"}}  new Billing Account</h4>
+    <button type="button" class="close pull-right"
+            aria-label="Close" (click)="_closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label>Username</label>
+      <input class="form-control" name="username" [(ngModel)]="editableBa.username" #username="ngModel" required/>
+      <div [hidden]="username.valid || username.untouched" class="alert alert-danger">
+        Pls set username <!--Easy way to create client validation-->
+      </div>
+    </div>
+    <div class="form-group">
+      <label>E-mail</label>
+      <input class="form-control" name="email" [(ngModel)]="editableBa.email" #email="ngModel"
+             required pattern="[a-zA-Z0-9_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,4}"/>
+      <div [hidden]="email.valid || email.untouched" class="alert alert-danger">
+        E-mail is incorrect
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Address</label>
+      <input class="form-control" name="address" [(ngModel)]="editableBa.address" #address="ngModel" required/>
+      <div [hidden]="address.valid || address.untouched" class="alert alert-danger">
+        Pls set address
+      </div>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="_addBillingAccount(username, email, address)"
+            [disabled]="username.invalid || email.invalid || address.invalid">{{editMode ? "Save": "Create"}}
+    </button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="_closeModal()">Close</button>
+
+  </div>
+</ng-template>
+
+
+
