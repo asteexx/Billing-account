@@ -21,7 +21,7 @@
         <tr *ngFor="let billingAccount of billingAccounts">
           <td scope="row">{{billingAccount.id}}</td>
           <td>{{billingAccount.address}}</td>
-          <td>{{billingAccount.username}}</td>
+          <td><a [routerLink]="['/billing-details', billingAccount.id]">{{billingAccount.username}}</a></td>
           <td>{{billingAccount.email}}</td>
           <td><button type="button" class="btn btn-danger" (click)="_deleteBillingAccount(billingAccount.id)">Delete</button></td>
           <td><button type="button" class="btn btn-secondary" (click)="_openModal(template, billingAccount)">Edit</button></td>

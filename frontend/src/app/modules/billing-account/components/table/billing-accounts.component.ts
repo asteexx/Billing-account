@@ -1,9 +1,9 @@
 import {Component, OnInit, TemplateRef} from '@angular/core';
-import {BillingAccount} from "../model/billing-account";
-import {BillingAccountService} from "../service/billing/billing-account.service";
+import {BillingAccount} from "../../models/billing-account";
 import {BsModalRef, BsModalService} from "ngx-bootstrap";
 import {Subscription} from "rxjs/internal/Subscription";
 import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
+import {BillingAccountService} from "../../../../services/billing-account.service";
 
 @Component({
   selector: 'app-billing-accounts',

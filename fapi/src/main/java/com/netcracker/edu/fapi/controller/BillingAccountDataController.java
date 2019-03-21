@@ -34,4 +34,10 @@ public class BillingAccountDataController {
         billingAccountDataService.deleteBillingAccount(Long.valueOf(id));
     }
 
+    @RequestMapping(value = "/{id}")
+    public ResponseEntity<BillingAccountViewModel> getAllBillingAccounts(@PathVariable String id) throws InterruptedException {
+        Long billingAccountId = Long.valueOf(id);
+        return ResponseEntity.ok(billingAccountDataService.getBillingAccountById(billingAccountId));
+    }
+
 }

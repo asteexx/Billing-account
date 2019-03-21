@@ -5,11 +5,14 @@ export class BillingAccount {
   email: string;
 
   static cloneBase(billingAccout: BillingAccount): BillingAccount {
-    let clonedBillingAccount: BillingAccount = new BillingAccount();
+    const clonedBillingAccount: BillingAccount = new BillingAccount();
     clonedBillingAccount.id = billingAccout.id;
     clonedBillingAccount.username = billingAccout.username;
     clonedBillingAccount.email = billingAccout.email;
     clonedBillingAccount.address = billingAccout.address;
     return clonedBillingAccount;
   }
+}
+
+export class BillingAccountStr {
 }

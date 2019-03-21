@@ -1,11 +1,9 @@
-import {Injectable} from '@angular/core';
+import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {BillingAccount} from "../../model/billing-account";
+import {BillingAccount} from "../modules/billing-account/models/billing-account";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 // Data service
 export class BillingAccountService { //todo create interface
 
@@ -23,6 +21,10 @@ export class BillingAccountService { //todo create interface
 
   deleteBillingAccount(billingAccountId: string): Observable<void> {
     return this.http.delete<void>('/api/ba/' + billingAccountId);
+  }
+
+  getBillingAccountById(id: string): Observable<BillingAccount> {
+    return this.http.get<BillingAccount>('/api/ba/' + id);
   }
 
 }
