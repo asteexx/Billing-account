@@ -13,6 +13,8 @@ import {BillingDetailsViewComponent} from "./modules/layout/components/billing-d
 import {NotFoundComponent} from "./modules/layout/components/404/not-found.component";
 import {LayoutModule} from "./modules/layout/layout.module";
 import {HomeComponent} from "./modules/layout/components/home/home.component";
+import { CatalogPageComponent } from "./modules/layout/components/catalog-page/catalog-page.component";
+import { RegistrationPageComponent } from "./modules/layout/components/registration-page/registration-page.component";
 
 
 
@@ -21,12 +23,16 @@ const appRoutes: Routes = [
   {path: "", component: HomeComponent},
   {path: "home", component: HomeComponent},
   {path: "billing-details/:id", component: BillingDetailsViewComponent},
+  {path: "catalog", component: CatalogPageComponent},
+  {path: "registration", component: RegistrationPageComponent},
   {path: "**", component: NotFoundComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+
+
 
 
 
