@@ -4,6 +4,7 @@ import {NotFoundComponent} from "./components/404/not-found.component";
 import {HomeComponent} from "./components/home/home.component";
 import {BillingAccountModule} from "../billing-account/billing-account.module";
 import {HeaderModule} from "../header/header.module";
+import {NavBarModule} from "../nav-bar/nav-bar.module";
 import {RouterModule} from "@angular/router";
 
 @NgModule({
@@ -15,6 +16,7 @@ import {RouterModule} from "@angular/router";
   imports: [
     BillingAccountModule,
     HeaderModule,
+    NavBarModule,
     RouterModule
   ],
   providers: [],

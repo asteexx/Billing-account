@@ -14,6 +14,9 @@ import {NotFoundComponent} from "./modules/layout/components/404/not-found.compo
 import {LayoutModule} from "./modules/layout/layout.module";
 import {HomeComponent} from "./modules/layout/components/home/home.component";
 
+
+
+
 const appRoutes: Routes = [
   {path: "", component: HomeComponent},
   {path: "home", component: HomeComponent},
@@ -23,7 +26,10 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
+
+
   ],
   imports: [
     BrowserModule,
