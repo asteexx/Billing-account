@@ -4,7 +4,7 @@ import {Ng4LoadingSpinnerModule} from 'ng4-loading-spinner';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
-import {BillingAccountService} from '../../services/billing-account.service';
+import {BillingAccountService} from '../../../services/billing-account.service';
 import {BillingAccountsComponent} from './components/table/billing-accounts.component';
 import {BillingDetailsComponent} from './components/details/billing-details.component';
 

@@ -2,7 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {Subscription} from "rxjs/internal/Subscription";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
-import {BillingAccountService} from "../../../../services/billing-account.service";
+import {BillingAccountService} from "../../../../../services/billing-account.service";
 import {BillingAccount} from "../../models/billing-account";
 
 @Component({

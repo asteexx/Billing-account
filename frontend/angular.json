@@ -25,7 +25,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["src/assets/bootstrap.min.js"],
+            "scripts": ["src/assets/jquery-3.4.1.min.js"]
           },
           "configurations": {
             "production": {
@@ -44,8 +45,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
-            }
-          }
+            }          }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",

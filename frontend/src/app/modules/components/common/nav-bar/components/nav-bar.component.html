@@ -1,0 +1,49 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand mb-0 h1" href="home">Space today</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="catalog">Cathalog <span class="sr-only"></span></a>
+        </li>
+
+        <li class="nav-item dropdown">
+
+
+          <app-dropdown [dropdownTitle]="'Recomended for you'" [dropdownId]="'dropdown01'"
+                        [dropdownItems]="[{value:'SpaceX', href:'SpaceX'}, {value:'Nasa', href:'Nasa'}, {value:'Roskosmos', href:'Roskosmos'}]">
+          </app-dropdown>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="about" >About project<span class="sr-only"></span></a>
+        </li>
+      </ul>
+
+      <div class="user_panel">
+        <div class="loginin">
+
+           <a href="registration">Регистрация</a>
+        </div>
+        <div style=" float:left; padding-left: 10px; padding-top: 4px;" id="test">
+          <form (submit)="login(loginName.value, loginPwd.value)" >
+            <label for="login_name">Логин: </label><input type="text" name="login_name" id="login_name" style="width: 110px;" #loginName>
+            <label for="login_password">Пароль (<a href="#">Забыли?</a>): </label><input type="password" name="login_password" id="login_password" style="width: 110px;" #loginPwd>&nbsp;
+            <button type="submit" title="Войти">
+              <span>Войти</span>
+            </button>
+            <input name="login" type="hidden" id="login" value="submit">
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+</div> <!-- Container-->

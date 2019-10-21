@@ -11,4 +11,10 @@ constructor( ) {}
   ngOnInit() {
 
   }
+
+  login(loginName, loginPwd){
+if(loginName !=null){
+
+}
+}
 }

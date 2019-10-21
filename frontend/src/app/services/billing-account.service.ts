@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {BillingAccount} from "../modules/billing-account/models/billing-account";
+import {BillingAccount} from "../modules/components/billing-account/models/billing-account";
 
 @Injectable()
 // Data service
