@@ -1,0 +1,10 @@
+<a class="nav-link dropdown-toggle" id="{{dropdownId}}" (click)="isOpened = !isOpened">{{dropdownTitle}}</a>
+<div class="app-dropdown-menu" *ngIf="isOpened">
+  <a class="app-dropdown-item" href="{{dropdownItem.href}}"
+     *ngFor="let dropdownItem of dropdownItems">
+    {{dropdownItem.value}}
+  </a>
+</div>
+
+
+
