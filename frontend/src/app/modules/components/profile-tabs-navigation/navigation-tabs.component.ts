@@ -23,7 +23,7 @@ export class NavigationTabsComponent  {
 
   import() {
 
-SharedModule
+
 }
 
 
