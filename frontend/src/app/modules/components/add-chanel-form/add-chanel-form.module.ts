@@ -1,11 +1,13 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import {AddChanelFormComponent} from "./components/add-chanel-form.component";
+import {SharedModule} from "../../../shared/shared.module";
 
 
 
 
 @NgModule({
   imports: [
+    SharedModule
 
   ],
   declarations: [
@@ -15,4 +17,6 @@ import {AddChanelFormComponent} from "./components/add-chanel-form.component";
     AddChanelFormComponent
   ]
 })
-export class AddChanelFormModule { }
+export class AddChanelFormModule {
+
+}

@@ -20,43 +20,13 @@
         <div class="tab-content" id="nav-tabContent">
           <div *ngSwitchCase="'active'">
 
-<!--
-            <ul class="list-group" id="chanel_options">
+            <app-active-chanels> </app-active-chanels>
 
-              <li class="list-group-item">Ilon Mask is a human</li>
-              <li class="list-group-item">Tesla is not a car</li>
-              <li class="list-group-item">Bla bla vla bla</li>
-              <li class="list-group-item">Hello humans!</li>
-              <li class="list-group-item">Hello humans! Lorem ipsum dolor sit amet, consectetur adipisicing elit. At
-                beatae cum cumque cupiditate doloremque doloribus eligendi ipsum iste, laboriosam laudantium minus
-                numquam odio perspiciatis quia sint suscipit temporibus ut voluptatum!
-              </li>
-            </ul>
-            -->
+
           </div>
           <div *ngSwitchCase="'add'">
 
-            <form>
-              <div class="form-group" id="add_chanel_options">
-
-                <label for="exampleFormControlInput1">Head name</label>
-                <input type="string" class="form-control" id="exampleFormControlInput1" placeholder="Head input">
-              </div>
-
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1">Small description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-              </div>
-
-              <form>
-                <div class="form-group">
-                  <label for="exampleFormControlFile1">file input</label>
-                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                </div>
-              </form>
-              <a href="#" class="btn btn-success">Create</a>
-
-            </form>
+          <app-add-chanel-form> </app-add-chanel-form>
 
           </div>
 

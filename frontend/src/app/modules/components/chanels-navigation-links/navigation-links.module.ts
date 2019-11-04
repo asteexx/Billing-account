@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import {CommonModule} from "@angular/common";
 
-import {SharedModule} from "../../../shared/shared.module";
+
 import {NavigationLinksComponent} from "./navigation-links.component";
+import {AddChanelFormModule} from "../add-chanel-form/add-chanel-form.module";
+
+import {ActiveChanelsModule} from "../active-chanels/active-chanels.module";
 
 
 @NgModule({
-  imports: [SharedModule, CommonModule
+  imports: [CommonModule, AddChanelFormModule, ActiveChanelsModule
   ],
   declarations: [
     NavigationLinksComponent

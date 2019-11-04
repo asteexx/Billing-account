@@ -28,7 +28,7 @@
                [placeholder]="'Please enter your first name'" >
               </app-input>
 
-              <app-input [inputLabel]="'Lasr Name'"
+              <app-input [inputLabel]="'Last Name'"
                          [placeholder]="'Please enter your last name'" >
               </app-input>
 
@@ -87,19 +87,8 @@
   </div>
   <div *ngSwitchCase="'balance'">
 
-    <h3>Your balance <span class="badge badge-secondary">9.99$</span></h3>
+    <app-balance></app-balance>
 
-
-    <div class="scroll__item">
-      <div class="bk-card bank-card2__front_theme_light">
-        <div class="bk-card__system bk-card__system-mastercard"></div>
-        <div class="bk-card__number">
-          <input type="number" class="form-control" placeholder="Input ammount">
-        </div>
-      </div>
-    </div>
-
-    <app-btn [text]="'Add money to wallet'" ></app-btn><!--todo shared button-->
 
   </div>
 </div>
