@@ -25,9 +25,8 @@ import {HeaderModule} from "./modules/components/common/header/header.module";
 
 import { ProfilePageComponent } from "./modules/layout/components/profile-page/profile-page.component";
 import {NavBarModule} from "./modules/components/common/nav-bar/nav-bar.module";
-import {NavigationTabsComponent} from "./modules/components/profile-tabs-navigation/navigation-tabs.component";
+
 import { CreateChanelFormComponent } from './modules/components/create-chanel-form/components/create-chanel-form.component';
-import { AddChanelFormComponent } from './modules/components/add-chanel-form/components/add-chanel-form.component';
 
 
 
@@ -47,9 +46,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
 
-    CreateChanelFormComponent,
 
-    AddChanelFormComponent,
+
+
 
 
   ],
@@ -67,6 +66,7 @@ const appRoutes: Routes = [
     NavBarModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

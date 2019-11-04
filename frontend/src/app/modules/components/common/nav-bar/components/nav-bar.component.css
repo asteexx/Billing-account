@@ -1,3 +1,12 @@
 .container{
   margin-top:20px;
+  color: #B87A3D;
+  background-color:  #FF9540;
+}
+
+#navbarSupportedContent{
+  background-color: #DFA062;
+}
+.bg-dark{
+  background-color: #DFA062!important;
 }

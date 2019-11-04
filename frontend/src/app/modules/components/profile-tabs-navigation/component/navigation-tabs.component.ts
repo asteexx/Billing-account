@@ -1,7 +1,7 @@
 import {Component, Input, Output} from '@angular/core';
 
-import {ProfileHeaderModule} from "../profile/profile-header/profile-header.module";
-import {SharedModule} from "../../../shared/shared.module";
+import {ProfileHeaderModule} from "../../profile/profile-header/profile-header.module";
+import {SharedModule} from "../../../../shared/shared.module";
 
 @Component({
   selector: 'app-navigation-tabs',

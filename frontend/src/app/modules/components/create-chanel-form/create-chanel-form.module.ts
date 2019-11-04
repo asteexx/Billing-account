@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CreateChanelFormComponent} from "./components/create-chanel-form.component";
+
+
+
 
 @NgModule({
   imports: [
-    CommonModule
+
   ],
-  declarations: []
+  declarations: [
+   CreateChanelFormComponent
+  ],
+  exports: [
+    CreateChanelFormComponent
+  ]
 })
 export class CreateChanelFormModule { }

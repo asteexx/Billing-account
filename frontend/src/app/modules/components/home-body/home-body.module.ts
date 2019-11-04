@@ -14,5 +14,5 @@ import {SharedModule} from "../../../shared/shared.module";
   exports: [HomeBodyComponent]
 })
 export class HomeBodyModule {
-  value: string;
+
 }

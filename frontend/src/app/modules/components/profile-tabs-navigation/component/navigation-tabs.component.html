@@ -23,28 +23,26 @@
 <!--todo make input shared component-->
 
             <form>
-              <div class="col">
-                <label>First name</label>
-                <input type="text" class="form-control" placeholder="Please enter your first name">
-              </div>
+              <!--first name-->
+              <app-input [inputLabel]="'First Name'"
+               [placeholder]="'Please enter your first name'" >
+              </app-input>
 
-              <div class="col">
-                <label>Last name</label>
-                <input type="text" class="form-control" placeholder="Please enter your last name">
-              </div>
+              <app-input [inputLabel]="'Lasr Name'"
+                         [placeholder]="'Please enter your last name'" >
+              </app-input>
 
-              <div class="col">
-                <label>Adress</label>
-                <input type="text" class="form-control" placeholder="Please enter your home adress">
-              </div>
+              <app-input [inputLabel]="'Adress'"
+                         [placeholder]="'Please enter your home adress'" >
+              </app-input>
 
-              <div class="col">
-                <label>Phone number</label>
-                <input type="tel" pattern="[+][0-9]{3} [0-9]{2} [0-9]{3} [0-9]{2} [0-9]{2}" class="form-control"
-                       placeholder="+375 11 111 11 11">
+              <app-input [inputLabel]="'Phone number'"
+                         [placeholder]="'+375 11 111 11 11'"  type="tel" pattern="[+][0-9]{3} [0-9]{2} [0-9]{3} [0-9]{2} [0-9]{2}">
+              </app-input>
                 <small span class="example">example: +3754 11 111 11 11
-                  <hr>
-                </small></div>
+                  <hr></small>
+
+
 
               <form>
 

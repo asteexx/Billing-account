@@ -3,9 +3,34 @@
   <component name="ChangeListManager">
     <list default="true" id="d4c21854-667f-4a87-bbad-4ab394d2045e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/profile-tabs-navigation/navigation-tabs.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/profile-tabs-navigation/navigation-tabs.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/about/components/about.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/about/components/about.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/add-chanel-form/add-chanel-form.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/add-chanel-form/add-chanel-form.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/add-chanel-form/components/add-chanel-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/add-chanel-form/components/add-chanel-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/catalog/components/catalog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/catalog/components/catalog.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/chanels-navigation-links/navigation-links.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/chanels-navigation-links/navigation-links.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/common/header/components/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/common/header/components/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/common/nav-bar/components/nav-bar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/common/nav-bar/components/nav-bar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/common/nav-bar/components/nav-bar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/common/nav-bar/components/nav-bar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/create-chanel-form/components/create-chanel-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/create-chanel-form/components/create-chanel-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/create-chanel-form/create-chanel-form.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/create-chanel-form/create-chanel-form.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/home-body/components/home-body.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/home-body/components/home-body.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/home-body/home-body.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/home-body/home-body.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/profile-tabs-navigation/navigation-tabs.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/profile-tabs-navigation/component/navigation-tabs.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/profile-tabs-navigation/navigation-tabs.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/profile-tabs-navigation/component/navigation-tabs.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/profile-tabs-navigation/navigation-tabs.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/profile-tabs-navigation/component/navigation-tabs.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/profile-tabs-navigation/navigation-tabs.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/profile-tabs-navigation/component/navigation-tabs.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/profile/profile-body/component/profile-body.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/profile/profile-body/component/profile-body.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/profile/profile-header/components/profile-header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/profile/profile-header/components/profile-header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/profile/profile-header/components/profile-header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/profile/profile-header/components/profile-header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/profile/profile-header/profile-header.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/profile/profile-header/profile-header.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/button/button.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/button/button.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/card/card.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/card/card.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/card/card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/card/card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/input/input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/input/input.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/input/input.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/input/input.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/shared.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +40,13 @@
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -142,6 +174,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/src/app/shared/components/button" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -158,17 +191,17 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/frontend/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/app/modules/components/profile-tabs-navigation" />
+      <recent name="$PROJECT_DIR$/frontend/src/app/modules/components/profile-tabs-navigation/component" />
+      <recent name="$PROJECT_DIR$/frontend/src/app/modules/components/add-chanel-form" />
+      <recent name="$PROJECT_DIR$/frontend/src/app/modules/components/add-chanel-form/add-chanel-form" />
+      <recent name="$PROJECT_DIR$/frontend/src/app/modules/components/add-chanel-form/components" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend/src/app/shared/components/button" />
       <recent name="$PROJECT_DIR$/frontend/src/app/modules/components/home-body/components" />
       <recent name="$PROJECT_DIR$/frontend/src/app/modules/components/navigation-links" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/frontend/src/app/modules/components/add-chanel-form" />
-      <recent name="$PROJECT_DIR$/frontend/src/app/modules/components/add-chanel-form/add-chanel-form" />
-      <recent name="$PROJECT_DIR$/frontend/src/app/modules/components/add-chanel-form/components" />
-      <recent name="$PROJECT_DIR$/frontend/src/app/shared/components" />
-      <recent name="$PROJECT_DIR$/frontend/src/app/modules/components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -287,8 +320,17 @@
       <workItem from="1572716678213" duration="106000" />
       <workItem from="1572717075006" duration="1010000" />
       <workItem from="1572773108437" duration="533000" />
-      <workItem from="1572789539590" duration="1195000" />
+      <workItem from="1572789539590" duration="1300000" />
+      <workItem from="1572851066064" duration="5594000" />
     </task>
+    <task id="LOCAL-00001" summary="fixed the project">
+      <created>1572790768246</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1572790768246</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,6 +348,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed the project" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the project" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
