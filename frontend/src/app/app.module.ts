@@ -25,8 +25,6 @@ import {HeaderModule} from "./modules/components/common/header/header.module";
 
 import { ProfilePageComponent } from "./modules/layout/components/profile-page/profile-page.component";
 import {NavBarModule} from "./modules/components/common/nav-bar/nav-bar.module";
-import { BalanceComponent } from './modules/components/balance/components/balance.component';
-
 
 
 
@@ -46,7 +44,8 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
 
 
 

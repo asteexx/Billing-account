@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4c21854-667f-4a87-bbad-4ab394d2045e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/add-chanel-form/add-chanel-form.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/add-chanel-form/add-chanel-form.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/add-chanel-form/components/add-chanel-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/add-chanel-form/components/add-chanel-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/add-chanel-form/components/add-chanel-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/add-chanel-form/components/add-chanel-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/chanels-navigation-links/navigation-links.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/chanels-navigation-links/navigation-links.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/chanels-navigation-links/navigation-links.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/chanels-navigation-links/navigation-links.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/profile-tabs-navigation/component/navigation-tabs.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/profile-tabs-navigation/component/navigation-tabs.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/input/input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/input/input.component.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -301,7 +294,7 @@
       <workItem from="1572717075006" duration="1010000" />
       <workItem from="1572773108437" duration="533000" />
       <workItem from="1572789539590" duration="1300000" />
-      <workItem from="1572851066064" duration="13657000" />
+      <workItem from="1572851066064" duration="14118000" />
     </task>
     <task id="LOCAL-00001" summary="fixed the project">
       <created>1572790768246</created>
@@ -317,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572858593945</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add balance component">
+      <created>1572876852656</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572876852656</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +339,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixed the project" />
     <MESSAGE value="all the components are are in a propper wiew" />
-    <option name="LAST_COMMIT_MESSAGE" value="all the components are are in a propper wiew" />
+    <MESSAGE value="add balance component" />
+    <option name="LAST_COMMIT_MESSAGE" value="add balance component" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
