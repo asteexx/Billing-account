@@ -3,6 +3,7 @@
     <li [class.active]="linkView==='personal'"><a (click)="linkView='personal'">Personal Information</a></li>
     <li [class.active]="linkView==='chanels'"><a (click)="linkView='chanels'">Chanels</a></li>
     <li [class.active]="linkView==='balance'"><a (click)="linkView='balance'">Balance</a></li>
+    <li [class.active]="linkView==='registration'"><a (click)="linkView='registration'">Admin Registration</a></li>
   </div>
   <!--todo click link (change link state)-->
 </nav>
@@ -32,6 +33,13 @@
   <div *ngSwitchCase="'balance'">
 
     <app-balance></app-balance>
+
+
+  </div>
+
+  <div *ngSwitchCase="'registration'">
+
+    <app-register-admin> </app-register-admin>
 
 
   </div>

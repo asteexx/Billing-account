@@ -25,6 +25,7 @@ import {HeaderModule} from "./modules/components/common/header/header.module";
 
 import { ProfilePageComponent } from "./modules/layout/components/profile-page/profile-page.component";
 import {NavBarModule} from "./modules/components/common/nav-bar/nav-bar.module";
+import {SharedModule} from "./shared/shared.module";
 
 
 
@@ -54,6 +55,7 @@ const appRoutes: Routes = [
 
 
 
+
   ],
   imports: [
     BrowserModule,
@@ -66,7 +68,8 @@ const appRoutes: Routes = [
     ModalModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     HeaderModule,
-    NavBarModule
+    NavBarModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent],
