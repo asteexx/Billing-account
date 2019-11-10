@@ -1,54 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4c21854-667f-4a87-bbad-4ab394d2045e" name="Default Changelist" comment="created all entities, backend is now running">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/repository/ChanelRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/service/ChanelService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/service/impl/ChanelServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_atteo_evo_inflector_1_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_atteo_evo_inflector_1_2_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_rest_2_0_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_rest_2_0_5_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_0_5_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_0_5_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_rest_core_3_0_10_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_rest_core_3_0_10_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_rest_webmvc_3_0_10_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_rest_webmvc_3_0_10_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_hateoas_spring_hateoas_0_25_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_hateoas_spring_hateoas_0_25_0_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_0_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_0_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_test_5_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_test_5_0_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_0_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_core_2_0_6_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_core_2_0_6_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d4c21854-667f-4a87-bbad-4ab394d2045e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/controller/ChanelController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/FapiApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/config/security/WebSecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/controller/AuthenticationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/controller/BillingAccountDataController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/filter/CORSFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/models/AuthToken.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/models/BillingAccountViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/models/BookViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/models/LoginUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/models/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/security/JwtAuthenticationEntryPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/security/JwtAuthenticationFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/security/SecurityJwtConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/security/TokenProvider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/service/BillingAccountDataService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/service/impl/BillingAccountDataServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/edu/fapi/service/impl/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/fapi-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/fapi-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/fapi-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/fapi-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/entity/ChanelsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/entity/ChanelsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/entity/CompaniesEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/entity/CompaniesEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/service/ChanelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/service/ChanelService.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,6 +47,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="space_chanels: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="chanels: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="space_chanels: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="companies: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -304,7 +269,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.FapiApplication">
+  <component name="RunManager" selected="Application.BackendApplication">
     <configuration name="BackendApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.netcracker.gorbunov.backend.BackendApplication" />
       <module name="backend" />
@@ -386,8 +351,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FapiApplication" />
         <item itemvalue="Application.BackendApplication" />
+        <item itemvalue="Application.FapiApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -418,7 +383,7 @@
       <workItem from="1573135682022" duration="434000" />
       <workItem from="1573136148592" duration="6903000" />
       <workItem from="1573199301881" duration="8928000" />
-      <workItem from="1573285398428" duration="871000" />
+      <workItem from="1573285398428" duration="6660000" />
     </task>
     <task id="LOCAL-00001" summary="fixed the project">
       <created>1572790768246</created>
@@ -483,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573218401430</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="created Chanel repository and chanel service">
+      <created>1573286325603</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1573286325603</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,7 +484,8 @@
     <MESSAGE value="created all entities, backend is now running" />
     <MESSAGE value="created controller, repository and service for CategoryEntity" />
     <MESSAGE value="created Category in fapi, added CORSFilter" />
-    <option name="LAST_COMMIT_MESSAGE" value="created Category in fapi, added CORSFilter" />
+    <MESSAGE value="created Chanel repository and chanel service" />
+    <option name="LAST_COMMIT_MESSAGE" value="created Chanel repository and chanel service" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

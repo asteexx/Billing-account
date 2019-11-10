@@ -43,7 +43,7 @@ public class CompaniesEntity {
     }
 
     @Basic
-    @Column(name = "money_on_bank-account")
+    @Column(name = "money_on_bank_account")
     public BigDecimal getMoneyOnBankAccount() {
         return moneyOnBankAccount;
     }

@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
-@Table(name = "chanels", schema = "space_chanels", catalog = "")
+@Table(name = "chanels", schema = "space_chanels")
 public class ChanelsEntity {
     private int id;
     private String chanelName;

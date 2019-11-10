@@ -1,7 +1,5 @@
 package com.netcracker.gorbunov.backend.service;
 
-
-import com.netcracker.gorbunov.backend.entity.CategoryEntity;
 import com.netcracker.gorbunov.backend.entity.ChanelsEntity;
 
 import java.util.Optional;
