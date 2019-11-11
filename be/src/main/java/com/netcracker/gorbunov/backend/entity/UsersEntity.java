@@ -41,7 +41,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "e-mail")
+    @Column(name = "e_mail")
     public String geteMail() {
         return eMail;
     }
@@ -101,7 +101,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "Phone-number")
+    @Column(name = "Phone_number")
     public Integer getPhoneNumber() {
         return phoneNumber;
     }

@@ -36,7 +36,7 @@ public class CategoryDataServiceImpl implements CategoryDataService {
     }
 
     @Override
-    public void deleteCategory(Integer Id) {
+    public void deleteCategory(Integer id) {
 
     }
 }

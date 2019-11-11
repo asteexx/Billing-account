@@ -2,11 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4c21854-667f-4a87-bbad-4ab394d2045e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/controller/ChanelController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_197.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/controller/ChanelDataController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/models/ChanelViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/service/ChanelDataService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/service/impl/ChanelDataServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/catalog/models/catalog.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/services/chanel.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/entity/ChanelsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/entity/ChanelsEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/entity/CompaniesEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/entity/CompaniesEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/service/ChanelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/service/ChanelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/entity/UsersEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/entity/UsersEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/fapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/fapi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/controller/CategoryDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/controller/CategoryDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/service/impl/CategoryDataServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/service/impl/CategoryDataServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/gorbunov/fapi/controller/CategoryDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/gorbunov/fapi/controller/CategoryDataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/gorbunov/fapi/service/impl/CategoryDataServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/gorbunov/fapi/service/impl/CategoryDataServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/target/fapi-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/fapi-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/target/fapi-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/fapi-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,6 +99,7 @@
         <option value="CSS File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -233,7 +252,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/frontend/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -308,6 +327,13 @@
     <configuration name="Angular Application (frontend)" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
+    <configuration name="BackendApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.netcracker.gorbunov.backend.BackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="backend" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.netcracker.edu.backend.BackendApplication" />
@@ -348,6 +374,7 @@
       <item itemvalue="Protractor.E2E Tests (etalon-e2e)" />
       <item itemvalue="Spring Boot.BackendApplication" />
       <item itemvalue="Spring Boot.FapiApplication" />
+      <item itemvalue="Spring Boot.BackendApplication (1)" />
     </list>
     <recent_temporary>
       <list>
@@ -383,7 +410,8 @@
       <workItem from="1573135682022" duration="434000" />
       <workItem from="1573136148592" duration="6903000" />
       <workItem from="1573199301881" duration="8928000" />
-      <workItem from="1573285398428" duration="6660000" />
+      <workItem from="1573285398428" duration="8177000" />
+      <workItem from="1573456554279" duration="9229000" />
     </task>
     <task id="LOCAL-00001" summary="fixed the project">
       <created>1572790768246</created>
@@ -455,7 +483,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573286325603</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="created chanel controller, small db update">
+      <created>1573383476491</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1573383476491</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +520,8 @@
     <MESSAGE value="created controller, repository and service for CategoryEntity" />
     <MESSAGE value="created Category in fapi, added CORSFilter" />
     <MESSAGE value="created Chanel repository and chanel service" />
-    <option name="LAST_COMMIT_MESSAGE" value="created Chanel repository and chanel service" />
+    <MESSAGE value="created chanel controller, small db update" />
+    <option name="LAST_COMMIT_MESSAGE" value="created chanel controller, small db update" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
