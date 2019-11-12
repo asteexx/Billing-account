@@ -23,7 +23,7 @@ public class CategoryDataController {
     }
 
     @RequestMapping(value = "/{id}")
-    public ResponseEntity<CategoryViewModel> getAllCategories(@PathVariable String id) throws InterruptedException {
+    public ResponseEntity<CategoryViewModel> getAllCategories(@PathVariable String id)  {
         Integer categoryId = Integer.valueOf(id);
         return ResponseEntity.ok(categoryDataService.getCategoryById(categoryId));
     }

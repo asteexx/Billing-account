@@ -26,7 +26,6 @@ import {HeaderModule} from "./modules/components/common/header/header.module";
 import { ProfilePageComponent } from "./modules/layout/components/profile-page/profile-page.component";
 import {NavBarModule} from "./modules/components/common/nav-bar/nav-bar.module";
 import {SharedModule} from "./shared/shared.module";
-import { Chanel } from './services/chanel.service/chanel.service.component';
 
 
 
@@ -47,7 +46,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    Chanel.ServiceComponent,
+
 
 
 

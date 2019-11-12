@@ -18,12 +18,12 @@ public class ChanelDataController {
 
 
 
-    @RequestMapping
+    @GetMapping
     public ResponseEntity<List<ChanelViewModel>> getAllChanels() {
         return ResponseEntity.ok(chanelDataService.getAllChanels());
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @PostMapping()
     public ResponseEntity<ChanelViewModel> saveChanel(@RequestBody ChanelViewModel chanelViewModel /*todo server validation*/) {
         if (chanelViewModel != null) {
             return ResponseEntity.ok(chanelDataService.saveChanel(chanelViewModel));
@@ -31,13 +31,13 @@ public class ChanelDataController {
         return null;
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @DeleteMapping(value = "/{id}")
     public void deleteChanel(@PathVariable Integer id) {
         chanelDataService.deleteChanel(Integer.valueOf(id));
     }
 
-    @RequestMapping(value = "/{id}")
-    public ResponseEntity<ChanelViewModel> getChanelById(@PathVariable Integer id) throws InterruptedException {
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<ChanelViewModel> getChanelById(@PathVariable Integer id) {
         Integer chanelId = Integer.valueOf(id);
         return ResponseEntity.ok(chanelDataService.getChanelById(chanelId));
     }
