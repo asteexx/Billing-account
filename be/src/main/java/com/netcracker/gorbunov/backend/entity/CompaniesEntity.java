@@ -1,11 +1,15 @@
 package com.netcracker.gorbunov.backend.entity;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
-@Table(name = "companies", schema = "space_chanels", catalog = "")
+@Table(name = "companies", schema = "space_chanels")
 public class CompaniesEntity {
     private int idCompany;
     private String name;
