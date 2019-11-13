@@ -6,11 +6,13 @@ import { CardComponent } from './components/card/card.component';
 
 
 import { InputComponent } from './components/input/input.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [DropdownComponent, ButtonComponent, CardComponent,  InputComponent],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   exports: [
     DropdownComponent,

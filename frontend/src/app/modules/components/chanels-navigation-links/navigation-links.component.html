@@ -1,53 +1,10 @@
-<div class="tab-pane " id="chanels_owner" role="tabpanel" aria-labelledby="chanels-tab">
-  <hr>
 
-  <div class="row">
-    <div class="col-4">
-
-      <div class="list-group" id="list-tab" role="tablist">
-        <a class="list-group-item list-group-item-action " [class.active]="chanelActionsView=='active'"
-           (click)="chanelActionsView='active'">Active chanels</a>
-        <a class="list-group-item list-group-item-action " [class.active]="chanelActionsView=='add'"
-           (click)="chanelActionsView='add'">Add chanel</a>
-        <a class="list-group-item list-group-item-action" [class.active]="chanelActionsView=='delete'"
-           (click)="chanelActionsView='delete'">Delete chanel</a>
-      </div>
-    </div>
-
-
-    <div [ngSwitch]="chanelActionsView">
-      <div class="col-8">
-        <div class="tab-content" id="nav-tabContent">
-          <div *ngSwitchCase="'active'">
 
             <app-active-chanels> </app-active-chanels>
 
 
-          </div>
-          <div *ngSwitchCase="'add'">
+
 
           <app-add-chanel-form> </app-add-chanel-form>
 
-          </div>
 
-          <div *ngSwitchCase="'delete'">.
-
-            <div class="list-group" id="delete_chanel_option">
-              <button type="button" class="list-group-item list-group-item-action ">
-                Cras justo odio
-              </button>
-              <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in Lorem ipsum</button>
-              <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-              <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-              <button type="button" class="list-group-item list-group-item-action">Vestibulum at eros</button>
-            </div>
-
-<!--todo for buttons use shared  replace this component to page module and split this component to separate child components -->
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>

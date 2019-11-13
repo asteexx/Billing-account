@@ -1,22 +1,48 @@
-<form>
+<div class="col">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+          (click)="_openModal(template)">
+    Create new chanel
+  </button>
+</div>
 
-
-    <app-input [inputLabel]="'Head name'"
-               [placeholder]="'Head input'" >
-    </app-input>
-
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Small description</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{editMode ? "Edit": "Create"}}  new Chanel</h4>
+    <button type="button" class="close pull-right"
+            aria-label="Close" (click)="_closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label>Owner</label>
+      <input class="form-control" name="username" [(ngModel)]="editableCatalog.owner" #owner="ngModel" required/>
+      <div [hidden]="owner.valid || owner.untouched" class="alert alert-danger">
+        Pls set username <!--Easy way to create client validation-->
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Name</label>
+      <input class="form-control" name="name" [(ngModel)]="editableCatalog.chanelName" #chanelName="ngModel"
+      />
+      <div [hidden]="chanelName.valid || chanelName.untouched" class="alert alert-danger">
+        Chanel name is incorrect
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Price</label>
+      <input class="form-control" name="price" [(ngModel)]="editableCatalog.price" #price="ngModel" required/>
+      <div [hidden]="price.valid || price.untouched" class="alert alert-danger">
+        Pls set price
+      </div>
+    </div>
 
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="_addChanel()"
+            [disabled]="owner.invalid || chanelName.invalid || price.invalid">{{editMode ? "Save": "Create"}}
+    </button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="_closeModal()">Close</button>
 
-
-    <app-input [inputLabel]="'File input'"
-                type="file" >
-    </app-input>
-
-
- <app-btn [text]="'Create'"></app-btn>
-
-</form>
+  </div>
+</ng-template>

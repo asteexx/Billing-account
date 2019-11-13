@@ -20,6 +20,8 @@ export class CatalogComponent implements OnInit{
   private subscriptions: Subscription[] = [];
 
 
+
+
   // Dependency injection for ChanelService into Chanel
   constructor(private chanelService: ChanelService,
               private loadingService: Ng4LoadingSpinnerService,
@@ -29,6 +31,8 @@ export class CatalogComponent implements OnInit{
   // Calls on component init
   ngOnInit() {
     this.loadChanels();
+
+
   }
 
   public _closeModal(): void {
@@ -92,5 +96,7 @@ export class CatalogComponent implements OnInit{
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
+
+
 
 }
