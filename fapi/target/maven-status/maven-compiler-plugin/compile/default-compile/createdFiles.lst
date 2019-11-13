@@ -1,6 +1,10 @@
+com/netcracker/gorbunov/fapi/models/ChanelViewModel.class
 com/netcracker/gorbunov/fapi/controller/CategoryDataController.class
+com/netcracker/gorbunov/fapi/service/ChanelDataService.class
 com/netcracker/gorbunov/fapi/FapiApplication.class
+com/netcracker/gorbunov/fapi/service/impl/ChanelDataServiceImpl.class
 com/netcracker/gorbunov/fapi/service/impl/CategoryDataServiceImpl.class
 com/netcracker/gorbunov/fapi/service/CategoryDataService.class
 com/netcracker/gorbunov/fapi/filter/CORSFilter.class
 com/netcracker/gorbunov/fapi/models/CategoryViewModel.class
+com/netcracker/gorbunov/fapi/controller/ChanelDataController.class

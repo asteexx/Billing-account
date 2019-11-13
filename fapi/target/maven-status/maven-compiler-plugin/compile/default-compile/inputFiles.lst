@@ -1,5 +1,9 @@
 /Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/models/CategoryViewModel.java
+/Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/controller/ChanelDataController.java
+/Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/service/impl/ChanelDataServiceImpl.java
+/Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/service/ChanelDataService.java
 /Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/filter/CORSFilter.java
+/Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/models/ChanelViewModel.java
 /Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/FapiApplication.java
 /Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/controller/CategoryDataController.java
 /Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/service/impl/CategoryDataServiceImpl.java
