@@ -13,20 +13,20 @@ public class ChanelViewModel {
     private BigDecimal price;
     private String smallDiscription;
     private Integer category;
-
+    private  CompanyViewModel companyViewModel;
 
 
     public ChanelViewModel() {
     }
 
-    public ChanelViewModel(int id, String chanelName, int owner, BigDecimal price, String smallDiscription, Integer category) {
+    public ChanelViewModel(int id, String chanelName, int owner, BigDecimal price, String smallDiscription, Integer category, CompanyViewModel companyViewModel) {
         this.id = id;
         this.chanelName = chanelName;
         this.owner = owner;
         this.price = price;
         this.smallDiscription = smallDiscription;
         this.category = category;
-
+        this.companyViewModel = companyViewModel;
     }
 
     public int getId() {
@@ -77,6 +77,11 @@ public class ChanelViewModel {
         this.category = category;
     }
 
+    public CompanyViewModel getCompanyViewModel() {
+        return companyViewModel;
+    }
 
-
+    public void setCompanyViewModel(CompanyViewModel companyViewModel) {
+        this.companyViewModel = companyViewModel;
+    }
 }

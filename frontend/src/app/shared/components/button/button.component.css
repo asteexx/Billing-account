@@ -1,5 +1,23 @@
 .btn {
   border: #B87A3D;
   background-color: #C39364;
+  margin-right: 4px;
 }
 
+.delete_btn{
+  background: #dc3545;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.edit_btn{
+
+background-color: #6c757d;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.sub_btn{
+  background: green;
+}

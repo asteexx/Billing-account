@@ -35,7 +35,7 @@ export class AddChanelFormComponent  implements OnInit{
 
   }
 
-  public _closeModal(): void {
+  private _closeModal(): void {
     this.modalRef.hide();
   }
 

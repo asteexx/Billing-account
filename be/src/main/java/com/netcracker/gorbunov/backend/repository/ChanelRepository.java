@@ -1,7 +1,9 @@
 package com.netcracker.gorbunov.backend.repository;
 
 import com.netcracker.gorbunov.backend.entity.ChanelsEntity;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface ChanelRepository extends CrudRepository<ChanelsEntity, Integer> {
+@Repository
+public interface ChanelRepository extends JpaRepository<ChanelsEntity, Integer> {
 }

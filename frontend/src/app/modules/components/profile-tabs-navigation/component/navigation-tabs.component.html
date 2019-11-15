@@ -1,9 +1,9 @@
 <nav>
   <div class="nav nav-tabs">
-    <li [class.active]="linkView==='personal'"><a (click)="linkView='personal'">Personal Information</a></li>
-    <li [class.active]="linkView==='chanels'"><a (click)="linkView='chanels'">Chanels</a></li>
-    <li [class.active]="linkView==='balance'"><a (click)="linkView='balance'">Balance</a></li>
-    <li [class.active]="linkView==='registration'"><a (click)="linkView='registration'">Admin Registration</a></li>
+    <li [class.active]="linkView==='personal'" class="profile-tabs"><a (click)="linkView='personal'">Personal Information</a></li>
+    <li [class.active]="linkView==='chanels'"class="profile-tabs"><a (click)="linkView='chanels'">Chanels</a></li>
+    <li [class.active]="linkView==='balance'"class="profile-tabs"><a (click)="linkView='balance'">Balance</a></li>
+    <li [class.active]="linkView==='registration'"class="profile-tabs"><a (click)="linkView='registration'">Admin Registration</a></li>
   </div>
   <!--todo click link (change link state)-->
 </nav>

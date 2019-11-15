@@ -1,3 +1,6 @@
 #myDiv{
   width: 600px;
 }
+app-card.sub_btn{
+  visibility: hidden;
+}

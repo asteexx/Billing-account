@@ -11,6 +11,10 @@ export class ButtonComponent {
   text: string;
 
   @Input()
+  className: string = '';
+
+
+  @Input()
   cardPrice: number;
 
   @Input()
@@ -18,4 +22,9 @@ export class ButtonComponent {
 
   @Output()
   clickChange: EventEmitter<void> = new EventEmitter<void>();
+
+  constructor() {
+
+    console.log(this.className);
+  }
 }

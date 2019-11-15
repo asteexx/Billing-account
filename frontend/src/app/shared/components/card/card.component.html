@@ -1,19 +1,18 @@
 
 <div class="card" *ngFor="let catalog of catalogs">
   <div class="card-header">
-    {{catalog.owner}};
+    {{catalog.owner}}
   </div>
-  <img src="src/assets/images/11.jpg" class="align-self-start mr-3" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{catalog.chanelName}} </h5>
     <p class="card-text">{{catalog.smallDiscription}}</p>
-    <!--todo use shared button-->
+
     <app-btn [text]="'Subscribe '"
-             [cardPrice]="catalog.price">  </app-btn>
-    <app-btn [text]="'Delete '"
-             (click)="_deleteChanel(catalog.id)" class="btn btn-danger">  </app-btn>
+             [cardPrice]="catalog.price" className="sub_btn">  </app-btn>
+    <app-btn [text]="'X '"
+             (click)="_deleteChanel(catalog.id)" className="delete_btn"  class="close"> <span aria-hidden="true">&times;</span> </app-btn>
     <app-btn [text]="'Edit '"
-             (click)="_openModal(template, catalog)">  </app-btn>
+             (click)="_openModal(template, catalog)" className="edit_btn">  </app-btn>
 
   </div>
 </div>
@@ -52,7 +51,7 @@
 
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-default" (click)="_addChanel()"
+    <button type="button" class="btn btn-default " (click)="_addChanel()"
             [disabled]="owner.invalid || chanelName.invalid || price.invalid">{{editMode ? "Save": "Create"}}
     </button>
     <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="_closeModal()">Close</button>
