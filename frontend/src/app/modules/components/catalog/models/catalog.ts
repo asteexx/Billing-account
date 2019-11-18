@@ -1,3 +1,5 @@
+import {Company} from "./company";
+
 export class Catalog {
   id: string;
   chanelName: string;
@@ -5,8 +7,7 @@ export class Catalog {
   price: string;
   smallDiscription: string;
   category: string;
-  companiesByOwner:string;
-
+  companiesByOwner: string;
 
 
   static cloneBase(catalog: Catalog): Catalog {
@@ -19,9 +20,12 @@ export class Catalog {
     clonedCatalog.category = catalog.category;
     clonedCatalog.companiesByOwner = catalog.companiesByOwner;
 
+
+
     return clonedCatalog;
   }
 }
+
 
 export class CatalogStr {
 }

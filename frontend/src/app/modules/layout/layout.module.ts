@@ -32,6 +32,7 @@ import {AboutModule} from "../components/about/about.module";
 import {ProfileHeaderModule} from "../components/profile/profile-header/profile-header.module";
 
 import {ProfileBodyModule} from "../components/profile/profile-body/profile-body.module";
+import {FooterComponent} from "../components/common/footer/components/footer.component";
 
 
 
@@ -45,6 +46,7 @@ import {ProfileBodyModule} from "../components/profile/profile-body/profile-body
     RegistrationPageComponent,
     AboutPageComponent,
     ProfilePageComponent,
+    FooterComponent,
 
   ],
   imports: [

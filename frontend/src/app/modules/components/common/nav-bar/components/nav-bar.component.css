@@ -1,12 +1,18 @@
-.container{
-  margin-top:20px;
-  color: #B87A3D;
-
-}
 
 #navbarSupportedContent{
   background-color: #742E37;
 }
 .bg-dark{
   background-color: #742E37!important;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+
+label {
+  margin-right: 2px;
+  margin-left: 5px;
+}
+input {
+  width: 110px;
 }

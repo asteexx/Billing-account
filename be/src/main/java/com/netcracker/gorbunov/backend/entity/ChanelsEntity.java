@@ -101,11 +101,25 @@ public class ChanelsEntity {
 
     @ManyToOne
     @JoinColumn(name = "owner", referencedColumnName = "id_company", nullable = false, insertable = false, updatable = false)
+
     public CompaniesEntity getCompaniesByOwner() {
         return companiesByOwner;
     }
 
     public void setCompaniesByOwner(CompaniesEntity companiesByOwner) {
         this.companiesByOwner = companiesByOwner;
+    }
+
+    @Override
+    public String toString() {
+        return "ChanelsEntity{" +
+                "id=" + id +
+                ", chanelName='" + chanelName + '\'' +
+                ", owner=" + owner +
+                ", price=" + price +
+                ", smallDiscription='" + smallDiscription + '\'' +
+                ", category=" + category +
+                ", companiesByOwner=" + companiesByOwner +
+                '}';
     }
 }

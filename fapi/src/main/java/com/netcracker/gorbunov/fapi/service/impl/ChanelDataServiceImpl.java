@@ -1,6 +1,7 @@
 package com.netcracker.gorbunov.fapi.service.impl;
 
 
+import com.netcracker.gorbunov.fapi.beClasses.ChanelModel;
 import com.netcracker.gorbunov.fapi.models.ChanelViewModel;
 import com.netcracker.gorbunov.fapi.service.ChanelDataService;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,22 +22,22 @@ public class ChanelDataServiceImpl implements ChanelDataService {
 
 
     @Override
-    public List<ChanelViewModel> getAllChanels() {
+    public List<ChanelModel> getAllChanels() {
         RestTemplate restTemplate = new RestTemplate();
-        ChanelViewModel[] chanelViewModelResponse = restTemplate.getForObject(backendServerUrl + "/api/chanels/", ChanelViewModel[].class);
+        ChanelModel[] chanelViewModelResponse = restTemplate.getForObject(backendServerUrl + "/api/chanels", ChanelModel[].class);
         return chanelViewModelResponse == null ? Collections.emptyList() : Arrays.asList(chanelViewModelResponse);
     }
 
     @Override
-    public ChanelViewModel getChanelById(Integer id) {
+    public ChanelModel getChanelById(Integer id) {
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForObject(backendServerUrl + "/api/chanels/" + id, ChanelViewModel.class);
+        return restTemplate.getForObject(backendServerUrl + "/api/chanels/" + id, ChanelModel.class);
     }
 
     @Override
-    public ChanelViewModel saveChanel(ChanelViewModel chanelViewModel) {
+    public ChanelModel saveChanel(ChanelViewModel chanelViewModel) {
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.postForEntity(backendServerUrl + "/api/chanels", chanelViewModel, ChanelViewModel.class).getBody();
+        return restTemplate.postForEntity(backendServerUrl + "/api/chanels", chanelViewModel, ChanelModel.class).getBody();
 
     }
 

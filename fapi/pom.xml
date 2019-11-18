@@ -59,8 +59,14 @@
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.netcracker.edu</groupId>
+            <artifactId>backend</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
 
-    <!--Spring Security & JWT-->
+        <!--Spring Security & JWT-->
 
         <!--
         <dependency>

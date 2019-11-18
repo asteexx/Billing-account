@@ -71,4 +71,14 @@ public class CompaniesEntity {
     public int hashCode() {
         return Objects.hash(idCompany, name, shortDescription, moneyOnBankAccount);
     }
+
+    @Override
+    public String toString() {
+        return "CompaniesEntity{" +
+                "idCompany=" + idCompany +
+                ", name='" + name + '\'' +
+                ", shortDescription='" + shortDescription + '\'' +
+                ", moneyOnBankAccount=" + moneyOnBankAccount +
+                '}';
+    }
 }

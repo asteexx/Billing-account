@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 public class CompanyViewModel {
 
     private int idCompany;
-    private String name;
+    private  String name;
     private String shortDescription;
     private BigDecimal moneyOnBankAccount;
 
@@ -29,7 +29,7 @@ public class CompanyViewModel {
         this.idCompany = idCompany;
     }
 
-    public String getName() {
+    public  String getName() {
         return name;
     }
 
