@@ -2,57 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4c21854-667f-4a87-bbad-4ab394d2045e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/beClasses/ChanelModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/beClasses/CompanyModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/config/chanel/ConverterConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/converter/ChanelModelToChanelViewModelConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/catalog/models/company.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/common/footer/components/footer.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/common/footer/components/footer.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/common/footer/components/footer.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/common/footer/components/footer.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/common/footer/footer.module.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/common/footer/footer.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/Space-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/entity/ChanelsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/entity/ChanelsEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/entity/CompaniesEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/entity/CompaniesEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/entity/UsersEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/com/netcracker/gorbunov/backend/entity/UsersEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/fapi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/fapi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/controller/ChanelDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/controller/ChanelDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/models/ChanelViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/models/ChanelViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/models/CompanyViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/models/CompanyViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/service/ChanelDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/service/ChanelDataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/service/impl/ChanelDataServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/service/impl/ChanelDataServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/gorbunov/fapi/controller/ChanelDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/gorbunov/fapi/controller/ChanelDataController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/gorbunov/fapi/models/ChanelViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/gorbunov/fapi/models/ChanelViewModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/gorbunov/fapi/service/ChanelDataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/gorbunov/fapi/service/ChanelDataService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/gorbunov/fapi/service/impl/ChanelDataServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/classes/com/netcracker/gorbunov/fapi/service/impl/ChanelDataServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/fapi-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/fapi-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/fapi-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/fapi-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/catalog/components/catalog.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/catalog/components/catalog.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/catalog/components/catalog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/catalog/components/catalog.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/catalog/models/catalog.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/catalog/models/catalog.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/common/nav-bar/components/nav-bar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/common/nav-bar/components/nav-bar.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/components/common/nav-bar/components/nav-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/components/common/nav-bar/components/nav-bar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/layout/components/404/not-found.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/layout/components/404/not-found.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/layout/components/about-page/about-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/layout/components/about-page/about-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/layout/components/catalog-page/catalog-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/layout/components/catalog-page/catalog-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/layout/components/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/layout/components/home/home.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/layout/components/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/layout/components/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/layout/components/profile-page/profile-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/layout/components/profile-page/profile-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/layout/components/registration-page/registration-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/layout/components/registration-page/registration-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/layout/layout.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/layout/layout.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/button/button.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/button/button.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/card/card.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/card/card.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/card/card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/card/card.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,6 +52,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="space_chanels: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="companies: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="space_chanels: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="users: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -303,7 +262,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.FapiApplication">
+  <component name="RunManager" selected="Application.BackendApplication">
     <configuration name="BackendApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.netcracker.gorbunov.backend.BackendApplication" />
       <module name="backend" />
@@ -393,8 +352,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FapiApplication" />
         <item itemvalue="Application.BackendApplication" />
+        <item itemvalue="Application.FapiApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -433,7 +392,10 @@
       <workItem from="1573982312354" duration="4185000" />
       <workItem from="1573992532397" duration="279000" />
       <workItem from="1573992817679" duration="2000" />
-      <workItem from="1573992846116" duration="19632000" />
+      <workItem from="1573992846116" duration="24679000" />
+      <workItem from="1574173944970" duration="903000" />
+      <workItem from="1574188351525" duration="481000" />
+      <workItem from="1574188976163" duration="5879000" />
     </task>
     <task id="LOCAL-00001" summary="fixed the project">
       <created>1572790768246</created>
@@ -554,7 +516,21 @@
       <option name="project" value="LOCAL" />
       <updated>1573818170606</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Converter created and configured">
+      <created>1574097279562</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1574097279562</updated>
+    </task>
+    <task id="LOCAL-00019" summary="UserService Implementation added">
+      <created>1574170819249</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1574170819249</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,24 +566,13 @@
     <MESSAGE value="modified profile page:&#10; added availability to create, edit, delete channels from profile" />
     <MESSAGE value="be: added company controller, repository, service" />
     <MESSAGE value="fapi: added companies controller&#10;front: added new styles" />
-    <option name="LAST_COMMIT_MESSAGE" value="fapi: added companies controller&#10;front: added new styles" />
+    <MESSAGE value="Converter created and configured" />
+    <MESSAGE value="UserService Implementation added" />
+    <option name="LAST_COMMIT_MESSAGE" value="UserService Implementation added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/controller/ChanelDataController.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/controller/ChanelDataController.java</url>
-          <line>34</line>
-          <properties>
-            <option name="lambda-ordinal" value="0" />
-          </properties>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/fapi/src/main/java/com/netcracker/gorbunov/fapi/service/impl/ChanelDataServiceImpl.java</url>
           <line>26</line>
@@ -615,9 +580,5 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
   </component>
 </project>

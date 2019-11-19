@@ -1,17 +1,20 @@
 package com.netcracker.gorbunov.backend.entity;
 
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
 
 @Entity
 @Table(name = "users", schema = "space_chanels")
+
 public class UsersEntity {
     private int idUser;
     private String login;
     private String eMail;
     private String password;
     @Enumerated(EnumType.STRING)
+
     private Role role;
     private Integer idCompany;
     private String firstName;
@@ -60,8 +63,10 @@ public class UsersEntity {
         this.password = password;
     }
 
+
     @Basic
     @Column(name = "role")
+    @Enumerated(EnumType.STRING)
     public Role getRole() {
         return role;
     }
@@ -81,7 +86,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "First Name")
+    @Column(name = "first_name")
     public String getFirstName() {
         return firstName;
     }
@@ -91,7 +96,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "Last Name")
+    @Column(name = "last_name")
     public String getLastName() {
         return lastName;
     }
@@ -101,7 +106,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "Phone_number")
+    @Column(name = "phone_number")
     public Integer getPhoneNumber() {
         return phoneNumber;
     }
@@ -111,7 +116,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "Adress")
+    @Column(name = "adress")
     public String getAdress() {
         return adress;
     }
@@ -123,23 +128,24 @@ public class UsersEntity {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof UsersEntity)) return false;
         UsersEntity that = (UsersEntity) o;
         return idUser == that.idUser &&
-                Objects.equals(login, that.login) &&
-                Objects.equals(eMail, that.eMail) &&
-                Objects.equals(password, that.password) &&
-                Objects.equals(role, that.role) &&
+                login.equals(that.login) &&
+                eMail.equals(that.eMail) &&
+                password.equals(that.password) &&
+                role == that.role &&
                 Objects.equals(idCompany, that.idCompany) &&
                 Objects.equals(firstName, that.firstName) &&
                 Objects.equals(lastName, that.lastName) &&
                 Objects.equals(phoneNumber, that.phoneNumber) &&
-                Objects.equals(adress, that.adress);
+                Objects.equals(adress, that.adress) &&
+                Objects.equals(eWalletsByIdUser, that.eWalletsByIdUser);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idUser, login, eMail, password, role, idCompany, firstName, lastName, phoneNumber, adress);
+        return Objects.hash(idUser, login, eMail, password, role, idCompany, firstName, lastName, phoneNumber, adress, eWalletsByIdUser);
     }
 
     @OneToMany()
@@ -152,7 +158,19 @@ public class UsersEntity {
         this.eWalletsByIdUser = eWalletsByIdUser;
     }
 
-    public enum Role{
-        COMPANY, CUSTOMER, ADMIN;
+    public enum Role {
+        COMPANY("company"),
+        ADMIN("admin"),
+        CUSTOMER("customer");
+
+        private String value;
+
+        private Role(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
     }
 }
