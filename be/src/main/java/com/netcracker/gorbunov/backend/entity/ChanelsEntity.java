@@ -21,6 +21,19 @@ public class ChanelsEntity {
     private Integer category;
     private CompaniesEntity companiesByOwner;
 
+    public ChanelsEntity() {
+    }
+
+    public ChanelsEntity(int id, String chanelName, int owner, BigDecimal price, String smallDiscription, Integer category, CompaniesEntity companiesByOwner) {
+        this.id = id;
+        this.chanelName = chanelName;
+        this.owner = owner;
+        this.price = price;
+        this.smallDiscription = smallDiscription;
+        this.category = category;
+        this.companiesByOwner = companiesByOwner;
+    }
+
     @Id
     @Column(name = "id")
     public int getId() {

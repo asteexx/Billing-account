@@ -14,5 +14,21 @@ label {
   margin-left: 5px;
 }
 input {
-  width: 110px;
+  width: 210px;
+  margin-left: 7px;
+  margin-right: 5px;
+}
+.login-form__container {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.login-form__danger-alert {
+  margin-top: 20px
+}
+button{
+  height: 40px;
+  margin-top: 30px;
+
 }

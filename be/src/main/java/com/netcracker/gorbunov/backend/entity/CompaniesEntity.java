@@ -16,6 +16,16 @@ public class CompaniesEntity {
     private String shortDescription;
     private BigDecimal moneyOnBankAccount;
 
+    public CompaniesEntity() {
+    }
+
+    public CompaniesEntity(int idCompany, String name, String shortDescription, BigDecimal moneyOnBankAccount) {
+        this.idCompany = idCompany;
+        this.name = name;
+        this.shortDescription = shortDescription;
+        this.moneyOnBankAccount = moneyOnBankAccount;
+    }
+
     @Id
     @Column(name = "id_company")
     public int getIdCompany() {

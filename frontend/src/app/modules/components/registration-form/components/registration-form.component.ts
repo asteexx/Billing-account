@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SharedModule} from "../../../../shared/shared.module";
 
 @Component({
@@ -6,10 +6,14 @@ import {SharedModule} from "../../../../shared/shared.module";
   templateUrl: './registration-form.component.html',
 
 })
-export class RegistrationFormComponent  {
+export class RegistrationFormComponent implements OnInit {
+
 
 
 import(){
   SharedModule
 }
+
+  ngOnInit(): void {
+  }
 }

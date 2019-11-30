@@ -6,20 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="fapi" />
         <module name="backend" />
+        <module name="Maven: io.jsonwebtoken:jjwt:0.9.0" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="backend" target="1.8" />
       <module name="edu-parent" target="1.5" />
-      <module name="fapi" target="1.8" />
+      <module name="Maven: io.jsonwebtoken:jjwt:0.9.0" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Maven: io.jsonwebtoken:jjwt:0.9.0" options="-parameters" />
       <module name="backend" options="-parameters" />
-      <module name="fapi" options="-parameters" />
     </option>
   </component>
 </project>

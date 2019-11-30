@@ -159,9 +159,9 @@ public class UsersEntity {
     }
 
     public enum Role {
-        COMPANY("company"),
-        ADMIN("admin"),
-        CUSTOMER("customer");
+        COMPANY("COMPANY"),
+        ADMIN("ADMIN"),
+        CUSTOMER("CUSTOMER");
 
         private String value;
 

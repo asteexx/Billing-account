@@ -41,6 +41,12 @@
         Chanel name is incorrect
       </div>
     </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <input class="form-control" name="description" [(ngModel)]="editableCatalog.smallDiscription" #chanelName="ngModel"
+      />
+    </div>
     <div class="form-group">
       <label>Price</label>
       <input class="form-control" name="price" [(ngModel)]="editableCatalog.price" #price="ngModel" required/>

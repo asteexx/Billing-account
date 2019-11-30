@@ -15,10 +15,9 @@
 
 
 
-    <label for="confirmPassword3" class="col-sm-2 col-form-label">Confirm password</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="confirmPassword3" placeholder="Confirm password">
-    </div>
+  <app-input [inputLabel]="'Confirm password'"
+             [placeholder]="'confirm password'" type="password">
+  </app-input>
 
 
   <fieldset class="form-group">
@@ -33,6 +32,8 @@
       </div>
     </div>
   </fieldset>
+
+
 
   <div class="container">
     <app-btn [text]="'Sign up'" ></app-btn>

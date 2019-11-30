@@ -35,9 +35,9 @@ public class ChanelDataServiceImpl implements ChanelDataService {
     }
 
     @Override
-    public ChanelModel saveChanel(ChanelViewModel chanelViewModel) {
+    public ChanelModel saveChanel(ChanelModel chanelModel) {
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.postForEntity(backendServerUrl + "/api/chanels", chanelViewModel, ChanelModel.class).getBody();
+        return restTemplate.postForEntity(backendServerUrl + "/api/chanels", chanelModel, ChanelModel.class).getBody();
 
     }
 

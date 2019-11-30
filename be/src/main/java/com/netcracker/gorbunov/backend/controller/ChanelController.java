@@ -36,6 +36,7 @@ public class ChanelController {
 
     @RequestMapping(method = RequestMethod.POST)
     public ChanelsEntity saveChanel(@RequestBody ChanelsEntity chanelsEntity) {
+        System.out.println(chanelsEntity);
         return chanelService.saveChanel(chanelsEntity);
     }
 

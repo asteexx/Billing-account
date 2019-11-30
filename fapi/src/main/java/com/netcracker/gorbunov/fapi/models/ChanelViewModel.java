@@ -84,4 +84,17 @@ public class ChanelViewModel {
     public void setCompaniesByOwner(String companiesByOwner) {
         this.companiesByOwner = companiesByOwner;
     }
+
+    @Override
+    public String toString() {
+        return "ChanelViewModel{" +
+                "id=" + id +
+                ", chanelName='" + chanelName + '\'' +
+                ", owner=" + owner +
+                ", price=" + price +
+                ", smallDiscription='" + smallDiscription + '\'' +
+                ", category=" + category +
+                ", companiesByOwner='" + companiesByOwner + '\'' +
+                '}';
+    }
 }

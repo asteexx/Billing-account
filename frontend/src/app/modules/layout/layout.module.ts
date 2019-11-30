@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import {RouterModule} from "@angular/router";
-import {BillingDetailsViewComponent} from "./components/billing-details/billing-details-view.component";
 
 import {NotFoundComponent} from "./components/404/not-found.component";
 
@@ -19,9 +18,7 @@ import { CatalogModule} from "../components/catalog/catalog.module"
 
 import { RegistrationFormModule} from "../components/registration-form/registration-form.module"
 
-import {BillingAccountModule} from "../components/billing-account/billing-account.module";
 
-import {HeaderModule} from "../components/common/header/header.module";
 
 import {NavBarModule} from "../components/common/nav-bar/nav-bar.module";
 
@@ -41,7 +38,6 @@ import {FooterComponent} from "../components/common/footer/components/footer.com
   declarations: [
     HomeComponent,
     NotFoundComponent,
-    BillingDetailsViewComponent,
     CatalogPageComponent,
     RegistrationPageComponent,
     AboutPageComponent,
@@ -50,8 +46,7 @@ import {FooterComponent} from "../components/common/footer/components/footer.com
 
   ],
   imports: [
-    BillingAccountModule,
-    HeaderModule,
+
     NavBarModule,
     HomeBodyModule,
     CatalogModule,
@@ -64,6 +59,6 @@ import {FooterComponent} from "../components/common/footer/components/footer.com
 
   ],
   providers: [],
-  exports: [HomeComponent, NotFoundComponent, BillingDetailsViewComponent, CatalogPageComponent, RegistrationPageComponent,  AboutPageComponent, ProfilePageComponent]
+  exports: [HomeComponent, NotFoundComponent, CatalogPageComponent, RegistrationPageComponent,  AboutPageComponent, ProfilePageComponent]
 })
 export class LayoutModule {}

@@ -9,7 +9,8 @@ import {FormsModule} from "@angular/forms";
 @NgModule({
   imports: [
     SharedModule,
-    FormsModule
+    FormsModule,
+
 
   ],
   declarations: [

@@ -13,6 +13,19 @@ public class ChanelModel {
     private Integer category;
     private CompanyModel companiesByOwner;
 
+    public ChanelModel() {
+    }
+
+    public ChanelModel(int id, String chanelName, int owner, BigDecimal price, String smallDiscription, Integer category, CompanyModel companiesByOwner) {
+        this.id = id;
+        this.chanelName = chanelName;
+        this.owner = owner;
+        this.price = price;
+        this.smallDiscription = smallDiscription;
+        this.category = category;
+        this.companiesByOwner = companiesByOwner;
+    }
+
     public int getId() {
         return id;
     }

@@ -6,10 +6,9 @@ import { ModalModule } from "ngx-bootstrap/modal";
 import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {Ng4LoadingSpinnerModule} from "ng4-loading-spinner";
 import {RouterModule, Routes} from "@angular/router";
-import {BillingDetailsViewComponent} from "./modules/layout/components/billing-details/billing-details-view.component";
 import {NotFoundComponent} from "./modules/layout/components/404/not-found.component";
 import {LayoutModule} from "./modules/layout/layout.module";
 
@@ -21,11 +20,13 @@ import { RegistrationPageComponent } from "./modules/layout/components/registrat
 
 import { AboutPageComponent } from './modules/layout/components/about-page/about-page.component';
 
-import {HeaderModule} from "./modules/components/common/header/header.module";
 
 import { ProfilePageComponent } from "./modules/layout/components/profile-page/profile-page.component";
 import {NavBarModule} from "./modules/components/common/nav-bar/nav-bar.module";
 import {SharedModule} from "./shared/shared.module";
+import {CanActivateService} from "./services/security/can-activate.service";
+import {UserService} from "./services/security/user-service";
+import {APIInterceptor} from "./interceptors/api-interceptor";
 
 
 
@@ -33,8 +34,7 @@ import {SharedModule} from "./shared/shared.module";
 
 const appRoutes: Routes = [
   {path: "", component: HomeComponent},
-  {path: "home", component: HomeComponent},
-  {path: "billing-details/:id", component: BillingDetailsViewComponent},
+  {path: "home", component: HomeComponent , canActivate: [CanActivateService]},
   {path: "catalog", component: CatalogPageComponent},
   {path: "registration", component: RegistrationPageComponent},
   {path: "about", component: AboutPageComponent},
@@ -47,17 +47,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
 
-
-
-
-
-
-
-
-
-
-
-
   ],
   imports: [
     BrowserModule,
@@ -69,11 +58,14 @@ const appRoutes: Routes = [
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    HeaderModule,
     NavBarModule,
     SharedModule
   ],
-  providers: [],
+  providers: [UserService, APIInterceptor, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: APIInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent],
 
 })

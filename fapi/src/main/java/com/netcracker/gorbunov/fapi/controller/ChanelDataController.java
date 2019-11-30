@@ -39,7 +39,11 @@ public class ChanelDataController {
     @PostMapping()
     public ResponseEntity<ChanelModel> saveChanel(@RequestBody ChanelViewModel chanelViewModel /*todo server validation*/) {
         if (chanelViewModel != null) {
-            return ResponseEntity.ok(chanelDataService.saveChanel(chanelViewModel));
+            ;
+            return ResponseEntity.ok(
+                    conversionService.convert(
+                            chanelDataService.saveChanel(
+                                    conversionService.convert(chanelViewModel, ChanelModel.class)), ChanelModel.class));
         }
         return null;
     }
