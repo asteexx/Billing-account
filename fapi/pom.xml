@@ -96,6 +96,11 @@
             <version>5.0.8.RELEASE</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.googlecode.gwtutils</groupId>
+            <artifactId>gwtUtils</artifactId>
+            <version>0.0.1</version>
+        </dependency>
 
     </dependencies>
 

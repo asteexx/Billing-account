@@ -1,14 +1,11 @@
 package com.netcracker.gorbunov.backend.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Entity
 @Table(name = "chanels", schema = "space_chanels")
@@ -135,4 +132,24 @@ public class ChanelsEntity {
                 ", companiesByOwner=" + companiesByOwner +
                 '}';
     }
+
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "subscribers_on_chanel",
+//            joinColumns = @JoinColumn(name = "id_chanel", referencedColumnName = "id"),
+//            inverseJoinColumns = @JoinColumn(name = "id_subscriber", referencedColumnName = "id_user"))
+//    private Set<UsersEntity> subscribers;
+//
+//
+//
+//    public ChanelsEntity(int id, String chanelName, int owner, BigDecimal price, String smallDiscription, Integer category, CompaniesEntity companiesByOwner, UsersEntity... subscribers) {
+//        this.id = id;
+//        this.chanelName = chanelName;
+//        this.owner = owner;
+//        this.price = price;
+//        this.smallDiscription = smallDiscription;
+//        this.category = category;
+//        this.companiesByOwner = companiesByOwner;
+//        this.subscribers = Stream.of(subscribers).collect(Collectors.toSet());
+//        this.subscribers.forEach(x -> x.get().add(this));
+//    }
 }

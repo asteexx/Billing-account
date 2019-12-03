@@ -2,6 +2,9 @@ package com.netcracker.gorbunov.fapi.service.impl;
 
 import com.netcracker.gorbunov.fapi.beClasses.UserModel;
 import com.netcracker.gorbunov.fapi.service.UserLoginService;
+import org.apache.logging.log4j.LogManager;
+
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -17,6 +20,8 @@ import java.util.*;
 @Service("userDetailsService")
 public class UserLoginServiceImpl implements UserDetailsService, UserLoginService {
 
+    private final static Logger LOGGER = LogManager.getLogger(UserLoginServiceImpl.class);
+
 
     @Value("${backend.server.url}")
     private String backendServerUrl;
@@ -27,7 +32,10 @@ public class UserLoginServiceImpl implements UserDetailsService, UserLoginServic
     @Override
     public UserModel findByLogin(String login) {
         RestTemplate restTemplate = new RestTemplate();
+        LOGGER.info("111");
         UserModel user = restTemplate.getForObject(backendServerUrl + "/api/users/login/" + login, UserModel.class);
+        LOGGER.info("2222");
+        LOGGER.info(user + ": user");
         return user;
     }
 

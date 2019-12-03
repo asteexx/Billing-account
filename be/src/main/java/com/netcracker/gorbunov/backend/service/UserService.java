@@ -9,6 +9,7 @@ public interface UserService {
     UsersEntity saveUser(UsersEntity usersEntity);
     Optional<UsersEntity> getUserById(Integer id);
     Iterable<UsersEntity> getAllUsers();
+    Optional<UsersEntity> findByLogin(String login);
     void deleteUser(Integer id);
 
 }

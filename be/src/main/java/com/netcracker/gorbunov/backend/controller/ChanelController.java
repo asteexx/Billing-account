@@ -30,8 +30,8 @@ public class ChanelController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public Iterable<ChanelsEntity> getAllChanels() {
-        return chanelService.getAllChanels();
+    public Iterable<ChanelsEntity> getAllChanels(@RequestParam int page) {
+        return chanelService.getAllChanels(page);
     }
 
     @RequestMapping(method = RequestMethod.POST)

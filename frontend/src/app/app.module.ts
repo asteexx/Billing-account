@@ -1,5 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import {NgModule} from "@angular/core";
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { ModalModule } from "ngx-bootstrap/modal";
@@ -31,7 +31,6 @@ import {APIInterceptor} from "./interceptors/api-interceptor";
 
 
 
-
 const appRoutes: Routes = [
   {path: "", component: HomeComponent},
   {path: "home", component: HomeComponent , canActivate: [CanActivateService]},
@@ -59,9 +58,12 @@ const appRoutes: Routes = [
     ModalModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     NavBarModule,
-    SharedModule
+    SharedModule,
+
   ],
-  providers: [UserService, APIInterceptor, {
+  providers: [UserService,
+    APIInterceptor, {
+
     provide: HTTP_INTERCEPTORS,
     useClass: APIInterceptor,
     multi: true
@@ -69,4 +71,6 @@ const appRoutes: Routes = [
   bootstrap: [AppComponent],
 
 })
-export class AppModule { }
+export class AppModule {
+
+}

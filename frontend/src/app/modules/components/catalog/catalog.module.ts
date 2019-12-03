@@ -14,7 +14,7 @@ import {FormsModule} from "@angular/forms";
   declarations: [
 CatalogComponent
 ],
-providers: [ChanelService],
+providers: [ChanelService, ],
 exports: [CatalogComponent]
 })
 export class CatalogModule { }

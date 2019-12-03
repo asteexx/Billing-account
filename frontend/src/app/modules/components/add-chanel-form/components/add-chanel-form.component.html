@@ -16,39 +16,25 @@
   <div class="modal-body">
 
     <app-input [inputLabel]="'Name'"
-               [placeholder]="'name'"  ><input class="form-control" name="name" [(ngModel)]="editableCatalog.chanelName" #chanelName="ngModel" />
+               [placeholder]="'name'"  name="chanelName" [value]="editableCatalog.chanelName" >
     </app-input>
-<!--    <div class="form-group">-->
-<!--      <label>Name</label>-->
-<!--      <input class="form-control" name="name" [(ngModel)]="editableCatalog.chanelName" #chanelName="ngModel"-->
-<!--      />-->
-      <div [hidden]="chanelName.valid || chanelName.untouched" class="alert alert-danger">
-        Chanel name is incorrect
-      </div>
+
+<!--      <div [hidden]="chanelName.valid || chanelName.untouched" class="alert alert-danger">-->
+<!--        Chanel name is incorrect-->
+<!--      </div>-->
 
     <app-input [inputLabel]="'Description'"
                [placeholder]="'description'">
-      <input class="form-control" name="name" [(ngModel)]="editableCatalog.smallDiscription" #smallDiscription="ngModel"/>
+      <input class="form-control" name="name" [value]="editableCatalog.smallDiscription" />
           </app-input>
-
-      <!--    <div class="form-group">-->
-<!--      <label>Description</label>-->
-<!--      <input class="form-control" name="name" [(ngModel)]="editableCatalog.smallDiscription" #chanelName="ngModel"-->
-<!--      />-->
-<!--    </div>-->
-
 
     <app-input [inputLabel]="'Price'"
                [placeholder]="'price'">
-      <input class="form-control" name="price" [(ngModel)]="editableCatalog.price" #price="ngModel" required/>
+      <input class="form-control" name="price" [value]="editableCatalog.price"/>
     </app-input>
-<!--    <div class="form-group">-->
-<!--      <label>Price</label>-->
-<!--      <input class="form-control" name="price" [(ngModel)]="editableCatalog.price" #price="ngModel" required/>-->
-     <div [hidden]="price.valid || price.untouched" class="alert alert-danger">
-        Pls set price
-      </div>
-
+<!--    <div [hidden]="price.valid || price.untouched" class="alert alert-danger">-->
+<!--        Pls set price-->
+<!--      </div>-->
 
   </div>
   <div class="modal-footer">

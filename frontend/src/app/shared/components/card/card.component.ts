@@ -4,13 +4,17 @@ import {Subscription} from "rxjs";
 import {ChanelService} from "../../../services/chanel.service";
 import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
 import {BsModalRef, BsModalService} from "ngx-bootstrap";
+import {NgbPaginationConfig} from "@ng-bootstrap/ng-bootstrap";
+
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  styleUrls: ['./card.component.css'],
+  providers: [NgbPaginationConfig] // add NgbPaginationConfig to the component providers
+
 })
-export class CardComponent implements OnInit{
+export class CardComponent implements OnInit {
 
   public editMode = false;
   public catalogs: Catalog[];
@@ -22,22 +26,26 @@ export class CardComponent implements OnInit{
   // Dependency injection for ChanelService into Chanel
   constructor(private chanelService: ChanelService,
               private loadingService: Ng4LoadingSpinnerService,
-              private modalService: BsModalService) { //to show the modal, we also need the ngx-bootstrap service
-}
+              private modalService: BsModalService,
+              config: NgbPaginationConfig) {
+    config.size = 'sm';
+    config.boundaryLinks = true;//to show the modal, we also need the ngx-bootstrap service
+  }
 
-
+  @Input()
+  page: number = 0;
+  @Input()
+  pageSize: number = 3;
 
   ngOnInit() {
     this.loadChanels();
-
-
   }
 
   public _closeModal(): void {
     this.modalRef.hide();
   }
 
-  public _openModal(template: TemplateRef<any>,catalog : Catalog): void {
+  public _openModal(template: TemplateRef<any>, catalog: Catalog): void {
 
     if (catalog) {
       this.editMode = true;
@@ -54,7 +62,7 @@ export class CardComponent implements OnInit{
   private loadChanels(): void {
     this.loadingService.show();
     // Get data from BillingAccountService
-    this.subscriptions.push(this.chanelService.getAllChanels().subscribe(chanels => {
+    this.subscriptions.push(this.chanelService.getAllChanels(this.page).subscribe(chanels => {
       // Parse json response into local array
       this.catalogs = chanels as Catalog[];
       // Check data in console
@@ -92,4 +100,6 @@ export class CardComponent implements OnInit{
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
+
+
 }

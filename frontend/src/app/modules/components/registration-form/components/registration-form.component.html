@@ -2,21 +2,21 @@
 <form>
 
     <app-input [inputLabel]="'Name'"
-               [placeholder]="'Please enter your name'" >
+               [placeholder]="'Please enter your name'" [(ngModel)]="editableCatalog.login" #login="ngModel">
     </app-input>
 
   <app-input [inputLabel]="'Email'"
-             [placeholder]="'Please enter your email'" type="email">
+             [placeholder]="'Please enter your email'" type="email"[(ngModel)]="editableCatalog.eMail" #eMail="ngModel">
   </app-input>
 
   <app-input [inputLabel]="'Password'"
-             [placeholder]="'Password'" type="password">
+             [placeholder]="'Password'" type="password"[(ngModel)]="editableCatalog.password" #password="ngModel">
   </app-input>
 
 
 
   <app-input [inputLabel]="'Confirm password'"
-             [placeholder]="'confirm password'" type="password">
+             [placeholder]="'confirm password'" type="password"[(ngModel)]="editableCatalog.password" #password="ngModel">
   </app-input>
 
 
@@ -36,7 +36,7 @@
 
 
   <div class="container">
-    <app-btn [text]="'Sign up'" ></app-btn>
+    <app-btn (click)="_addUser()" [text]="'Sign up'" ></app-btn>
   </div>
 
 </form>

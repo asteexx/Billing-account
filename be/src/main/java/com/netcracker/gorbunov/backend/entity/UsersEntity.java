@@ -5,6 +5,8 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
 
+
+
 @Entity
 @Table(name = "users", schema = "space_chanels")
 
@@ -157,6 +159,12 @@ public class UsersEntity {
     public void seteWalletsByIdUser(Collection<EWalletEntity> eWalletsByIdUser) {
         this.eWalletsByIdUser = eWalletsByIdUser;
     }
+
+
+
+
+
+
 
     public enum Role {
         COMPANY("COMPANY"),

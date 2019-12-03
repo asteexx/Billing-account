@@ -4,7 +4,6 @@ import {Catalog} from "../modules/components/catalog/models/catalog";
 import {Observable} from "rxjs";
 
 
-
 @Injectable()
 // Data service
 export class ChanelService {
@@ -13,8 +12,8 @@ export class ChanelService {
   }
 
   // Ajax request for Chanels data
-  getAllChanels(): Observable<Catalog[]> {
-    return this.http.get<Catalog[]>('/api/chanels');
+  getAllChanels(page: number): Observable<Catalog[]> {
+    return this.http.get<Catalog[]>('/api/chanels?page=' + page);
   }
 
   saveChanel(catalog: Catalog): Observable<Catalog> {
@@ -28,8 +27,6 @@ export class ChanelService {
   getChanelById(id: string): Observable<Catalog> {
     return this.http.get<Catalog>('/api/chanels/' + id);
   }
-
-
 
 
 }

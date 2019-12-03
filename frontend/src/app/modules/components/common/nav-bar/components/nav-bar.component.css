@@ -1,4 +1,7 @@
 
+#navv{
+}
+
 #navbarSupportedContent{
   background-color: #742E37;
 }
@@ -25,7 +28,7 @@ input {
 }
 
 .login-form__danger-alert {
-  margin-top: 20px
+  margin-top: 2px
 }
 button{
   height: 40px;

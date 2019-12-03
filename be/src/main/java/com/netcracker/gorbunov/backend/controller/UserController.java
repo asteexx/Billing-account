@@ -28,6 +28,16 @@ public class UserController {
         }
     }
 
+    @GetMapping(value = "/login/{login}")
+    public ResponseEntity<UsersEntity> getUserByLogin(@PathVariable(name = "login") String login) {
+        Optional<UsersEntity> usersEntity = userService.findByLogin(login);
+        if (usersEntity.isPresent()) {
+            return ResponseEntity.ok(usersEntity.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @GetMapping(value = "")
     public Iterable<UsersEntity> getAllUsers() {
         return userService.getAllUsers();
@@ -42,5 +52,7 @@ public class UserController {
     public void deleteUser(@PathVariable(name = "id") Integer id) {
         userService.deleteUser(id);
     }
+
+
 
 }

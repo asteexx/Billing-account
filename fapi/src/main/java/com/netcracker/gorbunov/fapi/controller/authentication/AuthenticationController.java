@@ -1,5 +1,7 @@
 package com.netcracker.gorbunov.fapi.controller.authentication;
 
+import com.netcracker.gorbunov.fapi.beClasses.UserModel;
+import com.netcracker.gorbunov.fapi.models.UserViewModel;
 import com.netcracker.gorbunov.fapi.models.authentication.AuthToken;
 import com.netcracker.gorbunov.fapi.models.authentication.LoginUser;
 import com.netcracker.gorbunov.fapi.security.TokenProvider;
@@ -24,12 +26,11 @@ public class AuthenticationController {
     private TokenProvider tokenProvider;
 
     @RequestMapping(value = "/generate-token", method = RequestMethod.POST)
-
-    public ResponseEntity register(@RequestBody LoginUser loginUser){
+    public ResponseEntity register(@RequestBody LoginUser userModel){
         final Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        loginUser.getUsername(),
-                        loginUser.getPassword()
+                        userModel.getUsername(),
+                        userModel.getPassword()
                 )
         );
         SecurityContextHolder.getContext().setAuthentication(authentication);

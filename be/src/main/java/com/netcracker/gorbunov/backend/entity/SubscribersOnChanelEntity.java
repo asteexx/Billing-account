@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "subscribers_on_chanel", schema = "space_chanels", catalog = "")
+@Table(name = "subscribers_on_chanel", schema = "space_chanels")
 @IdClass(SubscribersOnChanelEntityPK.class)
 public class SubscribersOnChanelEntity {
     private int idSubscriber;

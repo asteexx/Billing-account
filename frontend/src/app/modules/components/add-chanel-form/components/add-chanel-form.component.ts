@@ -11,17 +11,14 @@ import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
   templateUrl: './add-chanel-form.component.html',
   styleUrls: ['./add-chanel-form.component.css']
 })
-export class AddChanelFormComponent  implements OnInit{
+export class AddChanelFormComponent implements OnInit {
   public editMode = false;
   public catalogs: Catalog[];
   public editableCatalog: Catalog = new Catalog();
-  // public editCatalog: Catalog = new Catalog();
   public modalRef: BsModalRef; //we need a variable to keep a reference of our modal. This is going to be used to close the modal.
 
   private subscriptions: Subscription[] = [];
-
-
-
+  page: number = 0;
 
   // Dependency injection for ChanelService into Chanel
   constructor(private chanelService: ChanelService,
@@ -32,15 +29,13 @@ export class AddChanelFormComponent  implements OnInit{
   // Calls on component init
   ngOnInit() {
     this.loadChanels();
-
-
   }
 
   private _closeModal(): void {
     this.modalRef.hide();
   }
 
-  public _openModal(template: TemplateRef<any>,catalog : Catalog): void {
+  public _openModal(template: TemplateRef<any>, catalog: Catalog): void {
 
     if (catalog) {
       this.editMode = true;
@@ -50,8 +45,7 @@ export class AddChanelFormComponent  implements OnInit{
       this.editMode = false;
     }
 
-    this.modalRef = this.modalService.show(template); // and when the user clicks on the button to open the popup
-                                                      // we keep the modal reference and pass the template local name to the modalService.
+    this.modalRef = this.modalService.show(template); // and when the user clicks on the button to open the popup// we keep the modal reference and pass the template local name to the modalService.
   }
 
   public _addChanel(): void {
@@ -65,17 +59,8 @@ export class AddChanelFormComponent  implements OnInit{
     }));
   }
 
-
   public _updateChanels(): void {
     this.loadChanels();
-  }
-
-
-  public _deleteChanel(catalogId: string): void {
-    this.loadingService.show();
-    this.subscriptions.push(this.chanelService.deleteChanel(catalogId).subscribe(() => {
-      this._updateChanels();
-    }));
   }
 
   private refreshCatalog(): void {
@@ -85,7 +70,7 @@ export class AddChanelFormComponent  implements OnInit{
   private loadChanels(): void {
     this.loadingService.show();
     // Get data from BillingAccountService
-    this.subscriptions.push(this.chanelService.getAllChanels().subscribe(chanels => {
+    this.subscriptions.push(this.chanelService.getAllChanels(this.page).subscribe(chanels => {
       // Parse json response into local array
       this.catalogs = chanels as Catalog[];
       // Check data in console
@@ -97,6 +82,5 @@ export class AddChanelFormComponent  implements OnInit{
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
-
 
 }

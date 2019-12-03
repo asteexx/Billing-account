@@ -5,7 +5,7 @@ import com.netcracker.gorbunov.fapi.beClasses.ChanelModel;
 import java.util.List;
 
 public interface ChanelDataService {
-    List<ChanelModel> getAllChanels();
+    List<ChanelModel> getAllChanels(int page);
 
     ChanelModel getChanelById(Integer id);
 
