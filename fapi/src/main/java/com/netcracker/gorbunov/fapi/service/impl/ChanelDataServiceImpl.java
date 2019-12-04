@@ -1,11 +1,8 @@
 package com.netcracker.gorbunov.fapi.service.impl;
 
-
 import com.netcracker.gorbunov.fapi.beClasses.ChanelModel;
-import com.netcracker.gorbunov.fapi.models.ChanelViewModel;
 import com.netcracker.gorbunov.fapi.service.ChanelDataService;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -25,8 +22,8 @@ public class ChanelDataServiceImpl implements ChanelDataService {
     @Override
     public List<ChanelModel> getAllChanels(int page) {
         RestTemplate restTemplate = new RestTemplate();
-        Page<ChanelModel> chanelViewModelResponse = restTemplate.getForObject(backendServerUrl + "/api/chanels?page=" + page, Page.class);
-        return chanelViewModelResponse == null ? Collections.emptyList() : chanelViewModelResponse.getContent();
+        ChanelModel[] chanelViewModelResponse = restTemplate.getForObject(backendServerUrl + "/api/chanels?page=" + page, ChanelModel[].class);
+        return chanelViewModelResponse == null ? Collections.emptyList() : Arrays.asList(chanelViewModelResponse);
     }
 
     @Override

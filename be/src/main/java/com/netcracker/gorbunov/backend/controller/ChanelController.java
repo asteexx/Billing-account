@@ -4,9 +4,14 @@ package com.netcracker.gorbunov.backend.controller;
 import com.netcracker.gorbunov.backend.entity.ChanelsEntity;
 import com.netcracker.gorbunov.backend.service.ChanelService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -30,9 +35,12 @@ public class ChanelController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public Iterable<ChanelsEntity> getAllChanels(@RequestParam int page) {
-        return chanelService.getAllChanels(page);
+    public List<ChanelsEntity> getAllChanels(@RequestParam int page){
+        List<ChanelsEntity> chanelsEntityList = (List<ChanelsEntity>) chanelService.findAll(page);
+        //do other implementations here
+        return chanelsEntityList;
     }
+
 
     @RequestMapping(method = RequestMethod.POST)
     public ChanelsEntity saveChanel(@RequestBody ChanelsEntity chanelsEntity) {

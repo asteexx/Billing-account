@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ChanelRepository extends JpaRepository<ChanelsEntity, Integer> {
-
+    Page<ChanelsEntity> findAll(Pageable pageable);
 }
