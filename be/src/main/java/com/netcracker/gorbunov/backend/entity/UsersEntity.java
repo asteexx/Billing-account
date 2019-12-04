@@ -3,8 +3,9 @@ package com.netcracker.gorbunov.backend.entity;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Objects;
-
+import java.util.Set;
 
 
 @Entity
@@ -160,7 +161,15 @@ public class UsersEntity {
         this.eWalletsByIdUser = eWalletsByIdUser;
     }
 
-
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            })
+    @JoinTable(name = "subscribers_on_chanel",
+            joinColumns = { @JoinColumn(name = "id_subscriber") },
+            inverseJoinColumns = { @JoinColumn(name = "id_chanel") })
+    private Set<ChanelsEntity> tags = new HashSet<>();
 
 
 

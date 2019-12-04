@@ -8,6 +8,9 @@ import com.netcracker.gorbunov.fapi.service.UserLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,7 +34,7 @@ public class UserDataController {
                 .collect(Collectors.toList()));
     }
 
-    @PostMapping()
+    @PostMapping("/signup")
     public ResponseEntity<UserModel> saveUser(@RequestBody UserViewModel userViewModel /*todo server validation*/) {
         if (userViewModel != null) {
             return ResponseEntity.ok(conversionService.convert(
@@ -58,5 +61,15 @@ public class UserDataController {
         return ResponseEntity.ok(conversionService.convert(userLoginService.findByLogin(userLogin), UserViewModel.class));
 
     }
+
+    @PreAuthorize("isAuthenticated()")
+    @GetMapping(value = "/current")
+    public UserModel getCurrentUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        // todo exclude password from model!
+        return userLoginService.findByLogin(((org.springframework.security.core.userdetails.User) authentication.getPrincipal()).getUsername());
+    }
 }
+
+
 

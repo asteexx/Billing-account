@@ -33,7 +33,7 @@ export class CardComponent implements OnInit {
   }
 
   @Input()
-  page: number = 0;
+  page: number = 0 ;
   @Input()
   pageSize: number = 3;
 

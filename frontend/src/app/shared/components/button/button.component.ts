@@ -11,8 +11,7 @@ export class ButtonComponent {
   text: string;
 
   @Input()
-  className: string = '';
-
+  ngClass: string;
 
   @Input()
   cardPrice: number;
@@ -20,11 +19,11 @@ export class ButtonComponent {
   @Input()
   type: string = "";
 
+  @Input()
+  disabled: string;
+
   @Output()
   clickChange: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor() {
 
-    console.log(this.className);
-  }
 }

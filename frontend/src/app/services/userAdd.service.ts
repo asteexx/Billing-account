@@ -3,6 +3,8 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Catalog} from "../modules/components/catalog/models/catalog";
 import {User} from "../modules/components/registration-form/models/user";
+import {LoginModel} from "../modules/components/common/nav-bar/models/login.model";
+import {AuthToken} from "./security/user-service";
 
 @Injectable()
 // Data service
@@ -17,8 +19,13 @@ export class UserAddService {
   saveUser(catalog: User): Observable<User> {
     return this.http.post<User>('/api/users', catalog);
   }
+  public generateToken(loginModel: LoginModel): Observable<AuthToken> {
+    return this.http.post<AuthToken>("/api/token/generate-token", loginModel);
+  }
 
-
+  public getAuthorizedUser(): Observable<User> {
+    return this.http.get<User>("/api/user/current");
+  }
 
 
 

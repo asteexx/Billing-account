@@ -2,21 +2,21 @@
 <form>
 
     <app-input [inputLabel]="'Name'"
-               [placeholder]="'Please enter your name'" [(ngModel)]="editableCatalog.login" #login="ngModel">
+               [placeholder]="'Please enter your name'" [(ngModel)]="editableCatalog.login" #login="ngModel" required>
     </app-input>
 
   <app-input [inputLabel]="'Email'"
-             [placeholder]="'Please enter your email'" type="email"[(ngModel)]="editableCatalog.eMail" #eMail="ngModel">
+             [placeholder]="'Please enter your email'" type="email"[(ngModel)]="editableCatalog.eMail" #eMail="ngModel" required>
   </app-input>
 
   <app-input [inputLabel]="'Password'"
-             [placeholder]="'Password'" type="password"[(ngModel)]="editableCatalog.password" #password="ngModel">
+             [placeholder]="'Password'" type="password"[(ngModel)]="editableCatalog.password" #password="ngModel" required>
   </app-input>
 
 
 
   <app-input [inputLabel]="'Confirm password'"
-             [placeholder]="'confirm password'" type="password"[(ngModel)]="editableCatalog.password" #password="ngModel">
+             [placeholder]="'confirm password'" type="password"[(ngModel)]="editableCatalog.password" #password="ngModel" required>
   </app-input>
 
 
@@ -36,7 +36,10 @@
 
 
   <div class="container">
-    <app-btn (click)="_addUser()" [text]="'Sign up'" ></app-btn>
+    <app-btn [type]="'submit'" [ngClass]="'btn btn-dark btn-block'"
+             (click)="_addUser(login, eMail, password)"
+             [disabled]="login.invalid|| password.invalid || eMail.invalid"
+             [text]="'Sign up'" ></app-btn>
   </div>
 
 </form>

@@ -6,6 +6,7 @@ import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
 import {UserService} from "../../../../services/security/user-service";
 import {Subscription} from "rxjs";
 import {UserAddService} from "../../../../services/userAdd.service";
+import {NgModel} from "@angular/forms";
 
 @Component({
   selector: 'app-registration-form',
@@ -17,25 +18,34 @@ export class RegistrationFormComponent implements OnInit {
   private subscriptions: Subscription[] = [];
 
   constructor(private userAddService: UserAddService,
-              private loadingService: Ng4LoadingSpinnerService,){
+              private loadingService: Ng4LoadingSpinnerService,) {
 
   }
 
-  public _addUser(): void {
+  public _addUser(login: NgModel, eMail: NgModel, password: NgModel): void {
     this.loadingService.show();
     this.subscriptions.push(this.userAddService.saveUser(this.editableCatalog).subscribe(() => {
-
+      this.refreshUser()
       this.loadingService.hide();
-
+      this.redirect()
     }));
   }
 
-import(){
-  SharedModule
-}
+  public refreshUser(): void {
+    this.editableCatalog = new User();
+  }
+
+  public redirect(): void {
+    window.location.href = '/login';
+  }
+
+  import() {
+    SharedModule
+  }
 
   ngOnInit(): void {
   }
+
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }

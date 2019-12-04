@@ -43,7 +43,7 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @PostMapping()
+    @PostMapping(("/signup"))
     public UsersEntity saveUser(@RequestBody UsersEntity usersEntity) {
         return userService.saveUser(usersEntity);
     }

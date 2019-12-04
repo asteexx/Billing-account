@@ -50,7 +50,7 @@ public class UserLoginServiceImpl implements UserDetailsService, UserLoginServic
     public UserModel save(UserModel user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.postForEntity(backendServerUrl + "/api/users", user, UserModel.class).getBody();
+        return restTemplate.postForEntity(backendServerUrl + "/api/users/signup", user, UserModel.class).getBody();
     }
 
     @Override
@@ -80,5 +80,6 @@ public class UserLoginServiceImpl implements UserDetailsService, UserLoginServic
         authorities.add(new SimpleGrantedAuthority("ROLE_" + user.getRole().getValue()));
         return authorities;
     }
+
 
 }

@@ -74,7 +74,7 @@ export class AddChanelFormComponent implements OnInit {
       // Parse json response into local array
       this.catalogs = chanels as Catalog[];
       // Check data in console
-      console.log(this.catalogs);// don't use console.log in angular :)
+      // console.log(this.catalogs);// don't use console.log in angular :)
       this.loadingService.hide();
     }));
   }

@@ -33,11 +33,11 @@ import {APIInterceptor} from "./interceptors/api-interceptor";
 
 const appRoutes: Routes = [
   {path: "", component: HomeComponent},
-  {path: "home", component: HomeComponent , canActivate: [CanActivateService]},
+  {path: "home", component: HomeComponent },
   {path: "catalog", component: CatalogPageComponent},
-  {path: "registration", component: RegistrationPageComponent},
+  {path: "api/users/signup", component: RegistrationPageComponent},
   {path: "about", component: AboutPageComponent},
-  {path: "profile", component: ProfilePageComponent},
+  {path: "profile", component: ProfilePageComponent, canActivate: [CanActivateService]},
   {path: "**", component: NotFoundComponent}
 
 ];

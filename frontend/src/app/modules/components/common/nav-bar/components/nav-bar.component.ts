@@ -3,13 +3,14 @@ import {LoginModel} from "../models/login.model";
 import {StorageService} from "../../../../../services/security/storage.service";
 import {AuthToken, UserService} from "../../../../../services/security/user-service";
 import {UserModel} from "../models/user.model";
+import * as jwt_decode from 'jwt-decode';
 
 @Component({
-selector: "app-nav-bar",
-templateUrl: "./nav-bar.component.html",
+  selector: "app-nav-bar",
+  templateUrl: "./nav-bar.component.html",
   styleUrls: ['./nav-bar.component.css']
 })
-export class NavBarComponent implements OnInit{
+export class NavBarComponent implements OnInit {
 
   public loginModel: LoginModel = {};
   public showCheckYourSetDataAlert: boolean = false;
@@ -26,6 +27,9 @@ export class NavBarComponent implements OnInit{
       .subscribe((authToken: AuthToken) => {
         if (authToken.token) {
           this.storageService.setToken(authToken.token);
+          // var token = 'eyJ0eXAiO... /// jwt token';
+          // var decoded = jwt_decode(token);
+          // console.log(decoded);
           this.userService.getAuthorizedUser()
             .subscribe((userModel: UserModel) => {
               this.storageService.setCurrentUser(userModel);

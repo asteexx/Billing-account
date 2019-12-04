@@ -49,11 +49,12 @@
           You are logged as {{currentLoggedUser.login}} <br>
           Role is {{currentLoggedUser.role}} <br>
         </ng-container>
+
         <ng-container *ngIf="!storageService.getCurrentUser()">
           <div class="login-form__container">
             <div class="form-group">
               <label for="exampleInputEmail1">Login</label>
-              <input (focus)="showCheckYourSetDataAlert = false" type="email" class="form-control"
+              <input (focus)="showCheckYourSetDataAlert = false" type="string" class="form-control"
                      [(ngModel)]="loginModel.username" id="exampleInputEmail1" placeholder="Enter Username">
             </div>
             <div class="form-group">
@@ -68,7 +69,7 @@
 
             <div class="loginin">
 
-              <a href="registration">Sign up</a>
+              <a href="api/users/signup">Sign up</a>
             </div>
           </div>
         </ng-container>
