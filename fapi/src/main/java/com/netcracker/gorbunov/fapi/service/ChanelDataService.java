@@ -1,11 +1,11 @@
 package com.netcracker.gorbunov.fapi.service;
 
 import com.netcracker.gorbunov.fapi.beClasses.ChanelModel;
-
-import java.util.List;
+import com.netcracker.gorbunov.fapi.beClasses.ChanelModelPage;
+import com.netcracker.gorbunov.fapi.beClasses.PageModel;
 
 public interface ChanelDataService {
-    List<ChanelModel> getAllChanels(int page);
+    ChanelModelPage getAllChanels(int page);
 
     ChanelModel getChanelById(Integer id);
 

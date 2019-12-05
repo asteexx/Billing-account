@@ -1,5 +1,6 @@
 package com.netcracker.gorbunov.backend.service.impl;
 
+import com.netcracker.gorbunov.backend.chanelPageConverter.ChanelEntityPage;
 import com.netcracker.gorbunov.backend.entity.ChanelsEntity;
 import com.netcracker.gorbunov.backend.repository.ChanelRepository;
 import com.netcracker.gorbunov.backend.service.ChanelService;
@@ -34,12 +35,15 @@ public class ChanelServiceImpl implements ChanelService {
     }
 
     @Override
-    public List<ChanelsEntity> findAll(int page) {
+    public Page<ChanelsEntity> findAll(int page) {
         Pageable pageable = PageRequest.of(page, 5);
         Page<ChanelsEntity> chanelsEntityPage = repository.findAll(pageable);
-        return chanelsEntityPage.getContent();
+        return chanelsEntityPage;
 
     }
+
+
+
 
 
     @Override

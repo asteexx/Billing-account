@@ -1,13 +1,15 @@
 package com.netcracker.gorbunov.fapi.service.impl;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.netcracker.gorbunov.fapi.beClasses.ChanelModel;
+import com.netcracker.gorbunov.fapi.beClasses.ChanelModelPage;
+import com.netcracker.gorbunov.fapi.beClasses.PageModel;
 import com.netcracker.gorbunov.fapi.service.ChanelDataService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 
@@ -19,11 +21,21 @@ public class ChanelDataServiceImpl implements ChanelDataService {
     private String backendServerUrl;
 
 
+//    @Override
+//    public PageModel<ChanelModel> getAllChanels(int page) {
+//        RestTemplate restTemplate = new RestTemplate();
+//        PageModelWithChannelModel chanelViewModelResponse = restTemplate.getForObject
+//                (backendServerUrl + "/api/chanels?page=" + page, PageModelWithChannelModel.class);
+//        return chanelViewModelResponse == null ? new PageModel<ChanelModel>() : chanelViewModelResponse;
+//    }
+
+
     @Override
-    public List<ChanelModel> getAllChanels(int page) {
+    public ChanelModelPage getAllChanels(int page) {
         RestTemplate restTemplate = new RestTemplate();
-        ChanelModel[] chanelViewModelResponse = restTemplate.getForObject(backendServerUrl + "/api/chanels?page=" + page, ChanelModel[].class);
-        return chanelViewModelResponse == null ? Collections.emptyList() : Arrays.asList(chanelViewModelResponse);
+        ChanelModelPage chanelViewModelResponse = restTemplate.getForObject
+                (backendServerUrl + "/api/chanels?page=" + page, ChanelModelPage.class);
+        return chanelViewModelResponse == null ? new ChanelModelPage() : chanelViewModelResponse;
     }
 
     @Override
@@ -43,5 +55,15 @@ public class ChanelDataServiceImpl implements ChanelDataService {
     public void deleteChanel(Integer id) {
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.delete(backendServerUrl + "/api/chanels/" + id);
+    }
+//    @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonDeserialize(as = PageModelWithChannelModel.class)
+    class PageModelWithChannelModel extends PageModel<ChanelModel> {
+        public PageModelWithChannelModel() {
+        }
+
+        public PageModelWithChannelModel(List<ChanelModel> content, int totalPages) {
+            super(content, totalPages);
+        }
     }
 }
