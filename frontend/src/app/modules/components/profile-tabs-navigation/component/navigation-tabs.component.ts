@@ -2,7 +2,6 @@ import {Component, Input, Output} from '@angular/core';
 
 import {ProfileHeaderModule} from "../../profile/profile-header/profile-header.module";
 
-
 @Component({
   selector: 'app-navigation-tabs',
   templateUrl: './navigation-tabs.component.html',

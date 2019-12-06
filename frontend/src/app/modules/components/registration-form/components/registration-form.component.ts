@@ -1,11 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {SharedModule} from "../../../../shared/shared.module";
 import {User} from "../models/user";
-import {ChanelService} from "../../../../services/chanel.service";
 import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
 import {UserService} from "../../../../services/security/user-service";
 import {Subscription} from "rxjs";
-import {UserAddService} from "../../../../services/userAdd.service";
 import {NgModel} from "@angular/forms";
 
 @Component({

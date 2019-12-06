@@ -5,7 +5,6 @@
     <li [class.active]="linkView==='balance'"class="profile-tabs"><a (click)="linkView='balance'">Balance</a></li>
     <li [class.active]="linkView==='registration'"class="profile-tabs"><a (click)="linkView='registration'">Admin Registration</a></li>
   </div>
-  <!--todo click link (change link state)-->
 </nav>
 
 
@@ -13,7 +12,6 @@
   <div *ngSwitchCase="'personal'">
 
     <app-personal></app-personal>
-
 
   </div>
   <div *ngSwitchCase="'chanels'">

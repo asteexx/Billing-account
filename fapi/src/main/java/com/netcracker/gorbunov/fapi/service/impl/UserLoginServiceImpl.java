@@ -74,8 +74,8 @@ public class UserLoginServiceImpl implements UserDetailsService, UserLoginServic
         return restTemplate.getForObject(backendServerUrl + "/api/users/" + id, UserModel.class);
 
     }
-
-    private Set<SimpleGrantedAuthority> getAuthority(UserModel user) {
+@Override
+    public Set<SimpleGrantedAuthority> getAuthority(UserModel user) {
         Set<SimpleGrantedAuthority> authorities = new HashSet<>();
         authorities.add(new SimpleGrantedAuthority("ROLE_" + user.getRole().getValue()));
         return authorities;

@@ -3,7 +3,6 @@ import {LoginModel} from "../models/login.model";
 import {StorageService} from "../../../../../services/security/storage.service";
 import {AuthToken, UserService} from "../../../../../services/security/user-service";
 import {UserModel} from "../models/user.model";
-import * as jwt_decode from 'jwt-decode';
 
 @Component({
   selector: "app-nav-bar",

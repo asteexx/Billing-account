@@ -20,13 +20,13 @@
 <nav aria-label="Page navigation example">
   <ul class="pagination">
     <li class="page-item">
-      <button class="page-link" aria-label="Previous"*ngIf="currentPage!==totalPages - totalPages" (click)="showPreviousPage()">
+      <button class="page-link" aria-label="Previous" [disabled]="currentPage===totalPages - totalPages"  (click)="showPreviousPage()">
         <span aria-hidden="true">&laquo;</span>
       </button>
     </li>
     <li class="page-item"><a class="page-link">{{currentPage + 1}}</a></li>
     <li class="page-item">
-      <button class="page-link"  aria-label="Next" *ngIf="currentPage!==totalPages - 1" (click)="showNextPage()" >
+      <button class="page-link"  aria-label="Next" [disabled]="currentPage===totalPages - 1"  (click)="showNextPage()" >
         <span aria-hidden="true">&raquo;</span>
       </button>
     </li>
