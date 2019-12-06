@@ -72,7 +72,7 @@ export class AddChanelFormComponent implements OnInit {
     // Get data from BillingAccountService
     this.subscriptions.push(this.chanelService.getAllChanels(this.page).subscribe(chanels => {
       // Parse json response into local array
-      this.catalogs = chanels as Catalog[];
+      // this.catalogs = chanels as Catalog[];
       // Check data in console
       // console.log(this.catalogs);// don't use console.log in angular :)
       this.loadingService.hide();

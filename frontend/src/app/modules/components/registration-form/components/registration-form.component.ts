@@ -17,14 +17,14 @@ export class RegistrationFormComponent implements OnInit {
   public editableCatalog: User = new User();
   private subscriptions: Subscription[] = [];
 
-  constructor(private userAddService: UserAddService,
+  constructor(private userService: UserService,
               private loadingService: Ng4LoadingSpinnerService,) {
 
   }
 
   public _addUser(login: NgModel, eMail: NgModel, password: NgModel): void {
     this.loadingService.show();
-    this.subscriptions.push(this.userAddService.saveUser(this.editableCatalog).subscribe(() => {
+    this.subscriptions.push(this.userService.saveUser(this.editableCatalog).subscribe(() => {
       this.refreshUser()
       this.loadingService.hide();
       this.redirect()

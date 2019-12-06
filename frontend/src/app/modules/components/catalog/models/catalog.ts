@@ -1,4 +1,3 @@
-
 export class Catalog {
   id: string;
   chanelName: string;
@@ -8,9 +7,10 @@ export class Catalog {
   category: string;
   companiesByOwner: string;
 
-
   static cloneBase(catalog: Catalog): Catalog {
+
     const clonedCatalog: Catalog = new Catalog();
+
     clonedCatalog.id = catalog.id;
     clonedCatalog.chanelName = catalog.chanelName;
     clonedCatalog.owner = catalog.owner;

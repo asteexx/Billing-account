@@ -19,13 +19,6 @@ export class UserAddService {
   saveUser(catalog: User): Observable<User> {
     return this.http.post<User>('/api/users', catalog);
   }
-  public generateToken(loginModel: LoginModel): Observable<AuthToken> {
-    return this.http.post<AuthToken>("/api/token/generate-token", loginModel);
-  }
-
-  public getAuthorizedUser(): Observable<User> {
-    return this.http.get<User>("/api/user/current");
-  }
 
 
 

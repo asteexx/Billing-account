@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Catalog} from "../modules/components/catalog/models/catalog";
 import {Observable} from "rxjs";
+import {CatalogPage} from "../shared/components/card/pageBe/catalogPage";
 
 
 @Injectable()
@@ -12,8 +13,9 @@ export class ChanelService {
   }
 
   // Ajax request for Chanels data
-  getAllChanels(page: number): Observable<Catalog[]> {
-    return this.http.get<Catalog[]>('/api/chanels?page=' + page);
+  getAllChanels(page: number): Observable<CatalogPage> {
+
+    return this.http.get<CatalogPage>('/api/chanels?page=' + page);
   }
 
   saveChanel(catalog: Catalog): Observable<Catalog> {

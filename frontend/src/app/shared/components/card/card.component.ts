@@ -5,6 +5,7 @@ import {ChanelService} from "../../../services/chanel.service";
 import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
 import {BsModalRef, BsModalService} from "ngx-bootstrap";
 import {NgbPaginationConfig} from "@ng-bootstrap/ng-bootstrap";
+import {CatalogPage} from "./pageBe/catalogPage";
 
 
 @Component({
@@ -20,6 +21,8 @@ export class CardComponent implements OnInit {
   public catalogs: Catalog[];
   public editableCatalog: Catalog = new Catalog();
   private subscriptions: Subscription[] = [];
+  private currentPage: number;
+  private totalPages: number;
 
   public modalRef: BsModalRef; //we need a variable to keep a reference of our modal. This is going to be used to close the modal.
 
@@ -32,13 +35,9 @@ export class CardComponent implements OnInit {
     config.boundaryLinks = true;//to show the modal, we also need the ngx-bootstrap service
   }
 
-  @Input()
-  page: number = 0 ;
-  @Input()
-  pageSize: number = 3;
-
   ngOnInit() {
-    this.loadChanels();
+    this.currentPage = 0;
+    this.loadChanels(this.currentPage);
   }
 
   public _closeModal(): void {
@@ -59,17 +58,30 @@ export class CardComponent implements OnInit {
                                                       // we keep the modal reference and pass the template local name to the modalService.
   }
 
-  private loadChanels(): void {
+  private loadChanels(currentPage: number): void {
     this.loadingService.show();
     // Get data from BillingAccountService
-    this.subscriptions.push(this.chanelService.getAllChanels(this.page).subscribe(chanels => {
+    this.subscriptions.push(this.chanelService.getAllChanels(currentPage).subscribe(page => {
       // Parse json response into local array
-      this.catalogs = chanels as Catalog[];
+     let catalogPage: CatalogPage;
+     catalogPage =  page as CatalogPage;
+      this.catalogs = catalogPage.content;
+      this.totalPages = catalogPage.totalPages;
       // Check data in console
       console.log(this.catalogs);// don't use console.log in angular :)
       this.loadingService.hide();
     }));
   }
+
+  public showNextPage() {
+   this.currentPage++;
+    this._updateChanels();
+  }
+  public showPreviousPage() {
+    this.currentPage--;
+    this._updateChanels();
+  }
+
 
   public _deleteChanel(catalogId: string): void {
     this.loadingService.show();
@@ -79,7 +91,7 @@ export class CardComponent implements OnInit {
   }
 
   public _updateChanels(): void {
-    this.loadChanels();
+    this.loadChanels(this.currentPage);
   }
 
   public _addChanel(): void {

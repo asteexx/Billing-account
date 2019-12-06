@@ -35,7 +35,7 @@ const appRoutes: Routes = [
   {path: "", component: HomeComponent},
   {path: "home", component: HomeComponent },
   {path: "catalog", component: CatalogPageComponent},
-  {path: "api/users/signup", component: RegistrationPageComponent},
+  {path: "signup", component: RegistrationPageComponent},
   {path: "about", component: AboutPageComponent},
   {path: "profile", component: ProfilePageComponent, canActivate: [CanActivateService]},
   {path: "**", component: NotFoundComponent}
