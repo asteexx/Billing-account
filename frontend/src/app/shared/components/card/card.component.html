@@ -6,12 +6,12 @@
     <h5 class="card-title">{{catalog.chanelName}} </h5>
     <p class="card-text">{{catalog.smallDiscription}}</p>
 
-    <app-btn [text]="'Subscribe '"
+    <app-btn [text]="'Subscribe '" [class]="'btn-success'"
              [cardPrice]="catalog.price" className="sub_btn"></app-btn>
     <app-btn [text]="'X '"
              (click)="_deleteChanel(catalog.id)" className="delete_btn" class="close"><span
       aria-hidden="true">&times;</span></app-btn>
-    <app-btn [text]="'Edit '"
+    <app-btn [text]="'Edit '"  [class]="'btn-warning'"
              (click)="_openModal(template, catalog)" className="edit_btn"></app-btn>
 
   </div>
@@ -74,7 +74,7 @@
 
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-default " (click)="_addChanel()"
+    <button type="button" class="btn btn-success " (click)="_addChanel()"
             [disabled]="owner.invalid || chanelName.invalid || price.invalid">{{editMode ? "Save" : "Create"}}
     </button>
     <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="_closeModal()">Close</button>

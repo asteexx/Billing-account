@@ -96,6 +96,8 @@ export class CardComponent implements OnInit {
 
   public _addChanel(): void {
     this.loadingService.show();
+    console.log(1111);
+    console.log(this.editableCatalog);
     this.subscriptions.push(this.chanelService.saveChanel(this.editableCatalog).subscribe(() => {
       this._updateChanels();
       this.refreshCatalog();

@@ -4,6 +4,7 @@ import {BsModalRef, BsModalService} from "ngx-bootstrap";
 import {Subscription} from "rxjs";
 import {ChanelService} from "../../../../services/chanel.service";
 import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
+import {CatalogPage} from "../../../../shared/components/card/pageBe/catalogPage";
 
 
 @Component({
@@ -16,7 +17,7 @@ export class AddChanelFormComponent implements OnInit {
   public catalogs: Catalog[];
   public editableCatalog: Catalog = new Catalog();
   public modalRef: BsModalRef; //we need a variable to keep a reference of our modal. This is going to be used to close the modal.
-
+  private totalPages: number;
   private subscriptions: Subscription[] = [];
   page: number = 0;
 
@@ -28,7 +29,7 @@ export class AddChanelFormComponent implements OnInit {
 
   // Calls on component init
   ngOnInit() {
-    this.loadChanels();
+    this.loadChanels(this.page);
   }
 
   private _closeModal(): void {
@@ -60,21 +61,24 @@ export class AddChanelFormComponent implements OnInit {
   }
 
   public _updateChanels(): void {
-    this.loadChanels();
+    this.loadChanels(this.page);
   }
 
   private refreshCatalog(): void {
     this.editableCatalog = new Catalog();
   }
 
-  private loadChanels(): void {
+  private loadChanels(currentPage: number): void {
     this.loadingService.show();
     // Get data from BillingAccountService
-    this.subscriptions.push(this.chanelService.getAllChanels(this.page).subscribe(chanels => {
+    this.subscriptions.push(this.chanelService.getAllChanels(currentPage).subscribe(page => {
       // Parse json response into local array
-      // this.catalogs = chanels as Catalog[];
+      let catalogPage: CatalogPage;
+      catalogPage =  page as CatalogPage;
+      this.catalogs = catalogPage.content;
+      this.totalPages = catalogPage.totalPages;
       // Check data in console
-      // console.log(this.catalogs);// don't use console.log in angular :)
+      console.log(this.catalogs);// don't use console.log in angular :)
       this.loadingService.hide();
     }));
   }

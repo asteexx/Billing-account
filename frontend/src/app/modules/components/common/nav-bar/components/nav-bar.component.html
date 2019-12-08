@@ -1,6 +1,6 @@
 <div class="fixed-top" id="navv">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand mb-0 h1" href="home">Space today</a>
+    <a class="navbar-brand mb-0 h1" id="space" href="home">Space today</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -45,9 +45,13 @@
         <!--          </form>-->
         <!--        </div>-->
 
-        <ng-container *ngIf="storageService.getCurrentUser() as currentLoggedUser">
-          You are logged as {{currentLoggedUser.login}} <br>
-          Role is {{currentLoggedUser.role}} <br>
+        <ng-container  *ngIf="storageService.getCurrentUser() as currentLoggedUser">
+         <span id="loggedInfo"> Loged as: {{currentLoggedUser.login}}
+          (role: {{currentLoggedUser.role}})</span>
+
+          <button *ngIf="storageService.getCurrentUser()" (click)="logout()" type="button" class="btn btn-dark">Logout
+          </button>
+
         </ng-container>
 
         <ng-container *ngIf="!storageService.getCurrentUser()">
@@ -74,8 +78,7 @@
           </div>
         </ng-container>
 
-        <button *ngIf="storageService.getCurrentUser()" (click)="logout()" type="button" class="btn btn-dark">Logout
-        </button>
+
 
 
       </div>

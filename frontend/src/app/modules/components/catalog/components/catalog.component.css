@@ -1,8 +1,10 @@
 .jumbotron{
-  background-color: #146759;
+  background-color: rgba(255, 252, 61, 0.4);
   margin-top: 15px;
   border-radius: 45px;
-  text-decoration: #742E37;
-
+  text-decoration: #742E37;}
+p, h1{
+  text-align: center;
 }
+
 

@@ -5,6 +5,7 @@ import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
 import {UserService} from "../../../../services/security/user-service";
 import {Subscription} from "rxjs";
 import {NgModel} from "@angular/forms";
+import {Roles} from "../models/roles";
 
 @Component({
   selector: 'app-registration-form',
@@ -12,7 +13,8 @@ import {NgModel} from "@angular/forms";
 
 })
 export class RegistrationFormComponent implements OnInit {
-  public editableCatalog: User = new User();
+  public user: User = new User();
+  public roles: Roles[] = [{name: 'CUSTOMER'},{ name: 'COMPANY'}];
   private subscriptions: Subscription[] = [];
 
   constructor(private userService: UserService,
@@ -20,9 +22,9 @@ export class RegistrationFormComponent implements OnInit {
 
   }
 
-  public _addUser(login: NgModel, eMail: NgModel, password: NgModel): void {
+  public _addUser(): void {
     this.loadingService.show();
-    this.subscriptions.push(this.userService.saveUser(this.editableCatalog).subscribe(() => {
+    this.subscriptions.push(this.userService.saveUser(this.user).subscribe(() => {
       this.refreshUser()
       this.loadingService.hide();
       this.redirect()
@@ -30,7 +32,7 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   public refreshUser(): void {
-    this.editableCatalog = new User();
+    this.user = new User();
   }
 
   public redirect(): void {

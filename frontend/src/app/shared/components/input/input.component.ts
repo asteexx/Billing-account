@@ -10,7 +10,10 @@ export class InputComponent  {
   inputLabel: string;
   @Input()
   placeholder: string;
-
+  @Input()
+  name: string;
   @Input()
   value: string;
+  @Input()
+  inputType: string;
 }

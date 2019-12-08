@@ -18,8 +18,9 @@ export class ChanelService {
     return this.http.get<CatalogPage>('/api/chanels?page=' + page);
   }
 
-  saveChanel(catalog: Catalog): Observable<Catalog> {
-    return this.http.post<Catalog>('/api/chanels', catalog);
+  saveChanel(content: Catalog): Observable<CatalogPage> {
+
+    return this.http.post<CatalogPage>('/api/chanels', content);
   }
 
   deleteChanel(chanelId: string): Observable<void> {

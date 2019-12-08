@@ -1,3 +1,3 @@
-<button class="btn-nc" [ngClass]="ngClass" (click)="clickChange.emit()" [disabled]="disabled">
+<button class="{{class}}" [ngClass]="ngClass" (click)="clickChange.emit()" [disabled]="disabled">
   {{text}} {{cardPrice}}
 </button>

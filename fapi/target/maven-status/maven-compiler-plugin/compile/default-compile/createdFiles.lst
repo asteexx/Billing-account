@@ -4,6 +4,7 @@ com/netcracker/gorbunov/fapi/service/UserDataService.class
 com/netcracker/gorbunov/fapi/config/chanel/ConverterConfig.class
 com/netcracker/gorbunov/fapi/service/UserLoginService.class
 com/netcracker/gorbunov/fapi/security/JwtAuthenticationFilter.class
+com/netcracker/gorbunov/fapi/beClasses/ChanelModelPage.class
 com/netcracker/gorbunov/fapi/controller/CompanyDataController.class
 com/netcracker/gorbunov/fapi/converter/chanel/ChanelModelToChanelViewModelConverter.class
 com/netcracker/gorbunov/fapi/models/ChanelViewModel.class
@@ -17,6 +18,7 @@ com/netcracker/gorbunov/fapi/filter/CORSFilter.class
 com/netcracker/gorbunov/fapi/controller/authentication/AuthenticationController.class
 com/netcracker/gorbunov/fapi/controller/UserDataController.class
 com/netcracker/gorbunov/fapi/converter/user/UserViewModelToUserModelConverter.class
+com/netcracker/gorbunov/fapi/service/impl/ChanelDataServiceImpl$PageModelWithChannelModel.class
 com/netcracker/gorbunov/fapi/beClasses/UserModel$Role.class
 com/netcracker/gorbunov/fapi/service/impl/UserDataServiceImpl.class
 com/netcracker/gorbunov/fapi/security/JwtAuthenticationEntryPoint.class
@@ -28,6 +30,7 @@ com/netcracker/gorbunov/fapi/models/CategoryViewModel.class
 com/netcracker/gorbunov/fapi/controller/CategoryDataController.class
 com/netcracker/gorbunov/fapi/service/ChanelDataService.class
 com/netcracker/gorbunov/fapi/beClasses/EWalletModel.class
+com/netcracker/gorbunov/fapi/beClasses/PageModel.class
 com/netcracker/gorbunov/fapi/FapiApplication.class
 com/netcracker/gorbunov/fapi/converter/chanel/ChanelViewModelToChanelModelConverter.class
 com/netcracker/gorbunov/fapi/service/impl/CategoryDataServiceImpl.class

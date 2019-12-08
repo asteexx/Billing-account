@@ -15,6 +15,7 @@
 /Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/models/ChanelViewModel.java
 /Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/converter/chanel/ChanelModelToChanelViewModelConverter.java
 /Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/security/JwtAuthenticationEntryPoint.java
+/Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/beClasses/PageModel.java
 /Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/service/impl/CategoryDataServiceImpl.java
 /Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/models/CategoryViewModel.java
 /Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/controller/ChanelDataController.java
@@ -32,6 +33,7 @@
 /Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/security/TokenProvider.java
 /Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/service/UserDataService.java
 /Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/service/ChanelDataService.java
+/Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/beClasses/ChanelModelPage.java
 /Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/converter/user/UserModelToUserViewModelConverter.java
 /Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/service/CompanyDataService.java
 /Users/gorbunov/Desktop/NETCREKER/projectCourses/ethalon/fapi/src/main/java/com/netcracker/gorbunov/fapi/controller/CategoryDataController.java

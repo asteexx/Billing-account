@@ -1,12 +1,19 @@
+#loggedInfo{
+  font-size: medium;
+}
 
-#navv{
+#space{
+  font-family: Rockwell;
+  font-size: x-large;
+  text-decoration: underline;
 }
 
 #navbarSupportedContent{
-  background-color: #742E37;
+  /*background-color: rgba(13, 167, 209, 0.7);*/
+  font-size: x-large;
 }
 .bg-dark{
-  background-color: #742E37!important;
+  background-color: rgba(13, 167, 209, 0.9) !important;
   position: fixed;
   width: 100%;
   z-index: 99;
@@ -32,6 +39,5 @@ input {
 }
 button{
   height: 40px;
-  margin-top: 30px;
 
 }

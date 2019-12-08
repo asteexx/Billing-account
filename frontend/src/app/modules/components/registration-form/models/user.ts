@@ -13,7 +13,6 @@ export class User {
 
  // private Collection<EWalletModel>eWalletsByIdUser;
 
-
   static cloneBase(user: User): User {
     const clonedUser: User = new User();
     clonedUser.idUser = user.idUser;

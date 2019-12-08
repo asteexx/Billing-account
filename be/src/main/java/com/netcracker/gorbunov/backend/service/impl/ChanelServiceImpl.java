@@ -26,6 +26,7 @@ public class ChanelServiceImpl implements ChanelService {
 
     @Override
     public ChanelsEntity saveChanel(ChanelsEntity chanelsEntity) {
+
         return repository.save(chanelsEntity);
     }
 

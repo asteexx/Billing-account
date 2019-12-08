@@ -15,31 +15,34 @@
   </div>
   <div class="modal-body">
 
-    <app-input [inputLabel]="'Name'"
-               [placeholder]="'name'"  name="chanelName" [value]="editableCatalog.chanelName" >
-    </app-input>
+    <input type="text" class="form-control" name="name" placeholder="name" [(ngModel)]="editableCatalog.chanelName">
+    <input type="text" class="form-control" name="disc" placeholder="disc" [(ngModel)]="editableCatalog.smallDiscription">
+    <input type="text" class="form-control" name="price" placeholder="price" [(ngModel)]="editableCatalog.price">
 
-<!--      <div [hidden]="chanelName.valid || chanelName.untouched" class="alert alert-danger">-->
-<!--        Chanel name is incorrect-->
-<!--      </div>-->
+<!--    <app-input [inputLabel]="'Name'"-->
+<!--               [placeholder]="'name'" [inputType]="'text'" [name]="'name'"  [value]="editableCatalog.chanelName">-->
+<!--    </app-input>-->
 
-    <app-input [inputLabel]="'Description'"
-               [placeholder]="'description'">
-      <input class="form-control" name="name" [value]="editableCatalog.smallDiscription" />
-          </app-input>
+<!--&lt;!&ndash;      <div [hidden]="chanelName.valid || chanelName.untouched" class="alert alert-danger">&ndash;&gt;-->
+<!--&lt;!&ndash;        Chanel name is incorrect&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
 
-    <app-input [inputLabel]="'Price'"
-               [placeholder]="'price'">
-      <input class="form-control" name="price" [value]="editableCatalog.price"/>
-    </app-input>
+<!--    <app-input [inputLabel]="'Description'"-->
+<!--               [placeholder]="'description'">-->
+<!--      <input class="form-control" name="name" [value]="editableCatalog.smallDiscription" />-->
+<!--          </app-input>-->
+
+<!--    <app-input [inputLabel]="'Price'"-->
+<!--               [placeholder]="'price'">-->
+<!--      <input class="form-control" name="price" [value]="editableCatalog.price"/>-->
+<!--    </app-input>-->
 <!--    <div [hidden]="price.valid || price.untouched" class="alert alert-danger">-->
 <!--        Pls set price-->
 <!--      </div>-->
 
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-default" (click)="_addChanel()"
-            >
+    <button type="button" class="btn btn-default" (click)="_addChanel()">
       {{editMode ? "Save": "Create"}}
     </button>
     <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="_closeModal()">Close</button>
