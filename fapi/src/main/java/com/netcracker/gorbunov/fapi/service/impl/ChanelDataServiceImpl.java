@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.netcracker.gorbunov.fapi.beClasses.ChanelModel;
 import com.netcracker.gorbunov.fapi.beClasses.ChanelModelPage;
 import com.netcracker.gorbunov.fapi.beClasses.PageModel;
+import com.netcracker.gorbunov.fapi.controller.UserDataController;
 import com.netcracker.gorbunov.fapi.service.ChanelDataService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -54,16 +55,18 @@ public class ChanelDataServiceImpl implements ChanelDataService {
     @Override
     public void deleteChanel(Integer id) {
         RestTemplate restTemplate = new RestTemplate();
+        UserDataController userDataController = new UserDataController();
+        //userDataController.getCurrentUser();
         restTemplate.delete(backendServerUrl + "/api/chanels/" + id);
     }
-//    @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonDeserialize(as = PageModelWithChannelModel.class)
-    class PageModelWithChannelModel extends PageModel<ChanelModel> {
-        public PageModelWithChannelModel() {
-        }
-
-        public PageModelWithChannelModel(List<ChanelModel> content, int totalPages) {
-            super(content, totalPages);
-        }
-    }
+////    @JsonIgnoreProperties(ignoreUnknown = true)
+//@JsonDeserialize(as = PageModelWithChannelModel.class)
+//    class PageModelWithChannelModel extends PageModel<ChanelModel> {
+//        public PageModelWithChannelModel() {
+//        }
+//
+//        public PageModelWithChannelModel(List<ChanelModel> content, int totalPages) {
+//            super(content, totalPages);
+//        }
+//    }
 }

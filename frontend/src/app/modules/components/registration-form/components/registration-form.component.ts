@@ -4,7 +4,6 @@ import {User} from "../models/user";
 import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
 import {UserService} from "../../../../services/security/user-service";
 import {Subscription} from "rxjs";
-import {NgModel} from "@angular/forms";
 import {Roles} from "../models/roles";
 
 @Component({

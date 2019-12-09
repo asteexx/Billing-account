@@ -43,10 +43,6 @@ public class ChanelServiceImpl implements ChanelService {
 
     }
 
-
-
-
-
     @Override
     public void deleteChanel(Integer id) {
         repository.deleteById(id);

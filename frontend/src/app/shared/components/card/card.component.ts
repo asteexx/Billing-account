@@ -6,6 +6,7 @@ import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
 import {BsModalRef, BsModalService} from "ngx-bootstrap";
 import {NgbPaginationConfig} from "@ng-bootstrap/ng-bootstrap";
 import {CatalogPage} from "./pageBe/catalogPage";
+import {UserModel} from "../../../modules/components/common/nav-bar/models/user.model";
 
 
 @Component({
@@ -23,6 +24,7 @@ export class CardComponent implements OnInit {
   private subscriptions: Subscription[] = [];
   private currentPage: number;
   private totalPages: number;
+  private currentUser: UserModel;
 
   public modalRef: BsModalRef; //we need a variable to keep a reference of our modal. This is going to be used to close the modal.
 
