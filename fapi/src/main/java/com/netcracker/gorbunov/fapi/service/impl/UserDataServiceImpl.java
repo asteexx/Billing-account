@@ -20,8 +20,6 @@ public class UserDataServiceImpl implements UserDataService {
     @Value("${backend.server.url}")
     private String backendServerUrl;
 
-
-
     @Override
     public List<UserModel> getAllUsers() {
         RestTemplate restTemplate = new RestTemplate();
@@ -35,7 +33,6 @@ public class UserDataServiceImpl implements UserDataService {
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForObject(backendServerUrl + "/api/users/" + id, UserModel.class);
     }
-
 
     @Override
     public UserModel saveUser(UserModel userModel) {

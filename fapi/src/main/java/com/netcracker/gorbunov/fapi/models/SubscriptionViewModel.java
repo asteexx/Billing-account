@@ -4,6 +4,9 @@ public class SubscriptionViewModel {
     private int idSubscriber;
     private int idChanel;
 
+    public SubscriptionViewModel() {
+    }
+
     public SubscriptionViewModel(int idSubscriber, int idChanel) {
         this.idSubscriber = idSubscriber;
         this.idChanel = idChanel;
