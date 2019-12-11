@@ -3,7 +3,7 @@ export class Company{
   id: string;
   name: string;
   shortDescription: string;
-  moneyOnBankAccount: string;
+  moneyOnBankAccount: number;
 
 
   static cloneBase(catalog: Company): Company {

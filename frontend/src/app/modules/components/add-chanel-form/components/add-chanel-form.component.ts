@@ -1,5 +1,5 @@
 import {Component, OnInit, TemplateRef} from '@angular/core';
-import {Catalog} from "../../catalog/models/catalog";
+import {ChanelCatalog} from "../../catalog/models/chanelCatalog";
 import {BsModalRef, BsModalService} from "ngx-bootstrap";
 import {Subscription} from "rxjs";
 import {ChanelService} from "../../../../services/chanel.service";
@@ -14,8 +14,8 @@ import {CatalogPage} from "../../../../shared/components/card/pageBe/catalogPage
 })
 export class AddChanelFormComponent implements OnInit {
   public editMode = false;
-  public catalogs: Catalog[];
-  public editableCatalog: Catalog = new Catalog();
+  public catalogs: ChanelCatalog[];
+  public editableCatalog: ChanelCatalog = new ChanelCatalog();
   public modalRef: BsModalRef; //we need a variable to keep a reference of our modal. This is going to be used to close the modal.
   private totalPages: number;
   private subscriptions: Subscription[] = [];
@@ -36,11 +36,11 @@ export class AddChanelFormComponent implements OnInit {
     this.modalRef.hide();
   }
 
-  public _openModal(template: TemplateRef<any>, catalog: Catalog): void {
+  public _openModal(template: TemplateRef<any>, catalog: ChanelCatalog): void {
 
     if (catalog) {
       this.editMode = true;
-      this.editableCatalog = Catalog.cloneBase(catalog);
+      this.editableCatalog = ChanelCatalog.cloneBase(catalog);
     } else {
       this.refreshCatalog();
       this.editMode = false;
@@ -65,7 +65,7 @@ export class AddChanelFormComponent implements OnInit {
   }
 
   private refreshCatalog(): void {
-    this.editableCatalog = new Catalog();
+    this.editableCatalog = new ChanelCatalog();
   }
 
   private loadChanels(currentPage: number): void {

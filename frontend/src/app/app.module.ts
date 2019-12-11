@@ -27,6 +27,7 @@ import {SharedModule} from "./shared/shared.module";
 import {CanActivateService} from "./services/security/can-activate.service";
 import {UserService} from "./services/security/user-service";
 import {APIInterceptor} from "./interceptors/api-interceptor";
+import {SubscriptionService} from "./services/subscription.service";
 
 
 
@@ -61,7 +62,7 @@ const appRoutes: Routes = [
     SharedModule,
 
   ],
-  providers: [UserService,
+  providers: [UserService, SubscriptionService,
     APIInterceptor, {
 
     provide: HTTP_INTERCEPTORS,

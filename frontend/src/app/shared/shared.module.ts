@@ -8,9 +8,10 @@ import { CardComponent } from './components/card/card.component';
 import { InputComponent } from './components/input/input.component';
 import {FormsModule} from "@angular/forms";
 import {NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
+import {ProductComponent} from "./components/product/product.component";
 
 @NgModule({
-  declarations: [DropdownComponent, ButtonComponent, CardComponent,  InputComponent],
+  declarations: [DropdownComponent, ButtonComponent, CardComponent,  InputComponent, ProductComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -21,7 +22,7 @@ import {NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
     ButtonComponent,
     CardComponent,
     InputComponent,
-
+    ProductComponent,
   ]
 })
 export class SharedModule {

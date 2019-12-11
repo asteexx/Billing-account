@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {Catalog} from "../modules/components/catalog/models/catalog";
+import {ChanelCatalog} from "../modules/components/catalog/models/chanelCatalog";
 import {Observable} from "rxjs";
 import {CatalogPage} from "../shared/components/card/pageBe/catalogPage";
 
@@ -18,7 +18,7 @@ export class ChanelService {
     return this.http.get<CatalogPage>('/api/chanels?page=' + page);
   }
 
-  saveChanel(content: Catalog): Observable<CatalogPage> {
+  saveChanel(content: ChanelCatalog): Observable<CatalogPage> {
 
     return this.http.post<CatalogPage>('/api/chanels', content);
   }
@@ -27,8 +27,8 @@ export class ChanelService {
     return this.http.delete<void>('/api/chanels/' + chanelId);
   }
 
-  getChanelById(id: string): Observable<Catalog> {
-    return this.http.get<Catalog>('/api/chanels/' + id);
+  getChanelById(id: string): Observable<ChanelCatalog> {
+    return this.http.get<ChanelCatalog>('/api/chanels/' + id);
   }
 
 

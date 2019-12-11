@@ -1,8 +1,8 @@
-import {Catalog} from "../../../../modules/components/catalog/models/catalog";
+import {ChanelCatalog} from "../../../../modules/components/catalog/models/chanelCatalog";
 
 export class CatalogPage {
 
-content: Catalog[];
+content: ChanelCatalog[];
 totalPages: number;
 
   constructor(content,totalPages) {

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, TemplateRef} from '@angular/core';
-import {Catalog} from "../../../modules/components/catalog/models/catalog";
+import {ChanelCatalog} from "../../../modules/components/catalog/models/chanelCatalog";
 import {Subscription} from "rxjs";
 import {ChanelService} from "../../../services/chanel.service";
 import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
@@ -7,6 +7,9 @@ import {BsModalRef, BsModalService} from "ngx-bootstrap";
 import {NgbPaginationConfig} from "@ng-bootstrap/ng-bootstrap";
 import {CatalogPage} from "./pageBe/catalogPage";
 import {UserModel} from "../../../modules/components/common/nav-bar/models/user.model";
+import {SubscriptionOnChanel} from "../../../modules/components/active-chanels/subscription/subscriptionOnChanel";
+import {SubscriptionService} from "../../../services/subscription.service";
+import {StorageService} from "../../../services/security/storage.service";
 
 
 @Component({
@@ -19,17 +22,18 @@ import {UserModel} from "../../../modules/components/common/nav-bar/models/user.
 export class CardComponent implements OnInit {
 
   public editMode = false;
-  public catalogs: Catalog[];
-  public editableCatalog: Catalog = new Catalog();
+  public catalogs: ChanelCatalog[];
+  public editableCatalog: ChanelCatalog = new ChanelCatalog();
   private subscriptions: Subscription[] = [];
   private currentPage: number;
   private totalPages: number;
   private currentUser: UserModel;
-
   public modalRef: BsModalRef; //we need a variable to keep a reference of our modal. This is going to be used to close the modal.
 
   // Dependency injection for ChanelService into Chanel
   constructor(private chanelService: ChanelService,
+              private storageService: StorageService,
+              private subscriptionService: SubscriptionService,
               private loadingService: Ng4LoadingSpinnerService,
               private modalService: BsModalService,
               config: NgbPaginationConfig) {
@@ -46,11 +50,11 @@ export class CardComponent implements OnInit {
     this.modalRef.hide();
   }
 
-  public _openModal(template: TemplateRef<any>, catalog: Catalog): void {
+  public _openModal(template: TemplateRef<any>, catalog: ChanelCatalog): void {
 
     if (catalog) {
       this.editMode = true;
-      this.editableCatalog = Catalog.cloneBase(catalog);
+      this.editableCatalog = ChanelCatalog.cloneBase(catalog);
     } else {
       this.refreshCatalog();
       this.editMode = false;
@@ -82,7 +86,14 @@ export class CardComponent implements OnInit {
   public showPreviousPage() {
     this.currentPage--;
     this._updateChanels();
+    console.log(211)
   }
+
+
+
+
+
+
 
 
   public _deleteChanel(catalogId: string): void {
@@ -110,7 +121,7 @@ export class CardComponent implements OnInit {
   }
 
   private refreshCatalog(): void {
-    this.editableCatalog = new Catalog();
+    this.editableCatalog = new ChanelCatalog();
   }
 
   ngOnDestroy(): void {
