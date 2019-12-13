@@ -86,7 +86,6 @@ export class CardComponent implements OnInit {
   public showPreviousPage() {
     this.currentPage--;
     this._updateChanels();
-    console.log(211)
   }
 
 

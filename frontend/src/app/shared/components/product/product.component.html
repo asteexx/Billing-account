@@ -10,7 +10,7 @@
 <!--           [cardPrice]="price" className="sub_btn" >-->
 
 <!--  </app-btn>-->
-  <button type="button" class="btn btn-success" (click)="subscribeOnChanel()">Subscribe: {{price}}$</button>
+  <button type="button" class="btn btn-success" (click)="subscribeOnChanel()"  name="button">Subscribe: {{price}}$</button>
 
   <app-btn [text]="'X '"
            (click)="_deleteChanel(catalog.id)" className="delete_btn" class="close"><span

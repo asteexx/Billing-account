@@ -29,7 +29,7 @@
         <label class="mr-sm-2" for="inlineFormCustomSelect">Select role</label>
         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="roleSelect" required [(ngModel)]="user.role">
           <option selected disabled="Choose yours one">Choose yours one</option>
-          <option *ngFor="let role of roles" [ngValue]="role.name"> {{role.name}}</option>
+          <option *ngFor="let role of roles" [ngValue]="role.name" > {{role.name}}</option>
 <!--          <option [ngValue]="2"> Company</option>-->
 
         </select>

@@ -22,7 +22,9 @@ export class ProductComponent {
   // private subscriptionService: SubscriptionService ;
   public editableCatalog: ChanelCatalog = new ChanelCatalog();
 
-  constructor(private subscriptionService: SubscriptionService){}
+  constructor(private subscriptionService: SubscriptionService) {
+  }
+
   @Input()
   chanelName: string;
 
@@ -50,7 +52,7 @@ export class ProductComponent {
     this.subscriptionOnChanel.idSubscriber = idUser;
 
     this.subscriptionOnChanel.idChanel = idProduct;
-console.log(this.subscriptionOnChanel);
+    console.log(this.subscriptionOnChanel);
     this.subscriptions.push(this.subscriptionService.subscribeOnChanel(this.subscriptionOnChanel).subscribe(() => {
 
       this.refreshCatalog();
@@ -61,7 +63,13 @@ console.log(this.subscriptionOnChanel);
   private refreshCatalog(): void {
     this.editableCatalog = new ChanelCatalog();
   }
+
   public showSuccessForSubscription() {
+  }
+
+  public getUSerRole() {
+    let user = JSON.parse(localStorage.getItem("currentUser"));
+    let userRole = user.role;
   }
 
 }

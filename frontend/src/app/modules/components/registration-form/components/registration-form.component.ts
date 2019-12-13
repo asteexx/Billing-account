@@ -23,6 +23,15 @@ export class RegistrationFormComponent implements OnInit {
 
   public _addUser(): void {
     this.loadingService.show();
+
+    if (this.user.role =="COMPANY"){
+      this.user.idCompany === this.user.idUser;
+      this.subscriptions.push(this.userService.saveUser(this.user).subscribe(() => {
+        this.refreshUser()
+        this.loadingService.hide();
+        this.redirect()
+      }));
+    }
     this.subscriptions.push(this.userService.saveUser(this.user).subscribe(() => {
       this.refreshUser()
       this.loadingService.hide();

@@ -10,8 +10,8 @@ export class User {
   lastName: string;
   phoneNumber: number;
   adress: string;
-
- // private Collection<EWalletModel>eWalletsByIdUser;
+// eWallet: EWallet[] = [];
+  // private Collection<EWalletModel>eWalletsByIdUser;
 
   static cloneBase(user: User): User {
     const clonedUser: User = new User();
