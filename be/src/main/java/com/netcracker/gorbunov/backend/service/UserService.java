@@ -11,5 +11,4 @@ public interface UserService {
     Iterable<UsersEntity> getAllUsers();
     Optional<UsersEntity> findByLogin(String login);
     void deleteUser(Integer id);
-
 }

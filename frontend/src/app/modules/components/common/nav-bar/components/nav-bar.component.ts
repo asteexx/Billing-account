@@ -45,6 +45,7 @@ export class NavBarComponent implements OnInit {
   }
 
   public logout(): void {
+    window.location.href = '/home';
     this.storageService.clearToken();
     this.storageService.setCurrentUser(null);
   }

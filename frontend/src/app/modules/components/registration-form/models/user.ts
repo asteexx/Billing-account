@@ -1,3 +1,5 @@
+import {EWallet} from "../../balance/model/eWallet";
+
 export class User {
 
   idUser: number;
@@ -10,7 +12,8 @@ export class User {
   lastName: string;
   phoneNumber: number;
   adress: string;
-// eWallet: EWallet[] = [];
+  eWalletsByIdUser: EWallet[] = [];
+
   // private Collection<EWalletModel>eWalletsByIdUser;
 
   static cloneBase(user: User): User {
@@ -25,7 +28,7 @@ export class User {
     clonedUser.lastName = user.lastName;
     clonedUser.phoneNumber = user.phoneNumber;
     clonedUser.adress = user.adress;
-
+    clonedUser.eWalletsByIdUser = user.eWalletsByIdUser;
     return clonedUser;
   }
 }

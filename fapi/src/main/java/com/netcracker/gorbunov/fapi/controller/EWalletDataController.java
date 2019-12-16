@@ -26,7 +26,12 @@ public class EWalletDataController {
         if (eWalletViewModel != null) {
             return ResponseEntity.ok(eWalletDataService.saveWallet(eWalletViewModel));
         }
-        return null;
+        return ResponseEntity.notFound().build();
+    }
+    @GetMapping(value = "/{subscriber_id}")
+    public ResponseEntity<EWalletViewModel> getUsersEWallet(@PathVariable Integer subscriber_id) {
+        Integer userID = Integer.valueOf(subscriber_id);
+        return ResponseEntity.ok(eWalletDataService.getUsersEWallet(userID));
     }
 
 }

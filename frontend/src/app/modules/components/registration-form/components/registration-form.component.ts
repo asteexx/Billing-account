@@ -44,7 +44,7 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   public redirect(): void {
-    window.location.href = '/login';
+    window.location.href = '/home';
   }
 
   import() {

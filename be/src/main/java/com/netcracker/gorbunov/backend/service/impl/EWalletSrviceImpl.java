@@ -6,6 +6,8 @@ import com.netcracker.gorbunov.backend.service.EWalletService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class EWalletSrviceImpl implements EWalletService {
 
@@ -24,5 +26,10 @@ public class EWalletSrviceImpl implements EWalletService {
     @Override
     public Iterable<EWalletEntity> getAllWallets() {
         return eWalletRepository.findAll();
+    }
+
+    @Override
+    public Optional<EWalletEntity> findBySubscriberId(Integer subscriberId) {
+        return eWalletRepository.findBySubscriberId(subscriberId);
     }
 }

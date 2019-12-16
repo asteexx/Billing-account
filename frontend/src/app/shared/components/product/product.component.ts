@@ -1,10 +1,13 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, TemplateRef} from '@angular/core';
 import {SubscriptionOnChanel} from "../../../modules/components/active-chanels/subscription/subscriptionOnChanel";
 import {SubscriptionService} from "../../../services/subscription.service";
 import {Subscription} from "rxjs";
 import {UserModel} from "../../../modules/components/common/nav-bar/models/user.model";
 import {ChanelCatalog} from "../../../modules/components/catalog/models/chanelCatalog";
 import {ChanelService} from "../../../services/chanel.service";
+import {CatalogPage} from "../card/pageBe/catalogPage";
+import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
+import {BsModalRef, BsModalService} from "ngx-bootstrap";
 
 
 @Component({
@@ -17,12 +20,23 @@ import {ChanelService} from "../../../services/chanel.service";
 export class ProductComponent {
 
   public subscriptionOnChanel: SubscriptionOnChanel;
-  private subscriptions: Subscription[] = [];
-  private currentUser: UserModel;
-  // private subscriptionService: SubscriptionService ;
+  public editMode = false;
+  public catalogs: ChanelCatalog[];
   public editableCatalog: ChanelCatalog = new ChanelCatalog();
+  private subscriptions: Subscription[] = [];
+  private currentPage: number;
+  private currentUser: UserModel;
+  public modalRef: BsModalRef; //we need a variable to keep a reference of our modal. This is going to be used to close the modal.
+  private totalPages: number;
 
-  constructor(private subscriptionService: SubscriptionService) {
+  // private subscriptionService: SubscriptionService ;
+
+
+  constructor(private subscriptionService: SubscriptionService,
+               private loadingService: Ng4LoadingSpinnerService,
+              private chanelService: ChanelService,
+                private modalService: BsModalService,
+  ) {
   }
 
   @Input()
@@ -71,5 +85,7 @@ export class ProductComponent {
     let user = JSON.parse(localStorage.getItem("currentUser"));
     let userRole = user.role;
   }
+
+
 
 }

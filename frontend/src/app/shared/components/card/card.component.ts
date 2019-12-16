@@ -46,6 +46,59 @@ export class CardComponent implements OnInit {
     this.loadChanels(this.currentPage);
   }
 
+
+  private loadChanels(currentPage: number): void {
+    this.loadingService.show();
+    // Get data from BillingAccountService
+    this.subscriptions.push(this.chanelService.getAllChanels(currentPage).subscribe(page => {
+      // Parse json response into local array
+      let catalogPage: CatalogPage;
+      catalogPage = page as CatalogPage;
+      this.catalogs = catalogPage.content;
+      this.totalPages = catalogPage.totalPages;
+      // Check data in console
+      console.log(this.catalogs);// don't use console.log in angular :)
+      this.loadingService.hide();
+    }));
+  }
+
+  public showNextPage() {
+    this.currentPage++;
+    this._updateChanels();
+  }
+
+  public showPreviousPage() {
+    this.currentPage--;
+    this._updateChanels();
+  }
+
+
+  public _updateChanels(): void {
+    this.loadChanels(this.currentPage);
+  }
+
+
+  public _deleteChanel(catalogId: string): void {
+    this.loadingService.show();
+    this.subscriptions.push(this.chanelService.deleteChanel(catalogId).subscribe(() => {
+      this._updateChanels();
+    }));
+  }
+
+
+  public _addChanel(): void {
+    this.loadingService.show();
+    console.log(1111);
+    console.log(this.editableCatalog);
+    this.subscriptions.push(this.chanelService.saveChanel(this.editableCatalog).subscribe(() => {
+      this._updateChanels();
+      this.refreshCatalog();
+      this._closeModal();
+      this.loadingService.hide();
+
+    }));
+  }
+
   public _closeModal(): void {
     this.modalRef.hide();
   }
@@ -63,62 +116,6 @@ export class CardComponent implements OnInit {
     this.modalRef = this.modalService.show(template); // and when the user clicks on the button to open the popup
                                                       // we keep the modal reference and pass the template local name to the modalService.
   }
-
-  private loadChanels(currentPage: number): void {
-    this.loadingService.show();
-    // Get data from BillingAccountService
-    this.subscriptions.push(this.chanelService.getAllChanels(currentPage).subscribe(page => {
-      // Parse json response into local array
-     let catalogPage: CatalogPage;
-     catalogPage =  page as CatalogPage;
-      this.catalogs = catalogPage.content;
-      this.totalPages = catalogPage.totalPages;
-      // Check data in console
-      console.log(this.catalogs);// don't use console.log in angular :)
-      this.loadingService.hide();
-    }));
-  }
-
-  public showNextPage() {
-   this.currentPage++;
-    this._updateChanels();
-  }
-  public showPreviousPage() {
-    this.currentPage--;
-    this._updateChanels();
-  }
-
-
-
-
-
-
-
-
-  public _deleteChanel(catalogId: string): void {
-    this.loadingService.show();
-    this.subscriptions.push(this.chanelService.deleteChanel(catalogId).subscribe(() => {
-      this._updateChanels();
-    }));
-  }
-
-  public _updateChanels(): void {
-    this.loadChanels(this.currentPage);
-  }
-
-  public _addChanel(): void {
-    this.loadingService.show();
-    console.log(1111);
-    console.log(this.editableCatalog);
-    this.subscriptions.push(this.chanelService.saveChanel(this.editableCatalog).subscribe(() => {
-      this._updateChanels();
-      this.refreshCatalog();
-      this._closeModal();
-      this.loadingService.hide();
-
-    }));
-  }
-
   private refreshCatalog(): void {
     this.editableCatalog = new ChanelCatalog();
   }

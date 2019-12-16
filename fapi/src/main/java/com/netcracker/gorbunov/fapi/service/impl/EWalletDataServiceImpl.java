@@ -29,4 +29,11 @@ public class EWalletDataServiceImpl implements EWalletDataService {
         return restTemplate.postForEntity(backendServerUrl + "/api/e-wallet/add", eWalletViewModel, EWalletViewModel.class).getBody();
 
     }
+
+    @Override
+    public EWalletViewModel getUsersEWallet(Integer subscriberID) {
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.getForObject(backendServerUrl + "/api/e-wallet/" + subscriberID, EWalletViewModel.class);
+
+    }
 }
