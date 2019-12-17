@@ -12,4 +12,8 @@ public interface SubscriptionService {
     Iterable<SubscribersOnChanelEntity> getAllSubscriptions();
 
     void unsubscribe(Integer idChanel, Integer idSubscriber);
+
+    void getChanelOwnerByIdChanel(Integer idChanel);
+
+    void getUserEntityByIdSubscriber(Integer idSubscriber);
 }

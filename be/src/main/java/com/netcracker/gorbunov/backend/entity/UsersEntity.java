@@ -16,9 +16,10 @@ public class UsersEntity {
     private String login;
     private String eMail;
     private String password;
-    @Enumerated(EnumType.STRING)
 
+    @Enumerated(EnumType.STRING)
     private Role role;
+
     private Integer idCompany;
     private String firstName;
     private String lastName;
