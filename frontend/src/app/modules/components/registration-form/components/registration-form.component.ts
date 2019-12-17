@@ -36,6 +36,7 @@ export class RegistrationFormComponent implements OnInit {
       this.refreshUser()
       this.loadingService.hide();
       this.redirect()
+
     }));
   }
 

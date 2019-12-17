@@ -27,14 +27,13 @@ export class BalanceComponent implements OnInit {
   addedMoney: number;
 
 
-
   constructor(private storageService: StorageService,
               private  eWalletService: EWalletService,
   ) {
   }
 
   ngOnInit() {
-
+    this.showBalance()
   }
 
   @Input()
@@ -60,35 +59,28 @@ export class BalanceComponent implements OnInit {
   //   };
   // }
 
-  public showBalance () {
+  public showBalance() {
     let user = JSON.parse(localStorage.getItem("currentUser"));
-    // console.log(user)
-    // if()
+
     let eWalletByIdUser = this.eWalletService.getUsersWallet(user.idUser);
+
+    eWalletByIdUser.subscribe(eWalletByIdUser => {
+      let activeMoney = eWalletByIdUser.moneyAmmount
+      this.moneyAmount = activeMoney;
+      this.ngOnDestroy()
+    });
+
+       //    бесконечно отправляются запросы //
 
     // let eWalletsByIdUser = user.eWalletsByIdUser[0];
     // this.editableEWallet = EWallet.cloneBase(eWalletsByIdUser);
+    //
+    //
+    // let activeMoney = eWalletsByIdUser.map(a => a.moneyAmmount);
+    // let strMoney = activeMoney.toString();
+    // this.moneyAmount = strMoney;
 
-
-    eWalletByIdUser.subscribe(eWalletByIdUser => {
-
-        let activeMoney = eWalletByIdUser.moneyAmmount
-//       let strMoney = activeMoney.toString();
-// //      // console.log(strMoney);
-        this.moneyAmount = activeMoney;
-    });
-
-    }
-
-    // console.log(eWalletsByIdUser)
-//
-//     let money = eWalletsByIdUser.map(a => a.moneyAmmount);
-// // console.log(money);
-//      let strMoney = activeMoney.toString();
-// //      // console.log(strMoney);
-//      this.moneyAmount = strMoney;
-
-
+  }
 
   public addMoney() {
     let user: User = JSON.parse(localStorage.getItem("currentUser"));
@@ -128,7 +120,9 @@ export class BalanceComponent implements OnInit {
   //   return this.addedMoney;
   //
   // }
-
+  ngOnDestroy(): void {
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
+  }
 
 }
 
