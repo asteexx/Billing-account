@@ -4,7 +4,7 @@ import {SharedModule} from "../../../../shared/shared.module";
 import {StorageService} from "../../../../services/security/storage.service";
 import {UserService} from "../../../../services/security/user-service";
 import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 
 
@@ -16,7 +16,8 @@ import {CommonModule} from "@angular/common";
     SharedModule,
     HttpClientModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [UserService, StorageService],
   exports: [NavBarComponent]

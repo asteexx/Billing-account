@@ -10,11 +10,13 @@
 <!--           [cardPrice]="price" className="sub_btn" >-->
 
 <!--  </app-btn>-->
-  <button type="button" class="btn btn-success" (click)="subscribeOnChanel()"  name="button">Subscribe: {{price}}$</button>
+  <button type="button" class="btn btn-success" data-container="body" data-toggle="popover" title="Success!" data-content="You are now subscribed!"
+          (click)="subscribeOnChanel()"  name="button"*ngIf="userRole!=='COMPANY'"
+          >Subscribe: {{price}}$</button>
 
 </div>
 
-<div class="alert alert-success" role="alert" id="alertMessage">
-  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-  Subscribed!
-</div>
+<!--<div class="alert alert-success" role="alert" id="alertMessage"aria-disabled="true">-->
+<!--  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>-->
+<!--  Subscribed!-->
+<!--</div>-->

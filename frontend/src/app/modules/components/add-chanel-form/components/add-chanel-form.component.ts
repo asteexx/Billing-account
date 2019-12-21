@@ -1,10 +1,12 @@
-import {Component, OnInit, TemplateRef} from '@angular/core';
+import {Component, Input, OnInit, TemplateRef} from '@angular/core';
 import {ChanelCatalog} from "../../catalog/models/chanelCatalog";
 import {BsModalRef, BsModalService} from "ngx-bootstrap";
 import {Subscription} from "rxjs";
 import {ChanelService} from "../../../../services/chanel.service";
 import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
 import {CatalogPage} from "../../../../shared/components/card/pageBe/catalogPage";
+import {CompanyService} from "../../../../services/companyService";
+import {copyAnimationEvent} from "@angular/animations/browser/src/render/shared";
 
 
 @Component({
@@ -23,13 +25,23 @@ export class AddChanelFormComponent implements OnInit {
 
   // Dependency injection for ChanelService into Chanel
   constructor(private chanelService: ChanelService,
+              private companyService: CompanyService,
               private loadingService: Ng4LoadingSpinnerService,
               private modalService: BsModalService) { //to show the modal, we also need the ngx-bootstrap service
   }
 
+  @Input()
+  userRole: string;
+
   // Calls on component init
   ngOnInit() {
     this.loadChanels(this.page);
+    this.getUSerRole();
+  }
+
+  public getUSerRole() {
+    let user = JSON.parse(localStorage.getItem("currentUser"));
+    this.userRole = user.role;
   }
 
   private _closeModal(): void {
@@ -51,6 +63,16 @@ export class AddChanelFormComponent implements OnInit {
 
   public _addChanel(): void {
     this.loadingService.show();
+    let user = JSON.parse(localStorage.getItem("currentUser"));
+    this.editableCatalog.owner = user.idCompany;
+
+    let activeCompany = this.companyService.getCompanyById(user.idCompany);
+    activeCompany.subscribe(activeCompany => {
+      let companiesByOwnerFromCompany = activeCompany.name;
+      this.editableCatalog.companiesByOwner = companiesByOwnerFromCompany;
+      this.ngOnDestroy()
+    });
+
     this.subscriptions.push(this.chanelService.saveChanel(this.editableCatalog).subscribe(() => {
       this._updateChanels();
       this.refreshCatalog();
@@ -74,7 +96,7 @@ export class AddChanelFormComponent implements OnInit {
     this.subscriptions.push(this.chanelService.getAllChanels(currentPage).subscribe(page => {
       // Parse json response into local array
       let catalogPage: CatalogPage;
-      catalogPage =  page as CatalogPage;
+      catalogPage = page as CatalogPage;
       this.catalogs = catalogPage.content;
       this.totalPages = catalogPage.totalPages;
       // Check data in console

@@ -1,6 +1,6 @@
 
 export class Company{
-  id: string;
+  idCompany: number;
   name: string;
   shortDescription: string;
   moneyOnBankAccount: number;
@@ -10,7 +10,7 @@ export class Company{
     console.log(catalog);
 
     const clonedCompany: Company = new Company();
-    clonedCompany.id = catalog.id;
+    clonedCompany.idCompany = catalog.idCompany;
     clonedCompany.name = catalog.name;
     clonedCompany.moneyOnBankAccount = catalog.moneyOnBankAccount;
     clonedCompany.shortDescription = catalog.shortDescription;

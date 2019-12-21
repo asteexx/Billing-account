@@ -1,7 +1,7 @@
 export class ChanelCatalog {
   id: string;
   chanelName: string;
-  owner: string;
+  owner: number;
   price: string;
   smallDiscription: string;
   category: string;

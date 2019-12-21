@@ -1,6 +1,6 @@
 <div class="col">
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-          (click)="_openModal(template)">
+          (click)="_openModal(template)" *ngIf="userRole==='COMPANY'">
     Create new chanel
   </button>
 </div>
@@ -22,7 +22,7 @@
 
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-default" (click)="_addChanel()">
+    <button type="button" class="btn btn-default" (click)="_addChanel()" >
       {{editMode ? "Save" : "Create"}}
     </button>
     <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="_closeModal()">Close</button>

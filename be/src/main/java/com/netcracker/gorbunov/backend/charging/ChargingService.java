@@ -86,8 +86,10 @@ public class ChargingService {
         }
 
     }
+   @Scheduled(cron = "0 35 3 18 * ?") //0 15 10 ? * *	Fire at 10:15 AM every day
+   // charge at 03:35  on the 18 day of every month;
 
-    @Scheduled(fixedDelay = 10000)
+//    @Scheduled(fixedDelay = 10000) // charge every 10 sec
     public void doSmth() {
 
         this.moneyTransfer();

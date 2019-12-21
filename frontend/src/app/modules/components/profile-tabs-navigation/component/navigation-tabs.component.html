@@ -1,6 +1,6 @@
 <nav>
   <div class="nav nav-tabs">
-    <li [class.active]="linkView==='personal'" class="profile-tabs"><a (click)="linkView='personal'">Personal Information</a></li>
+<!--    <li [class.active]="linkView==='personal'" class="profile-tabs"><a (click)="linkView='personal'">Personal Information</a></li>-->
     <li [class.active]="linkView==='chanels'"class="profile-tabs"><a (click)="linkView='chanels'">Chanels</a></li>
     <li [class.active]="linkView==='balance'"class="profile-tabs"><a (click)="linkView='balance'">Balance</a></li>
 <!--    <li [class.active]="linkView==='registration'"class="profile-tabs"><a (click)="linkView='registration'">Admin Registration</a></li>-->
@@ -9,11 +9,11 @@
 
 
 <div [ngSwitch]="linkView">
-  <div *ngSwitchCase="'personal'">
+<!--  <div *ngSwitchCase="'personal'">-->
 
-    <app-personal></app-personal>
+<!--    <app-personal></app-personal>-->
 
-  </div>
+<!--  </div>-->
   <div *ngSwitchCase="'chanels'">
 
     <div class="tab-pane " id="chanels" role="tabpanel" aria-labelledby="chanels-tab">

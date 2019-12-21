@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, TemplateRef} from '@angular/core';
+import {Component, OnInit, TemplateRef} from '@angular/core';
 import {ChanelCatalog} from "../../../modules/components/catalog/models/chanelCatalog";
 import {Subscription} from "rxjs";
 import {ChanelService} from "../../../services/chanel.service";
@@ -7,7 +7,6 @@ import {BsModalRef, BsModalService} from "ngx-bootstrap";
 import {NgbPaginationConfig} from "@ng-bootstrap/ng-bootstrap";
 import {CatalogPage} from "./pageBe/catalogPage";
 import {UserModel} from "../../../modules/components/common/nav-bar/models/user.model";
-import {SubscriptionOnChanel} from "../../../modules/components/active-chanels/subscription/subscriptionOnChanel";
 import {SubscriptionService} from "../../../services/subscription.service";
 import {StorageService} from "../../../services/security/storage.service";
 
@@ -16,7 +15,7 @@ import {StorageService} from "../../../services/security/storage.service";
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css'],
-  providers: [NgbPaginationConfig] // add NgbPaginationConfig to the component providers
+  providers: [NgbPaginationConfig]
 
 })
 export class CardComponent implements OnInit {

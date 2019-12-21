@@ -1,4 +1,4 @@
-import {Component, Input, TemplateRef} from '@angular/core';
+import {Component, Input, OnInit, TemplateRef} from '@angular/core';
 import {SubscriptionOnChanel} from "../../../modules/components/active-chanels/subscription/subscriptionOnChanel";
 import {SubscriptionService} from "../../../services/subscription.service";
 import {Subscription} from "rxjs";
@@ -17,7 +17,7 @@ import {BsModalRef, BsModalService} from "ngx-bootstrap";
   providers: []
 
 })
-export class ProductComponent {
+export class ProductComponent  implements OnInit{
 
   public subscriptionOnChanel: SubscriptionOnChanel;
   public editMode = false;
@@ -53,6 +53,12 @@ export class ProductComponent {
 
   @Input()
   companiesByOwner: string;
+  @Input()
+  userRole: string;
+
+  ngOnInit(): void {
+    this.getUSerRole();
+  }
 
   public subscribeOnChanel() {
 
@@ -81,9 +87,10 @@ export class ProductComponent {
   public showSuccessForSubscription() {
   }
 
+
   public getUSerRole() {
     let user = JSON.parse(localStorage.getItem("currentUser"));
-    let userRole = user.role;
+    this.userRole = user.role;
   }
 
 

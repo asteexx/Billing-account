@@ -1,7 +1,13 @@
 package com.netcracker.gorbunov.backend.entity;
 
 
+import com.sun.istack.internal.NotNull;
+import org.aspectj.bridge.IMessage;
+import org.aspectj.bridge.IMessageContext;
+
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Objects;
@@ -37,6 +43,7 @@ public class UsersEntity {
         this.idUser = idUser;
     }
 
+    @NotBlank(message = "Login can not be null")
     @Basic
     @Column(name = "login")
     public String getLogin() {
@@ -47,6 +54,8 @@ public class UsersEntity {
         this.login = login;
     }
 
+    @Email(message = "Email should be valid")
+    @NotBlank(message = "Email can not be null")
     @Basic
     @Column(name = "e_mail")
     public String geteMail() {
@@ -57,6 +66,7 @@ public class UsersEntity {
         this.eMail = eMail;
     }
 
+    @NotBlank(message = "Password can not be null")
     @Basic
     @Column(name = "password")
     public String getPassword() {
@@ -67,7 +77,7 @@ public class UsersEntity {
         this.password = password;
     }
 
-
+    @NotNull
     @Basic
     @Column(name = "role")
     @Enumerated(EnumType.STRING)

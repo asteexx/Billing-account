@@ -2,18 +2,32 @@
 <h3>Your balance: {{moneyAmount}}$<span class="badge badge-secondary"></span></h3>
 
 
-
-
 <div class="card" style="width: 18rem;">
   <form>
-  <div class="card-body">
-    <h5 class="card-title">Here you can add some money</h5>
+    <div class="card-body">
+      <h5 class="card-title">Here you can add some money</h5>
 
-    <input type="number" min="1" max="1000" class="form-control" placeholder="Input ammount" [(ngModel)]="addedMoney" name="addedMoney">
-    <app-btn [text]="'Add'" (click)="addMoney()"></app-btn>
+      <input type="number" min="1" max="1000" class="form-control" placeholder="Input ammount" [(ngModel)]="addedMoney"
+             name="addedMoney">
+      <app-btn [text]="'Add'" (click)="addMoney()"></app-btn>
 
 
-  </div>
+    </div>
   </form>
 </div>
 
+
+<app-btn id="button" [text]="'Create Wallet'" (click)="createWallet()">
+
+</app-btn>
+
+<!--<script>-->
+<!--    function myFunction() {-->
+<!--        var x = document.getElementById("button");-->
+<!--        if (x.style.display === "none") {-->
+<!--            x.style.display = "block";-->
+<!--        } else {-->
+<!--            x.style.display = "none";-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->

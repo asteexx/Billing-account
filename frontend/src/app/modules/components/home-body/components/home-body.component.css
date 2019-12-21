@@ -1,1 +1,80 @@
+element.style {
+  min-height: 285px;
+}
 
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+  display: block;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+user agent stylesheet
+section {
+  display: block;
+}
+body {
+  background: black;
+  font-family: "Titillium Web", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+}
+
+p{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 19px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color:rgba(255,255,255, 0.5);
+}
+.body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+body {
+  font-size: 1em;
+  line-height: 1.5;
+}
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #000;
+}
+html {
+
+  -webkit-tap-highlight-color: transparent;
+}
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+html, button, input, select, textarea {
+  font-family: sans-serif;
+}
+html {
+  font-size: 100%;
+  background: #fff;
+  color: #000;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+user agent stylesheet
+html {
+  color: -internal-root-color;
+}
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}

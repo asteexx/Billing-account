@@ -3,6 +3,7 @@ import {LoginModel} from "../models/login.model";
 import {StorageService} from "../../../../../services/security/storage.service";
 import {AuthToken, UserService} from "../../../../../services/security/user-service";
 import {UserModel} from "../models/user.model";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: "app-nav-bar",
@@ -14,6 +15,11 @@ export class NavBarComponent implements OnInit {
   public loginModel: LoginModel = {};
   public showCheckYourSetDataAlert: boolean = false;
 
+  registerForm: FormGroup = new FormGroup({
+    "login": new FormControl("", Validators.required),
+    "password": new FormControl("", Validators.required),
+  });
+
   constructor(private storageService: StorageService,
               private userService: UserService) {
   }
@@ -21,7 +27,7 @@ export class NavBarComponent implements OnInit {
   ngOnInit() {
   }
 
-  public onSubmit(): void {
+  public onSubmit(loginModel: LoginModel): void {
     this.userService.generateToken(this.loginModel)
       .subscribe((authToken: AuthToken) => {
         if (authToken.token) {

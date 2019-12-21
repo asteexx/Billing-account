@@ -11,24 +11,26 @@ import {BsModalRef, BsModalService} from "ngx-bootstrap";
 import {EWalletService} from "../../../../services/eWallet.service";
 import {Subscription} from "rxjs";
 import {CatalogPage} from "../../../../shared/components/card/pageBe/catalogPage";
+import {CompanyService} from "../../../../services/companyService";
 
 @Component({
   selector: 'app-balance',
   templateUrl: './balance.component.html',
-  styleUrls: ['./balance.component.css']
+  styleUrls: ['./balance.component.css'],
+
 })
 export class BalanceComponent implements OnInit {
-  public companies: Company[];
-  private currentUser: UserModel;
-  private company: Company;
+  public usssser: User = new User();
+  public activeUser: User = new User();
   public eWallet: EWallet;
   public editableEWallet: EWallet = new EWallet();
   private subscriptions: Subscription[] = [];
   addedMoney: number;
 
-
   constructor(private storageService: StorageService,
               private  eWalletService: EWalletService,
+              private  companyService: CompanyService,
+              private  userService: UserService,
   ) {
   }
 
@@ -38,7 +40,8 @@ export class BalanceComponent implements OnInit {
 
   @Input()
   moneyAmount: number;
-
+  @Input()
+  easy_click: any;
 
   private loadWallets(): void {
     this.subscriptions.push(this.eWalletService.getAllWallets().subscribe(() => {
@@ -47,79 +50,56 @@ export class BalanceComponent implements OnInit {
     }));
   }
 
-
-  // public  function once(fn, context) {
-  //   var result;
-  //   return function() {
-  //     if (fn) {
-  //       result = fn.apply(context || this, arguments);
-  //       fn = null;
-  //     }
-  //     return result;
-  //   };
-  // }
-
   public showBalance() {
     let user = JSON.parse(localStorage.getItem("currentUser"));
+    if (user.role == "COMPANY") {
+      let activeCompany = this.companyService.getCompanyById(user.idCompany);
+      activeCompany.subscribe(activeCompany => {
+        let shownMoneyAmmount = activeCompany.moneyOnBankAccount
+        this.moneyAmount = shownMoneyAmmount;
+        this.ngOnDestroy()
+      })
+    } else {
+      let eWalletByIdUser = this.eWalletService.getUsersWallet(user.idUser);
 
-    let eWalletByIdUser = this.eWalletService.getUsersWallet(user.idUser);
+      eWalletByIdUser.subscribe(eWalletByIdUser => {
+        let activeMoney = eWalletByIdUser.moneyAmmount
+        this.moneyAmount = activeMoney;
+        this.ngOnDestroy()
+      });
 
-    eWalletByIdUser.subscribe(eWalletByIdUser => {
-      let activeMoney = eWalletByIdUser.moneyAmmount
-      this.moneyAmount = activeMoney;
-      this.ngOnDestroy()
-    });
-
-       //    бесконечно отправляются запросы //
-
-    // let eWalletsByIdUser = user.eWalletsByIdUser[0];
-    // this.editableEWallet = EWallet.cloneBase(eWalletsByIdUser);
-    //
-    //
-    // let activeMoney = eWalletsByIdUser.map(a => a.moneyAmmount);
-    // let strMoney = activeMoney.toString();
-    // this.moneyAmount = strMoney;
-
+    }
   }
 
   public addMoney() {
     let user: User = JSON.parse(localStorage.getItem("currentUser"));
-    // console.log(user)
-    // if()
     let eWalletsByIdUser = user.eWalletsByIdUser[0];
-
-    // let userWallet = this.eWalletService.getUsersWallet(userId)
-    // this.editableEWallet = EWallet.cloneBase(userWallet);
-    //  console.log(userWallet);
-    // let user = JSON.parse(localStorage.getItem("currentUser"));
-    // let wallet: EWallet = new EWallet();
-
     let ammount = +this.addedMoney;
-    console.log(ammount);
     let edittedMoneyAmmount = +this.moneyAmount;
-    console.log(edittedMoneyAmmount);
     let newMoneyAmmount = edittedMoneyAmmount + ammount;
-    console.log(newMoneyAmmount);
-
-    // wallet = user.eWalletsByIdUser;
-    // this.editableEWallet = EWallet.cloneBase(userWallet);
-// let stringWallet = JSON.stringify(wallet);
-//     console.log(stringWallet);
     this.editableEWallet = EWallet.cloneBase(eWalletsByIdUser);
+    this.editableEWallet.id = eWalletsByIdUser.id;
+    this.editableEWallet.subscriberId = eWalletsByIdUser.subscriberId;
     this.editableEWallet.moneyAmmount = newMoneyAmmount;
     this.subscriptions.push(this.eWalletService.saveWallet(this.editableEWallet).subscribe((eWallet) => {
       user.eWalletsByIdUser[0] = eWallet;
       this.storageService.setUser(user);
-      // localStorage.setItem("currentUser", user);
     }));
   }
 
-  getUsersWallet
-  // onSubmit() {
-  //   console.log(this.addedMoney);
-  //   return this.addedMoney;
-  //
-  // }
+  public createWallet() {
+    let user: User = JSON.parse(localStorage.getItem("currentUser"));
+    let userId = user.idUser;
+    this.editableEWallet.id = userId;
+    this.editableEWallet.subscriberId = userId;
+    this.editableEWallet.moneyAmmount = 0;
+    this.subscriptions.push(this.eWalletService.saveWallet(this.editableEWallet).subscribe(() => {
+        this.activeUser = User.cloneBase(user);
+        this.activeUser.eWalletsByIdUser[0] = this.editableEWallet;
+      this.storageService.setUser(user);
+    }));
+  }
+
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }

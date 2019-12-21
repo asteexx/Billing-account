@@ -29,6 +29,7 @@ import {UserService} from "./services/security/user-service";
 import {APIInterceptor} from "./interceptors/api-interceptor";
 import {SubscriptionService} from "./services/subscription.service";
 import {EWalletService} from "./services/eWallet.service";
+import {CompanyService} from "./services/companyService";
 
 
 
@@ -63,7 +64,7 @@ const appRoutes: Routes = [
     SharedModule,
 
   ],
-  providers: [UserService, SubscriptionService, EWalletService,
+  providers: [UserService, SubscriptionService, EWalletService, CompanyService,
     APIInterceptor, {
 
     provide: HTTP_INTERCEPTORS,

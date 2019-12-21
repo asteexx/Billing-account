@@ -4,13 +4,16 @@ import com.netcracker.gorbunov.backend.entity.UsersEntity;
 import com.netcracker.gorbunov.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
-public class UserController {
+public class UserController implements WebMvcConfigurer {
     private UserService userService;
 
     @Autowired
@@ -29,7 +32,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/login/{login}")
-    public ResponseEntity<UsersEntity> getUserByLogin(@PathVariable(name = "login") String login) {
+    public ResponseEntity<UsersEntity> getUserByLogin( @PathVariable(name = "login") String login) {
         Optional<UsersEntity> usersEntity = userService.findByLogin(login);
         if (usersEntity.isPresent()) {
             return ResponseEntity.ok(usersEntity.get());
@@ -44,7 +47,10 @@ public class UserController {
     }
 
     @PostMapping(("/signup"))
-    public UsersEntity saveUser(@RequestBody UsersEntity usersEntity) {
+    public UsersEntity saveUser( @RequestBody UsersEntity usersEntity) {
+
+
+
         return userService.saveUser(usersEntity);
     }
 

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import {RegistrationFormComponent} from "./components/registration-form.component";
 import {SharedModule} from "../../../shared/shared.module";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserModule} from "@angular/platform-browser";
 
 @NgModule({
@@ -11,7 +11,8 @@ RegistrationFormComponent
   imports: [
     SharedModule,
     FormsModule,
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
 
   ],
 providers: [],

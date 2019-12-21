@@ -1,50 +1,65 @@
 <body>
-<form>
-  <input type="text" class="form-control" name="bg" placeholder="Input login" [(ngModel)]="user.login" #login="ngModel" required>
-  <input type="text" class="form-control" name="bg" placeholder="Input E-mail" [(ngModel)]="user.eMail"#eMail="ngModel" required>
-  <input type="text" class="form-control" name="bg" placeholder="Input password" [(ngModel)]="user.password"#password="ngModel" required>
+<form [formGroup]="registerForm"
+      (ngSubmit)="_addUser(this.user)">
+  <input type="text" class="form-control" name="bg" placeholder="Input login" [(ngModel)]="user.login" formControlName="login"
+          required>
+  <div class="alert alert-danger"
+       *ngIf="registerForm.controls['login'].invalid && registerForm.controls['login'].touched">
+    Enter your login correctly
+  </div>
 
-<!--    <app-input [inputLabel]="'Name'"-->
-<!--               [placeholder]="'Please enter your name'" [(ngModel)]="editableCatalog.login" #login="ngModel" required>-->
-<!--    </app-input>-->
+  <input type="email" class="form-control" name="bg" placeholder="Input E-mail" [(ngModel)]="user.eMail"
+         formControlName="email"  required>
+  <div class="alert alert-danger"
+       *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched">
+    Please check your email!
+  </div>
 
-<!--  <app-input [inputLabel]="'Email'"-->
-<!--             [placeholder]="'Please enter your email'" type="email"[(ngModel)]="editableCatalog.eMail" #eMail="ngModel" required>-->
-<!--  </app-input>-->
-
-<!--  <app-input [inputLabel]="'Password'"-->
-<!--             [placeholder]="'Password'" type="password"[(ngModel)]="editableCatalog.password" #password="ngModel" required>-->
-<!--  </app-input>-->
-
-
-
-<!--  <app-input [inputLabel]="'Confirm password'"-->
-<!--             [placeholder]="'confirm password'" type="password"[(ngModel)]="editableCatalog.password" #password="ngModel" required>-->
-<!--  </app-input>-->
+  <input type="password" class="form-control" name="bg" placeholder="Input password" [(ngModel)]="user.password"
+         formControlName="password"  required>
+  <div class="alert alert-danger"
+       *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">
+    Enter your password!
+  </div>
 
 
   <fieldset class="form-group">
     <div class="form-row align-items-center">
       <div class="col-auto my-1">
         <label class="mr-sm-2" for="inlineFormCustomSelect">Select role</label>
-        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="roleSelect" required [(ngModel)]="user.role">
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="roleSelect" formControlName="role" required
+                [(ngModel)]="user.role">
           <option selected disabled="Choose yours one">Choose yours one</option>
-          <option *ngFor="let role of roles" [ngValue]="role.name" > {{role.name}}</option>
-<!--          <option [ngValue]="2"> Company</option>-->
+          <option *ngFor="let role of roles" [ngValue]="role.name"> {{role.name}}</option>
+          <!--          <option [ngValue]="2"> Company</option>-->
 
         </select>
       </div>
     </div>
   </fieldset>
 
+  <fieldset class="form-group">
+    <div class="form-row align-items-center">
+      <div class="col-auto my-1">
+        <label class="mr-sm-2" for="inlineFormCustomSelect">Select company</label>
+        <select class="custom-select mr-sm-2" id="inlineCompanySelect" name="companySelect" formControlName="company" required
+                [(ngModel)]="user.idCompany">
+          <option selected disabled="Choose yours one">Choose yours one</option>
+          <option *ngFor="let company of companies" [ngValue]="company.idCompany"> {{company.name}}</option>
+          <!--          <option [ngValue]="2"> Company</option>-->
 
+        </select>
+      </div>
+    </div>
+  </fieldset>
 
   <div class="container">
     <app-btn [type]="'submit'" [ngClass]="'btn btn-dark btn-block'"
-             (click)="_addUser()"
-             [disabled]="login.invalid|| password.invalid || eMail.invalid"
-             [text]="'Sign up'" ></app-btn>
+
+             [disabled]="!registerForm.valid"
+             [text]="'Sign up'"></app-btn>
   </div>
 
 </form>
 </body>
+<!--(click)="_addUser(this.user)"-->

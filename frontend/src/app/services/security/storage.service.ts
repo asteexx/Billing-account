@@ -24,6 +24,10 @@ export class StorageService {
     localStorage.setItem(this.CURRENT_USER, JSON.stringify(currentUser));
   }
 
+  public getUser(): User {
+    return this.currentUser || JSON.parse(localStorage.getItem(this.CURRENT_USER));
+  }
+
   public getCurrentUser(): UserModel {
     return this.currentUser || JSON.parse(localStorage.getItem(this.CURRENT_USER));
   }
