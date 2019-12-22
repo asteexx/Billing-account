@@ -5,6 +5,12 @@
   text-decoration: #742E37;}
 p, h1{
   text-align: center;
+  font-family: fantasy;
+  font-weight: 300;
 }
 
 
+.display-4{
+  font-family: fantasy;
+  font-weight: 300;
+}

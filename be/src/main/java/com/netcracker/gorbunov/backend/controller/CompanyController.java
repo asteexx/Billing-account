@@ -34,7 +34,7 @@ public class CompanyController {
         return companyService.getAllCompanies();
     }
 
-    @PostMapping()
+    @PostMapping(value = "/add")
     public CompaniesEntity saveCompany(@RequestBody CompaniesEntity companiesEntity) {
         return companyService.saveCompany(companiesEntity);
     }

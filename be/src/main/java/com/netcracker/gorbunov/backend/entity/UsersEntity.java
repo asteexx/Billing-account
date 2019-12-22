@@ -1,13 +1,11 @@
 package com.netcracker.gorbunov.backend.entity;
 
 
-import com.sun.istack.internal.NotNull;
-import org.aspectj.bridge.IMessage;
-import org.aspectj.bridge.IMessageContext;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Objects;

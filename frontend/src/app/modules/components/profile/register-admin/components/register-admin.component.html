@@ -1,22 +1,27 @@
-<form>
+<body>
+<form [formGroup]="registerForm"
+      (ngSubmit)="createCompany(this.company)">
+  <input type="text" class="form-control" name="bg" placeholder="Input login" [(ngModel)]="company.name" formControlName="name"
+         required>
+  <div class="alert alert-danger"
+       *ngIf="registerForm.controls['name'].invalid && registerForm.controls['name'].touched">
+    Enter your login correctly
+  </div>
 
-  <app-input [inputLabel]="'Name'"
-             [placeholder]="'Please enter your name'" >
-  </app-input>
-
-  <app-input [inputLabel]="'Email'"
-             [placeholder]="'Please enter your email'" type="email">
-  </app-input>
-
-  <app-input [inputLabel]="'Password'"
-             [placeholder]="'Password'" type="password">
-  </app-input>
+  <input type="email" class="form-control" name="bg" placeholder="Input E-mail" [(ngModel)]="company.shortDescription"
+         formControlName="description"  required>
+  <div class="alert alert-danger"
+       *ngIf="registerForm.controls['description'].invalid && registerForm.controls['description'].touched">
+    Please check your email!
+  </div>
 
 
+  <div class="container">
+    <app-btn [type]="'submit'" [ngClass]="'btn btn-dark btn-block'"
 
-  <app-input [inputLabel]="'Confirm password'"
-             [placeholder]="'confirm password'" type="password">
-  </app-input>
+             [disabled]="!registerForm.valid"
+             [text]="'add'"></app-btn>
+  </div>
 
-  <app-btn [text]="'Create profile'" id="app-btn"></app-btn>
 </form>
+</body>

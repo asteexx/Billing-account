@@ -3,7 +3,7 @@
 <!--    <li [class.active]="linkView==='personal'" class="profile-tabs"><a (click)="linkView='personal'">Personal Information</a></li>-->
     <li [class.active]="linkView==='chanels'"class="profile-tabs"><a (click)="linkView='chanels'">Chanels</a></li>
     <li [class.active]="linkView==='balance'"class="profile-tabs"><a (click)="linkView='balance'">Balance</a></li>
-<!--    <li [class.active]="linkView==='registration'"class="profile-tabs"><a (click)="linkView='registration'">Admin Registration</a></li>-->
+    <li [class.active]="linkView==='registration'"class="profile-tabs" *ngIf="storageService.getCurrentUser().role =='ADMIN'"><a (click)="linkView='registration'">Company Registration</a></li>
   </div>
 </nav>
 
@@ -35,12 +35,11 @@
 
   </div>
 
-<!--  <div *ngSwitchCase="'registration'">-->
+  <div *ngSwitchCase="'registration'">
 
-<!--    <app-register-admin> </app-register-admin>-->
+    <app-register-admin> </app-register-admin>
 
-
-<!--  </div>-->
+  </div>
 </div>
 
 

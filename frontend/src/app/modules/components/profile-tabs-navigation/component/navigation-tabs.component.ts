@@ -1,6 +1,8 @@
 import {Component, Input, Output} from '@angular/core';
 
 import {ProfileHeaderModule} from "../../profile/profile-header/profile-header.module";
+import {StorageService} from "../../../../services/security/storage.service";
+import {UserService} from "../../../../services/security/user-service";
 
 @Component({
   selector: 'app-navigation-tabs',
@@ -8,7 +10,8 @@ import {ProfileHeaderModule} from "../../profile/profile-header/profile-header.m
   styleUrls: ['./navigation-tabs.component.css']
 })
 export class NavigationTabsComponent  {
-
+  constructor(private storageService: StorageService) {
+  }
   @Input()
   navId: string;
 

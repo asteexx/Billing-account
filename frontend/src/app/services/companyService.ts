@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Company} from "../modules/components/catalog/models/company";
 import {EWallet} from "../modules/components/balance/model/eWallet";
+import {ChanelCatalog} from "../modules/components/catalog/models/chanelCatalog";
 
 @Injectable()
 // Data service
@@ -21,5 +22,10 @@ export class CompanyService {
   getAllCompanies() {
 
     return this.http.get<Company[]>('/api/companies');
+  }
+
+  saveCompany(content: Company): Observable<Company> {
+
+    return this.http.post<Company>('/api/companies/add', content);
   }
 }

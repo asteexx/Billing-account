@@ -12,14 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.math.BigDecimal;
-import java.util.ArrayList;
+import java.math.RoundingMode;
+import java.util.Calendar;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -27,11 +25,14 @@ import java.util.stream.StreamSupport;
 @EnableScheduling
 public class ChargingService {
 
-
     private UsersEntity userInAction;
     private ChanelsEntity chanelInAction;
     private CompaniesEntity companyInAction;
     private SubscribersOnChanelEntity subscription;
+    static Calendar calendar = Calendar.getInstance();
+    static int days = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+    private static final BigDecimal period = BigDecimal.valueOf(days);
+    private static final int scale = 2;
 
     @Autowired
     private CompanyRepository companyRepository;
@@ -56,40 +57,35 @@ public class ChargingService {
                     StreamSupport.stream(subscriptionService.getAllSubscriptions().spliterator(), false)
                             .collect(Collectors.toList());
             for (SubscribersOnChanelEntity subscription : subbs) {
-                // subscription = subbs.get(0);
-
 
                 EWalletEntity userWallet = eWalletRepository.findBySubscriberId(subscription.getIdSubscriber()).get();
                 //got EWallet from User
-                System.out.println(userWallet);
+                System.out.println("days in this month: " + period);
                 userInAction = userService.getUserById(subscription.getIdSubscriber()).get();
                 chanelInAction = chanelService.getChanelEntityById(subscription.getIdChanel()).get();
                 companyInAction = companyService.getCompanyById(chanelInAction.getOwner()).get();
                 BigDecimal price = chanelInAction.getPrice();
-
-                BigDecimal pricePerDay = price.divide(new BigDecimal(2));
+                BigDecimal pricePerDay = price.divide(period, scale, RoundingMode.CEILING);
 
                 if (userWallet.getMoneyAmmount().compareTo(pricePerDay) >= 0) {
                     userWallet.setMoneyAmmount(userWallet.getMoneyAmmount().subtract(pricePerDay));
                     eWalletRepository.save(userWallet);
                     companyInAction.setMoneyOnBankAccount(companyInAction.getMoneyOnBankAccount().add(pricePerDay));
                     companyRepository.save(companyInAction);
-                    System.out.println("sub active!");
+                    System.out.println("sub active!  " + userInAction.getLogin() + " payed " + pricePerDay + " to " + companyInAction.getName() + " for " + chanelInAction.getChanelName());
                 } else {
                     System.out.println("you are unsubscribed now!");
                     subscriptionService.unsubscribe(chanelInAction.getId(), userInAction.getIdUser());
-
                 }
             }
         } else {
             System.out.println("no sub to transfer!");
         }
-
     }
-   @Scheduled(cron = "0 35 3 18 * ?") //0 15 10 ? * *	Fire at 10:15 AM every day
-   // charge at 03:35  on the 18 day of every month;
 
-//    @Scheduled(fixedDelay = 10000) // charge every 10 sec
+     @Scheduled(cron = "0 35 3 ? * *") //	Fire at 3:35 AM every day
+
+   // @Scheduled(fixedDelay = 10000) // charge every 10 sec
     public void doSmth() {
 
         this.moneyTransfer();
