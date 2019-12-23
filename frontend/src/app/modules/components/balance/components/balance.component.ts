@@ -1,16 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Company} from "../../catalog/models/company";
-import {UserModel} from "../../common/nav-bar/models/user.model";
 import {User} from "../../registration-form/models/user";
-import {setUTCOffset} from "ngx-bootstrap/chronos/units/offset";
 import {StorageService} from "../../../../services/security/storage.service";
 import {UserService} from "../../../../services/security/user-service";
-import {ChanelCatalog} from "../../catalog/models/chanelCatalog";
 import {EWallet} from "../model/eWallet";
-import {BsModalRef, BsModalService} from "ngx-bootstrap";
 import {EWalletService} from "../../../../services/eWallet.service";
 import {Subscription} from "rxjs";
-import {CatalogPage} from "../../../../shared/components/card/pageBe/catalogPage";
 import {CompanyService} from "../../../../services/companyService";
 
 @Component({
@@ -35,11 +29,16 @@ export class BalanceComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.showBalance()
+    this.showBalance();
+    this.getUSerRole();
   }
 
   @Input()
+  userRole: string;
+
+  @Input()
   moneyAmount: number;
+
   @Input()
   easy_click: any;
 
@@ -94,10 +93,19 @@ export class BalanceComponent implements OnInit {
     this.editableEWallet.subscriberId = userId;
     this.editableEWallet.moneyAmmount = 0;
     this.subscriptions.push(this.eWalletService.saveWallet(this.editableEWallet).subscribe(() => {
-        this.activeUser = User.cloneBase(user);
-        this.activeUser.eWalletsByIdUser[0] = this.editableEWallet;
+      this.activeUser = User.cloneBase(user);
+      this.activeUser.eWalletsByIdUser[0] = this.editableEWallet;
       this.storageService.setUser(user);
     }));
+  }
+
+  public getUSerRole() {
+    let user = JSON.parse(localStorage.getItem("currentUser"));
+    if (user != null) {
+      this.userRole = user.role;
+    } else {
+      this.userRole = 'Default'
+    }
   }
 
   ngOnDestroy(): void {

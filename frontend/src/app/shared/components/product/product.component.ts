@@ -1,11 +1,10 @@
-import {Component, Input, OnInit, TemplateRef} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {SubscriptionOnChanel} from "../../../modules/components/active-chanels/subscription/subscriptionOnChanel";
 import {SubscriptionService} from "../../../services/subscription.service";
 import {Subscription} from "rxjs";
 import {UserModel} from "../../../modules/components/common/nav-bar/models/user.model";
 import {ChanelCatalog} from "../../../modules/components/catalog/models/chanelCatalog";
 import {ChanelService} from "../../../services/chanel.service";
-import {CatalogPage} from "../card/pageBe/catalogPage";
 import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
 import {BsModalRef, BsModalService} from "ngx-bootstrap";
 import {StorageService} from "../../../services/security/storage.service";
@@ -55,6 +54,7 @@ export class ProductComponent  implements OnInit{
 
   @Input()
   companiesByOwner: string;
+
   @Input()
   userRole: string;
 
@@ -94,10 +94,12 @@ export class ProductComponent  implements OnInit{
   }
 
   public getUSerRole() {
+
     let user = JSON.parse(localStorage.getItem("currentUser"));
+    if (user!= null){
     this.userRole = user.role;
+    }else {
+   this.userRole = 'Default'}
   }
-
-
 
 }

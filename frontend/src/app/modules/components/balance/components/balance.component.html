@@ -2,7 +2,7 @@
 <h3>Your balance: {{moneyAmount}}$<span class="badge badge-secondary"></span></h3>
 
 
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 18rem;" *ngIf="userRole =='CUSTOMER'">
   <form>
     <div class="card-body">
       <h5 class="card-title">Here you can add some money</h5>
@@ -15,7 +15,7 @@
   </form>
 </div>
 
-<app-btn id="button" [text]="'Create Wallet'" (click)="createWallet()">
+<app-btn id="button" [text]="'Create Wallet'" (click)="createWallet()" *ngIf="userRole =='CUSTOMER'">
 
 </app-btn>
 

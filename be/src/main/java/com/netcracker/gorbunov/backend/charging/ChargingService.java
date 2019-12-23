@@ -67,18 +67,18 @@ public class ChargingService {
     }
 
     @Scheduled(cron = "0 35 3 ? * *") //	Fire at 3:35 AM every day
-  //  @Scheduled(fixedDelay = 10000) // charge every 10 sec
+     // @Scheduled(fixedDelay = 50000) // charge every 50 sec
     public void doSmth() {
 
         this.subscriptionAction();
     }
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
-    public void moneyTransfer(BigDecimal period,SubscribersOnChanelEntity subscription ) {
+    public void moneyTransfer(BigDecimal period, SubscribersOnChanelEntity subscription) {
         EWalletEntity userWallet = eWalletRepository.findBySubscriberId(subscription.getIdSubscriber()).get();
         //got EWallet from User
         System.out.println("days in this month: " + period);
-       UsersEntity userInAction = userService.getUserById(subscription.getIdSubscriber()).get();
+        UsersEntity userInAction = userService.getUserById(subscription.getIdSubscriber()).get();
         ChanelsEntity chanelInAction = chanelService.getChanelEntityById(subscription.getIdChanel()).get();
         CompaniesEntity companyInAction = companyService.getCompanyById(chanelInAction.getOwner()).get();
         BigDecimal price = chanelInAction.getPrice();
@@ -89,8 +89,8 @@ public class ChargingService {
             System.out.println("money left: " + userWallet.getMoneyAmmount());
             userWallet.setMoneyAmmount(userWallet.getMoneyAmmount().subtract(pricePerDay));
             eWalletRepository.save(userWallet);
-            companyInAction.setMoneyOnBankAccount(companyInAction.getMoneyOnBankAccount().add(pricePerDay));
-            companyRepository.save(companyInAction);
+                companyInAction.setMoneyOnBankAccount(companyInAction.getMoneyOnBankAccount().add(pricePerDay));
+                companyRepository.save(companyInAction);
         } else {
             System.out.println("you are unsubscribed now!");
             subscriptionService.unsubscribe(chanelInAction.getId(), userInAction.getIdUser());

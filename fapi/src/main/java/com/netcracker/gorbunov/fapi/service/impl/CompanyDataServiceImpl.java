@@ -1,5 +1,6 @@
 package com.netcracker.gorbunov.fapi.service.impl;
 
+import com.netcracker.gorbunov.fapi.beClasses.CompanyModel;
 import com.netcracker.gorbunov.fapi.models.CompanyViewModel;
 import com.netcracker.gorbunov.fapi.service.CompanyDataService;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,7 +28,8 @@ public class CompanyDataServiceImpl implements CompanyDataService {
 
     @Override
     public CompanyViewModel getCompanyById(Integer id) {
-        return null;
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.getForObject(backendServerUrl + "/api/companies/" + id, CompanyViewModel.class);
     }
 
     @Override

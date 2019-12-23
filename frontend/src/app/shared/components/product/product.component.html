@@ -1,4 +1,4 @@
-<div class="card-header">
+<div class="card-header" >
   {{companiesByOwner}}
   <h6 id="idLabel">{{id}}</h6>
 </div>
@@ -8,13 +8,13 @@
 
   <button type="button" class="btn btn-success" data-container="body" data-toggle="popover" title="Success!"
           data-content="You are now subscribed!"
-          (click)="subscribeOnChanel()" name="button" *ngIf="userRole!=='COMPANY'"
+          (click)="subscribeOnChanel()" name="button" *ngIf="userRole =='CUSTOMER'"
   >Subscribe: {{price}}$
   </button>
 
   <button type="button" class="btn btn-danger" data-container="body" data-toggle="popover" title="Success!"
           data-content="You are now subscribed!"
-          (click)="unsubscribe( id, storageService.getUser().idUser)" name="button" *ngIf="userRole!=='COMPANY'"
+          (click)="unsubscribe( id, storageService.getUser().idUser)" name="button" *ngIf="userRole =='CUSTOMER',"
   >Unsubscribe
   </button>
 </div>
