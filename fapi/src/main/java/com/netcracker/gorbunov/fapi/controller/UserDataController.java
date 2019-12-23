@@ -12,6 +12,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -56,17 +57,20 @@ public class UserDataController {
     }
 
     @GetMapping("/login/{login}")
-    public ResponseEntity<UserViewModel> getUserByLogin(@PathVariable String login) {
-        String userLogin = String.valueOf(login);
-        return ResponseEntity.ok(conversionService.convert(userLoginService.findByLogin(userLogin), UserViewModel.class));
+    public ResponseEntity<UserViewModel> getUserByLogin(@PathVariable String login) throws HttpClientErrorException {
+      try {
+          String userLogin = String.valueOf(login);
+          return ResponseEntity.ok(conversionService.convert(userLoginService.findByLogin(userLogin), UserViewModel.class));
 
+      }catch (Exception e) {
+          return ResponseEntity.ok(new UserViewModel());
+      }
     }
 
     @PreAuthorize("isAuthenticated()")
     @GetMapping(value = "/current")
     public UserModel getCurrentUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        // todo exclude password from model!
         return userLoginService.findByLogin(((org.springframework.security.core.userdetails.User) authentication.getPrincipal()).getUsername());
     }
 }

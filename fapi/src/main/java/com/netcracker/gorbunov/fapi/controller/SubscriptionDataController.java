@@ -29,4 +29,9 @@ public class SubscriptionDataController {
         }
         return null;
     }
+
+    @DeleteMapping(value = "/{idChanel}/{idSubscriber}")
+    public void deleteChanel(@PathVariable Integer idChanel, @PathVariable Integer idSubscriber) {
+        subscriptionDataService.unsubscribe(Integer.valueOf(idChanel),Integer.valueOf(idSubscriber) );
+    }
 }

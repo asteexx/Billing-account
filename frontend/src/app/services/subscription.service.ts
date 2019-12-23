@@ -21,4 +21,8 @@ export class SubscriptionService {
     return this.http.post<SubscriptionOnChanel>('/api/subscriptions', content);
   }
 
+  unsubscribeFromChanel(idChanel: number, idSubscriber: number): Observable<void> {
+    return this.http.delete<void>('/api/subscriptions/' + idChanel + '/' + idSubscriber);
+  }
+
 }

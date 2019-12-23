@@ -16,10 +16,10 @@ public class ChanelViewModelToChanelModelConverter implements Converter<ChanelVi
         companyModel.setName(chanelViewModel.getCompaniesByOwner());
 
         chanelModel.setId(chanelViewModel.getId());
-        chanelModel.setCompaniesByOwner(companyModel);
         chanelModel.setChanelName(chanelViewModel.getChanelName());
         chanelModel.setPrice(chanelViewModel.getPrice());
         chanelModel.setSmallDiscription(chanelViewModel.getSmallDiscription());
+        chanelModel.setOwner(chanelViewModel.getOwner());
         System.out.println(chanelModel);
         return chanelModel;
 

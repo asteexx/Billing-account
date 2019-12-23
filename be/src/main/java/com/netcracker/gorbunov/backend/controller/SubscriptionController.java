@@ -29,7 +29,7 @@ public class SubscriptionController {
 
     }
 
-    @RequestMapping(value = "subscriber/{idSubscriber}/chanel/{idChanel}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{idChanel}/{idSubscriber}", method = RequestMethod.DELETE)
     public void unsubscribe(@PathVariable(name = "idChanel") Integer idChanel, @PathVariable(name = "idSubscriber")Integer idSubscriber) {
         subscriptionService.unsubscribe(idChanel, idSubscriber);
     }

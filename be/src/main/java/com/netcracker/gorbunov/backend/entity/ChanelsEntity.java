@@ -111,7 +111,6 @@ public class ChanelsEntity {
 
     @ManyToOne
     @JoinColumn(name = "owner", referencedColumnName = "id_company", nullable = false, insertable = false, updatable = false)
-
     public CompaniesEntity getCompaniesByOwner() {
         return companiesByOwner;
     }

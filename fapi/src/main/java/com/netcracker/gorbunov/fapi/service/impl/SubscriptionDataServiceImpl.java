@@ -30,4 +30,10 @@ public class SubscriptionDataServiceImpl implements SubscriptionDataService {
         return restTemplate.postForEntity(backendServerUrl + "/api/subscriptions", subscription, SubscriptionViewModel.class).getBody();
 
     }
+
+    @Override
+    public void unsubscribe(Integer idChanel, Integer idSubscriber) {
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.delete(backendServerUrl + "/api/subscriptions/" + idChanel + "/" + idSubscriber);
+    }
 }

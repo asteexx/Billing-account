@@ -31,7 +31,7 @@ export class RegisterAdminComponent implements OnInit {
   }
 
   public createCompany(company: Company): void {
-
+this.company.moneyOnBankAccount = 0;
     this.subscriptions.push(this.companyService.saveCompany(this.company).subscribe(() => {
 
 

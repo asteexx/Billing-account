@@ -38,11 +38,11 @@
     </div>
   </fieldset>
 
-  <fieldset class="form-group">
+  <fieldset class="form-group" *ngIf="user.role==='COMPANY'">
     <div class="form-row align-items-center">
       <div class="col-auto my-1">
         <label class="mr-sm-2" for="inlineFormCustomSelect">Select company</label>
-        <select class="custom-select mr-sm-2" id="inlineCompanySelect" name="companySelect" formControlName="company" required
+        <select class="custom-select mr-sm-2 form-control "  id="inlineCompanySelect" name="companySelect" formControlName="company" required
                 [(ngModel)]="user.idCompany">
           <option selected disabled="Choose yours one">Choose yours one</option>
           <option *ngFor="let company of companies" [ngValue]="company.idCompany"> {{company.name}}</option>

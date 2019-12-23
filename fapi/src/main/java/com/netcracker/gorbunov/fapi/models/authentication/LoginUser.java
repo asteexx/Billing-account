@@ -1,9 +1,12 @@
 package com.netcracker.gorbunov.fapi.models.authentication;
 
+import javax.validation.constraints.NotBlank;
+
 //Model for user login process
 public class LoginUser {
-
+@NotBlank(message = "Username can not be empty")
     private String username;
+    @NotBlank(message = "Password can not be empty")
     private String password;
 
     public LoginUser() {

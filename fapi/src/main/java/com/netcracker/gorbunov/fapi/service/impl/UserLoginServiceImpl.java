@@ -13,8 +13,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import javax.validation.constraints.Null;
+import javax.xml.ws.http.HTTPException;
 import java.util.*;
 
 @Service("userDetailsService")
@@ -30,11 +34,9 @@ public class UserLoginServiceImpl implements UserDetailsService, UserLoginServic
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
-    public UserModel findByLogin(String login) {
+    public UserModel findByLogin(String login) throws HTTPException {
         RestTemplate restTemplate = new RestTemplate();
-        LOGGER.info("111");
         UserModel user = restTemplate.getForObject(backendServerUrl + "/api/users/login/" + login, UserModel.class);
-        LOGGER.info("2222");
         LOGGER.info(user + ": user");
         return user;
     }
@@ -47,10 +49,17 @@ public class UserLoginServiceImpl implements UserDetailsService, UserLoginServic
     }
 
     @Override
-    public UserModel save(UserModel user) {
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.postForEntity(backendServerUrl + "/api/users/signup", user, UserModel.class).getBody();
+    public UserModel save(UserModel user) throws HttpServerErrorException {
+       try {
+           user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+           RestTemplate restTemplate = new RestTemplate();
+           return restTemplate.postForEntity(backendServerUrl + "/api/users/signup", user, UserModel.class).getBody();
+
+       }catch (HttpServerErrorException e) {
+
+           System.out.println("Username is not available");
+           return new UserModel();
+       }
     }
 
     @Override

@@ -1,8 +1,7 @@
 export class SubscriptionOnChanel {
 
-  idSubscriber: string;
+  idSubscriber: number;
   idChanel: number;
-
 
 
   // constructor(idSubscriber, idChanel) {

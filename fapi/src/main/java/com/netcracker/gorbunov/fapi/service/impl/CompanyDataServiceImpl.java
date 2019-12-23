@@ -32,7 +32,8 @@ public class CompanyDataServiceImpl implements CompanyDataService {
 
     @Override
     public CompanyViewModel saveCompany(CompanyViewModel companyViewModel) {
-        return null;
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.postForEntity(backendServerUrl + "/api/companies/add", companyViewModel, CompanyViewModel.class).getBody();
     }
 
     @Override

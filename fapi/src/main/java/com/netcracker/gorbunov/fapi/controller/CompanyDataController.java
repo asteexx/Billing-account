@@ -18,13 +18,12 @@ public class CompanyDataController {
     private CompanyDataService companyDataService;
 
 
-
     @GetMapping
     public ResponseEntity<List<CompanyViewModel>> getAllCompanies() {
         return ResponseEntity.ok(companyDataService.getAllCompanies());
     }
 
-    @PostMapping()
+    @PostMapping(value = "/add")
     public ResponseEntity<CompanyViewModel> saveCompany(@RequestBody CompanyViewModel companyViewModel /*todo server validation*/) {
         if (companyViewModel != null) {
             return ResponseEntity.ok(companyDataService.saveCompany(companyViewModel));

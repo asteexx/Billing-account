@@ -11,7 +11,10 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 //AuthenticationController has API exposed to generate JWT token
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -26,7 +29,10 @@ public class AuthenticationController {
     private TokenProvider tokenProvider;
 
     @RequestMapping(value = "/generate-token", method = RequestMethod.POST)
-    public ResponseEntity register(@RequestBody LoginUser userModel){
+    public ResponseEntity register(@Valid @RequestBody LoginUser userModel){
+
+
+
         final Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         userModel.getUsername(),

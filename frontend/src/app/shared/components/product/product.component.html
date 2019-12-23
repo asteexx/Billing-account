@@ -6,17 +6,17 @@
   <h5 class="card-title">{{chanelName}} </h5>
   <p class="card-text">{{smallDiscription}}</p>
 
-<!--  <app-btn [text]="'Subscribe '" [class]="'btn-success'"-->
-<!--           [cardPrice]="price" className="sub_btn" >-->
+  <button type="button" class="btn btn-success" data-container="body" data-toggle="popover" title="Success!"
+          data-content="You are now subscribed!"
+          (click)="subscribeOnChanel()" name="button" *ngIf="userRole!=='COMPANY'"
+  >Subscribe: {{price}}$
+  </button>
 
-<!--  </app-btn>-->
-  <button type="button" class="btn btn-success" data-container="body" data-toggle="popover" title="Success!" data-content="You are now subscribed!"
-          (click)="subscribeOnChanel()"  name="button"*ngIf="userRole!=='COMPANY'"
-          >Subscribe: {{price}}$</button>
-
+  <button type="button" class="btn btn-danger" data-container="body" data-toggle="popover" title="Success!"
+          data-content="You are now subscribed!"
+          (click)="unsubscribe( id, storageService.getUser().idUser)" name="button" *ngIf="userRole!=='COMPANY'"
+  >Unsubscribe
+  </button>
 </div>
 
-<!--<div class="alert alert-success" role="alert" id="alertMessage"aria-disabled="true">-->
-<!--  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>-->
-<!--  Subscribed!-->
-<!--</div>-->
+

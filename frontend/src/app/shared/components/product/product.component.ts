@@ -8,6 +8,7 @@ import {ChanelService} from "../../../services/chanel.service";
 import {CatalogPage} from "../card/pageBe/catalogPage";
 import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
 import {BsModalRef, BsModalService} from "ngx-bootstrap";
+import {StorageService} from "../../../services/security/storage.service";
 
 
 @Component({
@@ -33,6 +34,7 @@ export class ProductComponent  implements OnInit{
 
 
   constructor(private subscriptionService: SubscriptionService,
+              private storageService: StorageService,
                private loadingService: Ng4LoadingSpinnerService,
               private chanelService: ChanelService,
                 private modalService: BsModalService,
@@ -84,9 +86,12 @@ export class ProductComponent  implements OnInit{
     this.editableCatalog = new ChanelCatalog();
   }
 
-  public showSuccessForSubscription() {
-  }
+  public unsubscribe(idChanel: number, idSubscriber: number): void {
 
+    this.subscriptions.push(this.subscriptionService.unsubscribeFromChanel(idChanel, idSubscriber).subscribe(() => {
+      this.refreshCatalog();
+    }));
+  }
 
   public getUSerRole() {
     let user = JSON.parse(localStorage.getItem("currentUser"));

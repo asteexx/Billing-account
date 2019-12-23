@@ -3,8 +3,8 @@ package com.netcracker.gorbunov.fapi.controller;
 
 import com.netcracker.gorbunov.fapi.beClasses.ChanelModel;
 import com.netcracker.gorbunov.fapi.beClasses.ChanelModelPage;
-import com.netcracker.gorbunov.fapi.models.ChanelViewModel;
 import com.netcracker.gorbunov.fapi.beClasses.PageModel;
+import com.netcracker.gorbunov.fapi.models.ChanelViewModel;
 import com.netcracker.gorbunov.fapi.service.ChanelDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.ConversionService;
@@ -24,27 +24,6 @@ public class ChanelDataController {
     @Autowired
     private ConversionService conversionService;
 
-//    @GetMapping
-//    public ResponseEntity<List<ChanelViewModel>> getAllChanels(@RequestParam int page) {
-//        return ResponseEntity.ok(chanelDataService.getAllChanels(page)
-//                .stream()
-//                .map(chanel -> conversionService.convert(chanel, ChanelViewModel.class))
-//                .collect(Collectors.toList()));
-//    }
-
-//    @GetMapping
-//    public ResponseEntity<PageModel<ChanelViewModel>> getAllChanelsPage(@RequestParam int page) {
-//
-//        PageModel<ChanelModel> chanelModelPageModel = chanelDataService.getAllChanels(page);
-//        List<ChanelViewModel> chanelViewModelList = chanelModelPageModel.getContent().stream()
-//                .map(chanelModel -> conversionService.convert(chanelModel, ChanelViewModel.class))
-//                .collect(Collectors.toList());
-//        PageModel<ChanelViewModel> chanelViewModelPageModel = new PageModel<>(chanelViewModelList, chanelModelPageModel.getTotalPages());
-//        return ResponseEntity.ok(chanelViewModelPageModel);
-//
-//    }
-
-
     @GetMapping
     public ResponseEntity<PageModel<ChanelViewModel>> getAllChanelsPage(@RequestParam int page) {
 
@@ -52,8 +31,7 @@ public class ChanelDataController {
         List<ChanelViewModel> chanelViewModelList = chanelModelPage.getContent().stream()
                 .map(chanelModel -> conversionService.convert(chanelModel, ChanelViewModel.class))
                 .collect(Collectors.toList());
-            PageModel<ChanelViewModel> chanelViewModelPageModel = new PageModel<>(chanelViewModelList, chanelModelPage.getTotalPages());
-      //  ChanelModelPage ChanelModelNewPage = new ChanelModelPage(chanelModelPage.getContent(), chanelModelPage.getTotalPages());
+        PageModel<ChanelViewModel> chanelViewModelPageModel = new PageModel<>(chanelViewModelList, chanelModelPage.getTotalPages());
         return ResponseEntity.ok(chanelViewModelPageModel);
 
     }
@@ -62,11 +40,12 @@ public class ChanelDataController {
     @PostMapping()
     public ResponseEntity<ChanelModel> saveChanel(@RequestBody ChanelViewModel chanelViewModel /*todo server validation*/) {
         if (chanelViewModel != null) {
-            ;
+
             return ResponseEntity.ok(
-                    conversionService.convert(
-                            chanelDataService.saveChanel(
-                                    conversionService.convert(chanelViewModel, ChanelModel.class)), ChanelModel.class));
+
+                    chanelDataService.saveChanel(
+                            conversionService.convert(chanelViewModel, ChanelModel.class)));
+
         }
         return null;
     }

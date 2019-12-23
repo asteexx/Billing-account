@@ -23,6 +23,9 @@ export class UserService {
     return this.http.post<User>('/api/users/signup', catalog);
   }
 
+  public getUserByLogin(login: string): Observable<User> {
+    return this.http.get<User>('/api/users/login/' + login);
+  }
 }
 
 export interface AuthToken {

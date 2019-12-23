@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {SharedModule} from "../../../../shared/shared.module";
 import {User} from "../models/user";
 import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
@@ -8,7 +8,6 @@ import {Roles} from "../models/roles";
 import {CompanyService} from "../../../../services/companyService";
 import {Company} from "../../catalog/models/company";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-
 
 
 @Component({
@@ -21,6 +20,9 @@ export class RegistrationFormComponent implements OnInit {
   public roles: Roles[] = [{name: 'CUSTOMER'}, {name: 'COMPANY'}];
   public companies: Company[] = [];
   private subscriptions: Subscription[] = [];
+
+  @Input()
+  existingUserLogin: string;
 
   registerForm: FormGroup = new FormGroup({
     "login": new FormControl("", Validators.required),
@@ -37,15 +39,43 @@ export class RegistrationFormComponent implements OnInit {
 
   }
 
+
+  setUserCategoryValidators() {
+
+    const companyControl = this.registerForm.get('company');
+    this.registerForm.get('role').valueChanges
+      .subscribe(role => {
+
+        if (role === 'CUSTOMER') {
+          companyControl.setValidators(null);
+        }
+
+        if (role === 'COMPANY') {
+          companyControl.setValidators([Validators.required]);
+        }
+        companyControl.updateValueAndValidity();
+      });
+  }
+
+
   public _addUser(user: User): void {
-    this.loadingService.show();
+    let observableExistingUser = this.userService.getUserByLogin(this.user.login)
+    observableExistingUser.subscribe(observableExistingUser=>{
+      this.existingUserLogin = observableExistingUser.login
 
-    this.subscriptions.push(this.userService.saveUser(this.user).subscribe(() => {
+  });
+    if (this.existingUserLogin === null ) {
+      this.loadingService.show();
 
-      this.refreshUser()
-      this.loadingService.hide();
-     this.redirect()
-    }));
+      this.subscriptions.push(this.userService.saveUser(this.user).subscribe(() => {
+
+        this.refreshUser()
+        this.loadingService.hide();
+        this.redirect()
+      }));
+    } else {
+      console.log(user.login + ' is already used')
+    }
   }
 
   public loadCompanies() {
@@ -68,6 +98,7 @@ export class RegistrationFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadCompanies()
+    this.setUserCategoryValidators()
   }
 
   ngOnDestroy(): void {
